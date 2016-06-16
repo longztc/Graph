@@ -1,0 +1,65 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@leftPaddingCell2: 0;
+
+.azc-grid-reorderRow {
+    &.azc-grid {
+        table {
+            thead tr th:nth-child(2) {
+                & > a {
+                    // Overriding the base
+                    padding-left: @leftPaddingCell2;
+                }
+            }
+        }
+    }
+
+    col.azc-grid-reorderRow-col {
+        width: 16px;
+    }
+
+    table tbody tr {
+        td.azc-grid-reorderRow-cell {
+            padding-left: 5px;
+            padding-right: 6px;
+        }
+
+        td:nth-child(2) {
+            padding: @leftPaddingCell2;
+        }
+    }
+
+    &.azc-grid-reorderRow-enabled {
+        table tbody tr:not([aria-disabled="true"]) {
+
+            &:hover td.azc-grid-reorderRow-cell div {
+                margin-top: 4px; // Align more in the middle.
+
+                &:before {
+                    content: data-uri("image/svg+xml;base64", "../../../../Content/Images/Viva.Controls/azc.grid.reorderrowextension.handle-hover.svg");
+                    width: 5px;
+                    height: 17px;
+                }
+            }
+
+            &[aria-selected="true"]:hover td.azc-grid-reorderRow-cell div {
+                &:before {
+                    content: data-uri("image/svg+xml;base64", "../../../../Content/Images/Viva.Controls/azc.grid.reorderrowextension.handle-active.svg");
+                }
+            }
+        }
+    }
+
+    .azc-grid-reorderRow-line {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        display: none;
+    }
+
+    &.azc-grid-reorderRow-active {
+        .azc-grid-reorderRow-line {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-toolbarButton {
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.azc-toolbarButton.azc-toolbarButton-hover {
+  cursor: pointer;
+}
+.azc-toolbarButton a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.azc-toolbarButton a .azc-toolbarButton-icon {
+  height: 70%;
+  margin: 0 auto;
+}
+.azc-toolbarButton a .azc-toolbarButton-icon.azc-toolbarButton-label-hidden {
+  height: 100%;
+}
+.azc-toolbarButton a .azc-toolbarButton-icon img,
+.azc-toolbarButton a .azc-toolbarButton-icon svg {
+  height: 100%;
+  width: 100%;
+}
+.azc-toolbarButton a .azc-toolbarButton-label {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  height: 30%;
+  overflow: hidden;
+  font-size: 12px;
+  text-align: center;
+}
+.azc-toolbarButton a .azc-toolbarButton-label.azc-toolbarButton-icon-hidden {
+  height: 100%;
+}

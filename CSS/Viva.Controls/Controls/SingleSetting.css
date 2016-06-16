@@ -1,0 +1,41 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-singleSetting {
+  text-align: center;
+  /*alternative theme: Allow unit to align to the top. This is specially done for the need of handling Money Unit.*/
+}
+.azc-singleSetting .azc-singleSetting-data {
+  width: 100%;
+  position: relative;
+  line-height: 1;
+}
+.azc-singleSetting .azc-singleSetting-data .azc-singleSetting-value {
+  display: inline-block;
+  font-size: 40px;
+  pointer-events: none;
+}
+.azc-singleSetting .azc-singleSetting-data .azc-singleSetting-unit {
+  display: inline-block;
+  position: relative;
+}
+.azc-singleSetting .azc-singleSetting-data .azc-singleSetting-unit img {
+  max-width: 28px;
+  max-height: 28px;
+}
+.azc-singleSetting .azc-singleSetting-caption {
+  margin: 4px 0;
+}
+.azc-singleSetting .azc-singleSetting-captionWrapper .azc-singleSetting-caption {
+  display: inline;
+}
+.azc-singleSetting .azc-singleSetting-captionWrapper .azc-dockedballoon {
+  margin-top: 0px;
+  margin-bottom: -4px;
+}
+.azc-singleSetting.azc-theme-tropical .azc-singleSetting-data .azc-singleSetting-unit {
+  vertical-align: top;
+}

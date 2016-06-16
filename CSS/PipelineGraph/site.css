@@ -1,0 +1,236 @@
+﻿html {
+    margin: 0px;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    color: #333;
+    font-size: 12px;
+    font-family: "Segoe UI";
+    height: 100%;
+    background-image: none;
+    background-color: #efeff7;
+}
+
+a {
+    color: #222;
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: "Segoe UI Light";
+    font-weight: normal;
+    font-size: 2em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #444;
+    margin-top: 40px;
+}
+
+h1 small a,
+h2 small a {
+    font-size: 0.7em;
+}
+
+h2 {
+    font-family: "Segoe UI Light";
+    font-weight: normal;
+    font-size: 1.75em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #999;
+}
+
+h1 + .commands {
+    margin-top: -8px;
+}
+
+.commands {
+    margin-bottom: 8px;
+}
+
+section {
+    margin-bottom: 36px;
+}
+
+table.testscripts {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.testscripts .col2 {
+    width: 300px;
+}
+
+table.testscripts .col3 {
+    width: 300px;
+}
+
+table.testscripts th {
+    font-size: 1.5em;
+    text-align: left;
+    border: 1px solid #aaa;
+    padding: 4px;
+}
+
+table.testscripts td {
+    border: 1px solid #aaa;
+    padding: 4px;
+    font-size: 1.5em;
+}
+
+table.testscripts td .result {
+    font-size: 0.6em;
+}
+
+.run img,
+.runall img,
+.runeverything img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.2;
+    vertical-align: sub;
+    border: 0;
+}
+
+.run:hover img,
+.runall:hover img,
+.runeverything:hover img {
+    opacity: 0.6;
+}
+
+.test-pass {
+    background-color: #87e37b;
+}
+
+.test-fail {
+    background-color: #ee5757;
+}
+
+.test-pending {
+    background-color: #aaa;
+}
+
+.test-hide {
+    display: none;
+}
+
+table.date {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.date .col1 {
+    width: 150px;
+}
+
+table.date .col2 {
+    width: 40%;
+}
+
+table.date thead th {
+    text-align: left;
+    background-color: #ddd;
+    padding: 8px 4px;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Segoe UI Semibold";
+}
+
+table.date tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+table.date tbody tr:hover {
+    background-color: #e9f6fc;
+}
+
+table.date td {
+    padding: 4px;
+}
+
+#dock {
+    height: 40px;
+    background-color: #4c555e;
+    box-shadow: 0 1px 8px #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    opacity: 0.4;
+    font-size: 16px;
+    font-family: "Segoe UI";
+}
+
+#dock.dock-hidden {
+    display: none;
+}
+
+#dock:hover {
+    opacity: 1;
+}
+
+#dock .content {
+    position: relative;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#dock ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+        
+#dock .content > ul > li:nth-child(even) {
+    background-color: #32383e;
+}
+
+#dock ul li {
+    float: left;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#dock .content > ul > li {
+    border-right: 1px solid #fff;
+}
+
+#dock .content > ul li:last-child {
+    border-right: 0;
+}
+
+#dock ul li .subtitle {
+    float: left;
+    display: inline-block;
+    line-height: 40px;
+    height: 40px;
+    margin-right: 12px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 8px;
+}
+
+#dock a {
+    color: #fff;
+    display: block;
+    padding: 0 8px;
+    text-decoration: none;
+    line-height: 40px;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#dock a:hover {
+    text-decoration: underline;
+}
+
+#dock .selected a {
+    border: 2px solid #29abe2;
+    background-color: #156181;
+}

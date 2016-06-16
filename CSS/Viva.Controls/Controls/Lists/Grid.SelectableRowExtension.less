@@ -1,0 +1,36 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-grid-selectableRow {
+    table {
+        thead {
+            th.azc-grid-selectableRow-overlay-header {
+                width: 0;
+            }
+        }
+
+        tbody {
+            tr {
+                td.azc-grid-selectableRow-overlay-cell {
+                    overflow: visible;
+                    padding: 0;
+                    vertical-align: top;
+                    width: 0;
+
+                    div.azc-grid-selectableRow-overlay-origin {
+                        position: relative;
+                        overflow: visible;
+                        height: 100%;
+
+                        // The container div is aligned to the top right of the rightmost cell to hold the overlay content
+                        // This is effectively the end or the row.
+                        div.azc-grid-selectableRow-overlay-container {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

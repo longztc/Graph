@@ -1,0 +1,43 @@
+﻿@import "../Definitions/Common.d.less";
+
+@azcLogStreamBackgroundColor: #000;
+@azcLogStreamTextColor: #c0c0c0;
+@azcLogStreamTextWarningColor: #ff0;
+@azcLogStreamTextErrorColor: #f00;
+@azcLogStreamTextSuccessColor: #0f0;
+@azcLogStreamTextInformationColor: #0ff;
+
+.azc-log-stream {
+    background-color: @azcLogStreamBackgroundColor;
+    color: @azcLogStreamTextColor;
+    
+    span, em, strong {
+        &.azc-log-stream-error {
+            color: @azcLogStreamTextErrorColor;
+        }
+
+        &.azc-log-stream-success {
+            color: @azcLogStreamTextSuccessColor;
+        }
+
+        &.azc-log-stream-warning {
+            color: @azcLogStreamTextWarningColor;
+        }
+
+        &.azc-log-stream-information {
+            color: @azcLogStreamTextInformationColor;
+        }
+
+        &.azc-log-stream-text {
+            color: @azcLogStreamTextColor;
+        }
+    }
+
+    &.azc-log-stream-error-hide .azc-log-stream-error,
+    &.azc-log-stream-success-hide .azc-log-stream-success,
+    &.azc-log-stream-warning-hide .azc-log-stream-warning,
+    &.azc-log-stream-information-hide .azc-log-stream-information,
+    &.azc-log-stream-text-hide .azc-log-stream-text {
+        display: none;
+    }
+}

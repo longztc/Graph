@@ -1,0 +1,578 @@
+﻿@import "../../Definitions/Common.d.less";
+@import "../Forms/TextInput.less";
+
+@invalidBorderWidth: @borderWidth;
+
+@validationWidth: 14px;
+@validationIconWidth: @validationWidth;
+
+/* MIXINS */
+
+.azc-textInput-default-dockedballoon(@lineHeight: inherit) {
+    .azc-dockedballoon.azc-dockedballoon-validation {
+        display: none;
+
+        .azc-dockedballoon-anchor {
+            padding-left: 5 - @invalidBorderWidth;
+            /* Offset due to different anchor image sizes */
+            padding-top: 3px;
+            line-height: @lineHeight;
+        }
+    }
+}
+
+.azc-textInput-invalid-wrapper() {
+    .azc-input-slimbox();
+    float: left;
+    .azc-input-border-wrapper(@invalidBorderWidth);
+}
+
+.azc-textInput-pending-wrapper() {
+    .azc-input-slimbox();
+    float: left;
+    border-right-width: 0;
+    .azc-input-border-noRightWidth-wrapper(@invalidBorderWidth);
+}
+
+.azc-textInput-valid-wrapper() {
+    .azc-input-slimbox();
+    float: left;
+    border-right-color: transparent;
+
+    input, textarea {
+        border-right-width: 0;
+    }
+}
+
+.azc-textInput-invalid-dockedballoon() {
+    .azc-dockedballoon.azc-dockedballoon-validation {
+        display: inline-block;
+        width: @validationWidth;
+        margin-right: -@validationWidth;
+    }
+}
+
+.azc-textInput-dockedballoon-icon-wrapper() {
+    display: inline-block;
+    width: @validationIconWidth;
+    margin-right: -@validationIconWidth;
+    border-width: @borderWidth;
+    border-style: solid;
+    border-left-width: 0;
+    padding: 0 2px 0 0;
+    .box-sizing(border-box);
+    overflow: visible;
+    position: relative;
+    z-index: 1; /* Need it higher than the input */
+
+     div.azc-dockedballoon-anchor {
+        cursor: default;
+        padding: 1px 1px 0 0;
+        text-align: right;
+    }
+}
+
+.azc-textInput-valid-dockedballoon() {
+    .azc-dockedballoon.azc-dockedballoon-validation {
+        .azc-textInput-dockedballoon-icon-wrapper();
+
+        .azc-dockedballoon-anchor {
+            &:before {
+                display: none;
+            }
+
+            svg {
+                display: block;
+                width: 10px;
+                height: 10px;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+.azc-textInput-pending-dockedballoon() {
+    .azc-dockedballoon.azc-dockedballoon-validation {
+        .azc-textInput-dockedballoon-icon-wrapper();
+
+        .azc-dockedballoon-anchor:before {
+            //content: data-uri("../../../Content/Images/Viva.Controls/azc-validatableControl-pending.gif");
+            position: absolute;
+            top: 4px;
+            right: 3px;
+        }
+    }
+}
+
+.azc-textBox-invalid-wrapper() {
+    .box-sizing(border-box);
+    padding-right: @validationWidth;
+
+    .azc-textBox-wrapper {
+        .azc-textInput-invalid-wrapper();
+    }
+
+    .azc-textInput-invalid-dockedballoon();
+}
+
+.azc-textBox-pending-wrapper() {
+    .box-sizing(border-box);
+    padding-right: @validationIconWidth;
+
+    .azc-textBox-wrapper {
+        .azc-textInput-pending-wrapper();
+    }
+
+    .azc-textInput-pending-dockedballoon();
+}
+
+/* MultiLIneTextBox */
+.azc-multiLineTextBox-invalid-wrapper() {
+    .box-sizing(border-box);
+    padding-right: @validationWidth;
+
+    .azc-multiLineTextBox-wrapper {
+        .azc-textInput-invalid-wrapper();
+    }
+
+    .azc-textInput-invalid-dockedballoon();
+
+    &.azc-validatableControl-pending {
+        padding-right: @validationIconWidth;
+
+        .azc-multiLineTextBox-wrapper {
+            .azc-textInput-pending-wrapper();
+        }
+
+        .azc-textInput-pending-dockedballoon();
+    }
+}
+
+/* Password */
+.azc-password-invalid-wrapper() {
+    .box-sizing(border-box);
+    padding-right: @validationWidth;
+
+    .azc-password-wrapper {
+        .azc-textInput-invalid-wrapper();
+    }
+
+    .azc-textInput-invalid-dockedballoon();
+
+    &.azc-validatableControl-pending {
+        padding-right: @validationIconWidth;
+
+        .azc-password-wrapper {
+            .azc-textInput-pending-wrapper();
+        }
+
+        .azc-textInput-pending-dockedballoon();
+    }
+}
+
+/* NumericTextBox */
+.azc-numericTextBox-invalid-wrapper() {
+    .box-sizing(border-box);
+    padding-right: @validationWidth;
+
+    .azc-numericTextBox-wrapper {
+        .azc-textInput-invalid-wrapper();
+    }
+
+    .azc-textInput-invalid-dockedballoon();
+
+    &.azc-validatableControl-pending {
+        padding-right: @validationIconWidth;
+
+        .azc-numericTextBox-wrapper {
+            .azc-textInput-pending-wrapper();
+        }
+
+        .azc-textInput-pending-dockedballoon();
+    }
+}
+
+/* EditableCombo */
+.azc-editableCombo {
+    &.azc-validatableControl-invalid {
+        padding-right: @validationWidth;
+
+        .azc-dockedballoon.azc-dockedballoon-validation {
+            display: inline-block;
+            width: @validationWidth;
+            margin-right: -@validationWidth;
+            padding-bottom: 3px;
+        }
+    }
+
+    .azc-dockedballoon.azc-dockedballoon-validation {
+        .box-sizing(border-box);
+        display: none;
+        padding: 0;
+        margin: 0;
+        float: left;
+        height: 100%;
+
+        .azc-dockedballoon-anchor {
+            padding-top: 1px;
+        }
+    }
+}
+
+/* DropDown */
+.azc-dropdown {
+    .azc-dockedballoon.azc-dockedballoon-validation {
+        display: none;
+    }
+}
+
+
+/* .azc-editableControl and .azc-validatableControl are here to ensure the selector wins */
+.azc-editableControl {
+    &.azc-validatableControl {
+        &.azc-validatableControl-valid-validated {
+            &.azc-textBox-hasfocus,
+            &.azc-multiLineTextBox-hasfocus,
+            &.azc-password-hasfocus,
+            &.azc-numericTextBox-hasfocus {
+                .azc-dockedballoon-validation {
+                    border-color: @focusColor;
+                }
+            }
+        }
+
+        &.azc-editableControl-edited.azc-validatableControl-pending,
+        &.azc-editableControl-edited.azc-validatableControl-valid-validated {
+            .azc-dockedballoon-validation {
+                border-color: @Color_Palette_C15;
+            }
+        }
+
+        &.azc-textBox {
+            .azc-textInput-default-dockedballoon();
+
+            &.azc-validatableControl-invalid {
+                .azc-textBox-invalid-wrapper();
+            }
+
+            &.azc-editableControl-edited.azc-validatableControl-invalid {
+                .azc-textBox-invalid-wrapper();
+            }
+
+            &.azc-validatableControl-pending {
+                .azc-textBox-pending-wrapper();
+            }
+
+            &.azc-validatableControl-valid-validated {
+                .box-sizing(border-box);
+                padding-right: @validationIconWidth;
+
+                .azc-textBox-wrapper {
+                    .azc-textInput-valid-wrapper();
+                }
+
+                .azc-textInput-valid-dockedballoon();
+
+                &.azc-textBox-hasfocus {
+                    .azc-dockedballoon.azc-dockedballoon-validation {
+                        .azc-border-noLeftWidth-wrapper(@borderWidth);
+                    }
+
+                    .azc-input-focus-border-noRightWidth-wrapper(@borderWidth);
+                }
+            }
+
+            &.azc-editableControl-edited.azc-validatableControl-valid-validated {
+                &.azc-textBox-hasfocus {
+                    .azc-dockedballoon.azc-dockedballoon-validation {
+                        .azc-border-noLeftWidth-wrapper(@borderWidth);
+                    }
+                }
+
+                .azc-dockedballoon.azc-dockedballoon-validation {
+                    .azc-border-noLeftWidth-wrapper(@borderWidth);
+                }
+            }
+
+            &.azc-control-disabled {
+                &.azc-validatableControl-invalid,
+                &.azc-validatableControl-valid-validated,
+                &.azc-validatableControl-pending {
+                    .azc-textInput-default-dockedballoon();
+                }
+            }
+        }
+
+        &.azc-multiLineTextBox {
+            .azc-multiLineTextBox-wrapper {
+                .azc-textInput-default-wrapper();
+
+                // Need to clear out line height so it doesn't interfere with the validation height
+                line-height: 0;
+            }
+
+            &.azc-editableControl-edited {
+                .azc-multiLineTextBox-wrapper {
+                    .azc-input-border-wrapper(@borderWidth);
+                }
+            }
+
+            .azc-textInput-default-dockedballoon();
+
+            &.azc-validatableControl-invalid {
+                .azc-multiLineTextBox-invalid-wrapper()
+            }
+
+            &.azc-editableControl-edited.azc-validatableControl-invalid {
+                .azc-multiLineTextBox-invalid-wrapper()
+            }
+
+            &.azc-validatableControl-pending {
+                padding-right: @validationIconWidth;
+
+                .azc-multiLineTextBox-wrapper {
+                    .azc-textInput-pending-wrapper();
+                }
+
+                .azc-textInput-pending-dockedballoon();
+            }
+
+            &.azc-validatableControl-valid-validated {
+                .box-sizing(border-box);
+                padding-right: @validationIconWidth;
+
+                .azc-multiLineTextBox-wrapper {
+                    .azc-textInput-valid-wrapper();
+                }
+
+                .azc-textInput-valid-dockedballoon();
+
+                &.azc-multiLineTextBox-hasfocus {
+                    .azc-dockedballoon.azc-dockedballoon-validation {
+                        .azc-border-noLeftWidth-wrapper(@borderWidth);
+                    }
+                }
+            }
+
+            &.azc-editableControl-edited.azc-validatableControl-valid-validated {
+                .azc-dockedballoon.azc-dockedballoon-validation {
+                    .azc-border-noLeftWidth-wrapper(@borderWidth);
+                }
+            }
+
+            &.azc-multiLineTextBox-disabled {
+                .azc-multiLineTextBox-wrapper {
+                    .azc-textInput-default-wrapper();
+                }
+
+                &.azc-validatableControl-invalid,
+                &.azc-validatableControl-valid-validated,
+                &.azc-validatableControl-pending {
+                    padding-right: 0;
+
+                    .azc-multiLineTextBox-wrapper {
+                        .azc-textInput-default-wrapper();
+                    }
+
+                    .azc-textInput-default-dockedballoon();
+                }
+            }
+
+            &.azc-multiLineTextBox-hasfocus {
+                .azc-input-focus-border-wrapper(@borderWidth);
+            }
+        }
+
+        &.azc-password {
+            .azc-textInput-default-dockedballoon();
+
+            &.azc-validatableControl-invalid {
+                .azc-password-invalid-wrapper();
+            }
+
+            &.azc-editableControl-edited.azc-validatableControl-invalid {
+                .azc-password-invalid-wrapper();
+            }
+
+            &.azc-validatableControl-pending {
+                .box-sizing(border-box);
+                padding-right: @validationIconWidth;
+
+                .azc-password-wrapper {
+                    .azc-textInput-pending-wrapper();
+                }
+
+                .azc-textInput-pending-dockedballoon();
+            }
+
+            &.azc-validatableControl-valid-validated {
+                .box-sizing(border-box);
+                padding-right: @validationIconWidth;
+
+                .azc-password-wrapper {
+                    .azc-textInput-valid-wrapper();
+                }
+
+                .azc-textInput-valid-dockedballoon();
+
+                &.azc-password-hasfocus {
+                    .azc-dockedballoon.azc-dockedballoon-validation {
+                        .azc-border-noLeftWidth-wrapper(@borderWidth);
+                    }
+
+                    .azc-input-focus-border-noRightWidth-wrapper(@borderWidth);
+                }
+            }
+
+            &.azc-editableControl-edited.azc-validatableControl-valid-validated {
+                &.azc-password-hasfocus {
+                    .azc-dockedballoon.azc-dockedballoon-validation {
+                        .azc-border-noLeftWidth-wrapper(@borderWidth);
+                    }
+
+                    .azc-input-focus-border-noRightWidth-wrapper(@borderWidth);
+                }
+
+                .azc-dockedballoon.azc-dockedballoon-validation {
+                    .azc-border-noLeftWidth-wrapper(@borderWidth);
+                }
+            }
+
+            &.azc-control-disabled {
+                &.azc-validatableControl-invalid,
+                &.azc-validatableControl-valid-validated,
+                &.azc-validatableControl-pending {
+                    padding-right: 0;
+
+                    .azc-password-wrapper {
+                        .azc-textInput-default-wrapper();
+                    }
+                }
+
+                .azc-textInput-default-dockedballoon();
+            }
+        }
+
+        &.azc-numericTextBox {
+            .azc-textInput-default-dockedballoon();
+
+            &.azc-validatableControl-invalid {
+                .azc-numericTextBox-invalid-wrapper();
+            }
+
+            &.azc-editableControl-edited.azc-validatableControl-invalid {
+                .azc-numericTextBox-invalid-wrapper();
+            }
+
+            &.azc-validatableControl-pending {
+                padding-right: @validationIconWidth;
+
+                .azc-numericTextBox-wrapper {
+                    .azc-textInput-pending-wrapper();
+                }
+
+                .azc-textInput-pending-dockedballoon();
+            }
+
+            &.azc-validatableControl-valid-validated {
+                .box-sizing(border-box);
+                padding-right: @validationIconWidth;
+
+                .azc-numericTextBox-wrapper {
+                    .azc-textInput-valid-wrapper();
+                }
+
+                .azc-textInput-valid-dockedballoon();
+
+                &.azc-numericTextBox-hasfocus {
+                    .azc-dockedballoon.azc-dockedballoon-validation {
+                        .azc-border-noLeftWidth-wrapper(@borderWidth);
+                    }
+                }
+            }
+
+            &.azc-editableControl-edited.azc-validatableControl-valid-validated {
+                &.azc-numericTextBox-hasfocus {
+                    .azc-dockedballoon.azc-dockedballoon-validation {
+                        .azc-border-noLeftWidth-wrapper(@borderWidth);
+                    }
+                }
+
+                .azc-dockedballoon.azc-dockedballoon-validation {
+                    .azc-border-noLeftWidth-wrapper(@borderWidth);
+                }
+            }
+
+            &.azc-numericTextBox-disabled {
+                &.azc-validatableControl-invalid,
+                &.azc-validatableControl-valid-validated,
+                &.azc-validatableControl-pending {
+                    padding-right: 0;
+
+                    .azc-numericTextBox-wrapper {
+                        .azc-textInput-default-wrapper();
+                    }
+
+                    .azc-textInput-default-dockedballoon()
+                }
+            }
+        }
+
+        &.azc-dropdown {
+            &.azc-validatableControl-invalid {
+                padding-right: @validationWidth;
+
+                .azc-dockedballoon.azc-dockedballoon-validation {
+                    display: inline-block;
+                    width: @validationWidth;
+                    margin-right: -@validationWidth;
+                }
+            }
+        }
+
+        &.azc-checkBox {
+            &.azc-validatableControl-invalid {
+                .azc-dockedballoon.azc-dockedballoon-validation {
+                    display: inline-block;
+                }
+            }
+
+            .azc-dockedballoon.azc-dockedballoon-validation {
+                display: none;
+                vertical-align: top;
+                padding: 0;
+                height: @checkBoxHeight;
+
+                div.azc-dockedballoon-anchor {
+                    padding: 0 2px 0 0;
+                    font-size: 9pt;
+                    text-align: center;
+                    text-decoration: none;
+                    display: block;
+                }
+            }
+        }
+
+        &.azc-fileUpload {
+            .azc-textBox {
+                .azc-textInput-default-dockedballoon();
+
+                &.azc-validatableControl-invalid {
+                    .azc-textBox-invalid-wrapper();
+                }
+
+                &.azc-validatableControl-pending {
+                    .azc-textBox-pending-wrapper();
+                }
+
+                &.azc-control-disabled {
+                    &.azc-validatableControl-invalid,
+                    &.azc-validatableControl-valid-validated,
+                    &.azc-validatableControl-pending {
+                        padding-right: @validationWidth;
+                    }
+                }
+            }
+        }
+    }
+}

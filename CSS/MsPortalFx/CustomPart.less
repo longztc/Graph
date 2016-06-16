@@ -1,0 +1,715 @@
+@import "../Definitions/Common.less";
+@import "../Definitions/PartCommon.less";
+
+//
+// Layout
+//
+// Applies to a parent element with <div> children.
+// <div> children will be styled with box-sizing: border-box.
+//
+.msportalfx-layoutChildren-horizontal-inlineblock {
+    // prevent white space wrapping of inline elements.
+    white-space: nowrap;
+    // eliminate whitespace between elements by setting line-height and font-size to 0.
+    line-height: 0;
+    font-size: 0;
+
+    > .msportalfx-layoutChildren-child {
+        display: inline-block;
+        box-sizing: border-box;
+        // restore white space wrapping.
+        white-space: normal;
+        // restore line-height and font-size on child elements with some defaults.
+        .fx-text-regular();
+        line-height: normal;
+    }
+}
+
+.msportalfx-layoutChildren-horizontal-float {
+    > .msportalfx-layoutChildren-child {
+        float: left;
+        box-sizing: border-box;
+    }
+
+    .msportalfx-clearfix();
+}
+
+//
+// Selected background-color
+//
+.msportalfx-bgcolor-themeMain {
+    background-color: @Color_Theme;
+}
+
+.msportalfx-bgcolor-themeWarning {
+    background-color: @Color_HilightWarning;
+}
+
+.msportalfx-bgcolor-themeError {
+    background-color: @Color_HilightError;
+}
+
+.msportalfx-bgcolor-themeSuccess {
+    background-color: @Color_HilightSuccess;
+}
+
+.msportalfx-bgcolor-paletteDiffAdd {
+    background-color: @Color_Palette_C13;
+}
+
+.msportalfx-bgcolor-paletteDiffDel {
+    background-color: @Color_Palette_C14;
+}
+
+.msportalfx-bgcolor-white {
+    background-color: #fff;
+}
+
+//
+// Various
+//
+.msportalfx-removeTableBorders {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.msportalfx-boxsizing-borderbox {
+    box-sizing: border-box;
+}
+
+.msportalfx-removeDefaultListStyle {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    > li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.msportalfx-fill {
+    height: 100%;
+    width: 100%;
+}
+
+.msportalfx-clearfix {
+    &::after {
+        content: "\0000a0";
+        clear: both;
+        display: block;
+        visibility: hidden;
+        height: 0;
+        font-size: 0;
+        line-height: 0;
+    }
+}
+
+.msportalfx-tooltip-overflow {
+    // No style
+    // This class marks where overflowed content displays in a helper, like a tooltip.
+}
+
+.msportalfx-overflowY.azc-grid {
+    overflow-y: auto;
+}
+
+//
+// Part specific elements
+//
+.msportalfx-removepartpadding {
+    .overridePartPadding();
+}
+
+.fxs-blade-locked .msportalfx-removepartpaddingside {
+    .overridePartPaddingSide();
+}
+
+.msportalfx-removepartpaddingside {
+    // Keep one pixel of left padding to accomodate the fill line (box-shadow) of the part
+    .overridePartPaddingSide(@fxsPartPaddingRight, @fxsPartPaddingLeft - 1);
+}
+
+.msportalfx-partdivider:after {
+    content: "";
+    display: block;
+    .overridePartPaddingSide();
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+//
+// Remove this once we've HTML form element
+// RDTask 2467717:[Form] Add HTML form element
+//
+.msportalfx-form-section-label-donotuse {
+    height: 22px;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+//
+// Remove this once we've HTML form element
+// RDTask 2467717:[Form] Add HTML form element
+//
+.msportalfx-form-section-button-donotuse {
+    margin-bottom: 20px;
+}
+
+//
+// Text
+//
+.msportalfx-text-ellipsis {
+    .ellipsis();
+}
+
+//
+// Font
+//
+.msportalfx-font-monospace {
+    .fx-font-monospace();
+    font-size: 12px;
+}
+
+//
+// Common text formattings.
+//
+.msportalfx-text-header {
+    .fx-text-header();
+}
+
+.msportalfx-text-header-small,
+.msportalfx-text-label {
+    .fx-text-label();
+    text-transform: uppercase;
+}
+
+.msportalfx-text-small {
+    .fx-text-label();
+}
+
+.msportalfx-text-subheader {
+    .fx-text-subheader();
+}
+
+.msportalfx-text-header-regular {
+    .fx-text-header();
+}
+
+.msportalfx-text-regular {
+    .fx-text-regular();
+}
+
+.msportalfx-text-createsectionheader {
+    .fx-text-internal(light, 20px, normal);
+}
+
+//
+// Common number formattings.
+//
+.msportalfx-number-jumbo {
+    .fx-number-jumbo();
+}
+
+.msportalfx-number-large {
+    .fx-number-large();
+}
+
+.msportalfx-number-medium {
+    .fx-number-medium();
+}
+
+.msportalfx-number-small {
+    .fx-number-small();
+}
+
+.msportalfx-number-jumbo-adorn {
+    .fx-number-jumbo-adorn();
+}
+
+.msportalfx-number-large-adorn {
+    .fx-number-large-adorn();
+}
+
+.msportalfx-number-medium-adorn {
+    .fx-number-medium-adorn();
+}
+
+.msportalfx-number-small-adorn {
+    .fx-number-small-adorn();
+}
+
+//
+// Code Blocks
+//
+// Used extensively, yet candidate to be removed
+// Consider merging in <pre> or <code>
+
+.msportalfx-code {
+    .fx-font-monospace();
+    font-size: 12px;
+    background-color: @Color_SlateTints_G15;
+    color: @Color_SlateTints_G04;
+    border: 1px solid @Color_SlateTints_G12;
+    border-left: 5px solid @Color_SlateTints_G12;
+    padding: 10px 10px 10px 15px;
+    margin: 5px 0;
+    overflow-x: auto;
+}
+
+// Line-height resets
+// MUST be placed after text definitions to allow overriding default line-height
+.msportalfx-lineheight-reset {
+    line-height: normal;
+}
+
+// Getting started part
+.msportalfx-gettingstarted-part {
+    color: #fff;
+}
+
+
+// Hubs asset grids
+.msportalfx-gridcolumn-asseticon {
+    img, svg {
+        margin-top: 4px;
+        .size(@fxImageSizeSmall);
+    }
+}
+
+// Hubs asset grids
+.msportalfx-gridcolumn-statusicon {
+    img, svg {
+        text-align: center;
+        .size(@fxImageSizeStatus);
+    }
+
+    svg {
+        margin-top: 4px;
+    }
+
+    text-align: center;
+}
+
+//
+// Custom imports to remove
+// Only to unblock custom topology
+//
+.msportalfx-customtopo-text-name-donotuse {
+    .fx-text-internal(regular, 12px, normal);
+}
+
+.msportalfx-customtopo-text-description-donotuse {
+    .fx-text-internal(regular, 10px, normal);
+    color: @Color_SlateTints_G10;
+}
+
+//
+// INTRINSIC PART NURSERY
+// The following classes are developing grounds for future intrinsic parts.
+// Extension writers uses them to emulate these future parts.
+// These classes are not intended for use beyond the purpose defined as they will be retired
+// when the appropriate intrinsic part is built.
+//
+
+// Use either a propertysection or a metricsection, not both.
+@msportalfxStatusPartBottomSectionHeight: 55px;
+
+.msportalfx-statuspart {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    > * {
+        box-sizing: border-box;
+    }
+
+    .msportalfx-statuspart-statussection {
+        height: calc(~"100% - @{msportalfxStatusPartBottomSectionHeight}");
+        padding-top: 10px;
+
+        > * {
+            vertical-align: middle;
+        }
+
+        > img {
+            .size(@fxImageSizeNormal);
+        }
+
+        > span {
+            .fx-font-bold();
+            font-size: 11px;
+            text-transform: uppercase;
+            .ellipsis();
+        }
+    }
+
+    .msportalfx-statuspart-messagesection {
+        position: absolute;
+        bottom: @msportalfxStatusPartBottomSectionHeight;
+        margin-bottom: 25px;
+        height: 40px;
+        line-height: 0;
+        white-space: normal;
+
+        > span {
+            .fx-text-regular();
+        }
+    }
+
+    .msportalfx-statuspart-propertysection,
+    .msportalfx-statuspart-metricsection {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: @msportalfxStatusPartBottomSectionHeight;
+    }
+
+    .msportalfx-statuspart-propertysection {
+        padding-top: 5px;
+        .fx-text-regular();
+
+        > span,
+        > div {
+            display: block;
+            .ellipsis();
+        }
+    }
+
+    .msportalfx-statuspart-metricsection {
+        > div {
+            float: left;
+            width: calc(~"100% / 3 - 3px");
+            box-sizing: border-box;
+            border-right: 1px solid @Color_SlateTints_G10;
+            padding-left: 7px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+
+        .msportalfx-statuspart-metrictitle {
+            white-space: normal;
+            height: 30px;
+            .fx-text-label();
+            text-transform: uppercase;
+        }
+    }
+}
+
+//
+// All available background colors
+//
+
+.msportalfx-bgcolor-a1 {
+    background-color: #fcd116;
+}
+
+.msportalfx-bgcolor-b1 {
+    background-color: #eb3c00;
+}
+
+.msportalfx-bgcolor-c1 {
+    background-color: #ba141a;
+}
+
+.msportalfx-bgcolor-d1 {
+    background-color: #b4009e;
+}
+
+.msportalfx-bgcolor-e1 {
+    background-color: #442359;
+}
+
+.msportalfx-bgcolor-f1 {
+    background-color: #002050;
+}
+
+.msportalfx-bgcolor-g1 {
+    background-color: #0072c6;
+}
+
+.msportalfx-bgcolor-h1 {
+    background-color: #008272;
+}
+
+.msportalfx-bgcolor-i1 {
+    background-color: #007233;
+}
+
+.msportalfx-bgcolor-j1 {
+    background-color: #7fba00;
+}
+
+.msportalfx-bgcolor-k1 {
+    background-color: #a0a5a8;
+}
+
+.msportalfx-bgcolor-a0 {
+    background-color: #fff100;
+}
+
+.msportalfx-bgcolor-b0 {
+    background-color: @Color_Palette_B0;
+}
+
+.msportalfx-bgcolor-c0 {
+    background-color: #e81123;
+}
+
+.msportalfx-bgcolor-d0 {
+    background-color: #ec008c;
+}
+
+.msportalfx-bgcolor-e0 {
+    background-color: #68217a;
+}
+
+.msportalfx-bgcolor-f0 {
+    background-color: #00188f;
+}
+
+.msportalfx-bgcolor-g0 {
+    background-color: #00bcf2;
+}
+
+.msportalfx-bgcolor-h0 {
+    background-color: #00b294;
+}
+
+.msportalfx-bgcolor-i0 {
+    background-color: #009e49;
+}
+
+.msportalfx-bgcolor-j0 {
+    background-color: #bad80a;
+}
+
+.msportalfx-bgcolor-k0 {
+    background-color: #bbc2ca;
+}
+
+.msportalfx-bgcolor-a2 {
+    background-color: #fffc9e;
+}
+
+.msportalfx-bgcolor-b2 {
+    background-color: #ffb900;
+}
+
+.msportalfx-bgcolor-c2 {
+    background-color: #dd5900;
+}
+
+.msportalfx-bgcolor-d2 {
+    background-color: #f472d0;
+}
+
+.msportalfx-bgcolor-e2 {
+    background-color: #9b4f96;
+}
+
+.msportalfx-bgcolor-f2 {
+    background-color: #4668c5;
+}
+
+.msportalfx-bgcolor-g2 {
+    background-color: @Color_Palette_G2;
+}
+
+.msportalfx-bgcolor-h2 {
+    background-color: #00d8cc;
+}
+
+.msportalfx-bgcolor-i2 {
+    background-color: #55d455;
+}
+
+.msportalfx-bgcolor-j2 {
+    background-color: #e2e584;
+}
+
+.msportalfx-bgcolor-k2 {
+    background-color: #d6d7d8;
+}
+
+.msportalfx-bgcolor-a0s2 {
+    background-color: #807900;
+}
+
+.msportalfx-bgcolor-b0s2 {
+    background-color: #804600;
+}
+
+.msportalfx-bgcolor-c0s2 {
+    background-color: #740912;
+}
+
+.msportalfx-bgcolor-d0s2 {
+    background-color: #760046;
+}
+
+.msportalfx-bgcolor-e0s2 {
+    background-color: #34113d;
+}
+
+.msportalfx-bgcolor-f0s2 {
+    background-color: #000c48;
+}
+
+.msportalfx-bgcolor-g0s2 {
+    background-color: #005e79;
+}
+
+.msportalfx-bgcolor-h0s2 {
+    background-color: #084c41;
+}
+
+.msportalfx-bgcolor-i0s2 {
+    background-color: #063d20;
+}
+
+.msportalfx-bgcolor-j0s2 {
+    background-color: #3d460a;
+}
+
+.msportalfx-bgcolor-k0s2 {
+    background-color: #32383f;
+}
+
+.msportalfx-bgcolor-a0s1 {
+    background-color: #bfb500;
+}
+
+.msportalfx-bgcolor-b0s1 {
+    background-color: #bf6900;
+}
+
+.msportalfx-bgcolor-c0s1 {
+    background-color: #ae0d1a;
+}
+
+.msportalfx-bgcolor-d0s1 {
+    background-color: #b10069;
+}
+
+.msportalfx-bgcolor-e0s1 {
+    background-color: #4e195c;
+}
+
+.msportalfx-bgcolor-f0s1 {
+    background-color: #00126b;
+}
+
+.msportalfx-bgcolor-g0s1 {
+    background-color: #008db5;
+}
+
+.msportalfx-bgcolor-h0s1 {
+    background-color: #00856f;
+}
+
+.msportalfx-bgcolor-i0s1 {
+    background-color: #0f5b2f;
+}
+
+.msportalfx-bgcolor-j0s1 {
+    background-color: #8ba208;
+}
+
+.msportalfx-bgcolor-k0s1 {
+    background-color: #464f59;
+}
+
+.msportalfx-bgcolor-a0t1 {
+    background-color: #fcf37e;
+}
+
+.msportalfx-bgcolor-b0t1 {
+    background-color: #ffba66;
+}
+
+.msportalfx-bgcolor-c0t1 {
+    background-color: #f1707b;
+}
+
+.msportalfx-bgcolor-d0t1 {
+    background-color: #f466ba;
+}
+
+.msportalfx-bgcolor-e0t1 {
+    background-color: #a47aaf;
+}
+
+.msportalfx-bgcolor-f0t1 {
+    background-color: #6674bc;
+}
+
+.msportalfx-bgcolor-g0t1 {
+    background-color: #66d7f7;
+}
+
+.msportalfx-bgcolor-h0t1 {
+    background-color: #66d1bf;
+}
+
+.msportalfx-bgcolor-i0t1 {
+    background-color: #66c592;
+}
+
+.msportalfx-bgcolor-j0t1 {
+    background-color: #d6e86c;
+}
+
+.msportalfx-bgcolor-k0t1 {
+    background-color: #8f9ca8;
+}
+
+.msportalfx-bgcolor-a0t2 {
+    background-color: #fffccc;
+}
+
+.msportalfx-bgcolor-b0t2 {
+    background-color: #ffe8cc;
+}
+
+.msportalfx-bgcolor-c0t2 {
+    background-color: #facfd3;
+}
+
+.msportalfx-bgcolor-d0t2 {
+    background-color: #fbcce8;
+}
+
+.msportalfx-bgcolor-e0t2 {
+    background-color: #e1d3e4;
+}
+
+.msportalfx-bgcolor-f0t2 {
+    background-color: #ccd1e9;
+}
+
+.msportalfx-bgcolor-g0t2 {
+    background-color: #ccf2fc;
+}
+
+.msportalfx-bgcolor-h0t2 {
+    background-color: #ccf0ea;
+}
+
+.msportalfx-bgcolor-i0t2 {
+    background-color: #ccecdb;
+}
+
+.msportalfx-bgcolor-j0t2 {
+    background-color: #f0f7b2;
+}
+
+.msportalfx-bgcolor-k0t2 {
+    background-color: #63707e;
+}

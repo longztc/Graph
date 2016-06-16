@@ -1,0 +1,17 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-dateTimeCombo .azc-editableCombo-wrapper {
+  padding-right: 18px !important;
+}
+.azc-dateTimeCombo .azc-editableCombo-wrapper .azc-editableCombo-drop-image {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+.azc-dateTimeCombo-drop-popup {
+  width: 240px;
+}

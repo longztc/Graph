@@ -1,0 +1,180 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+/* Mixins */
+.azc-balloon {
+  position: fixed;
+  left: -99999px;
+  /* Position far since we are not display: none but visibility: hidden */
+  top: -99999px;
+  /* z-index managed by fx.utilities.getNextZIndex() */
+  word-wrap: break-word;
+  height: auto;
+  text-align: left;
+  z-index: 150;
+  /* TODO: LUSTAN remove text-transform */
+}
+.azc-balloon.azc-balloon-hidden {
+  visibility: hidden;
+}
+.azc-balloon.azc-balloon-box-right {
+  left: 10px;
+}
+.azc-balloon.azc-balloon-box-right .azc-balloon-pointer {
+  left: 2px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+}
+.azc-balloon.azc-balloon-box-right .azc-balloon-content {
+  margin: 21px 0 0 12px;
+}
+.azc-balloon.azc-balloon-box-right.azc-balloon-box-position-preferred,
+.azc-balloon.azc-balloon-box-right.azc-balloon-position-preferred {
+  top: -48px;
+  vertical-align: top;
+}
+.azc-balloon.azc-balloon-box-right.azc-balloon-box-position-preferred .azc-balloon-pointer,
+.azc-balloon.azc-balloon-box-right.azc-balloon-position-preferred .azc-balloon-pointer {
+  top: 33px;
+}
+.azc-balloon.azc-balloon-box-right.azc-balloon-box-position-alternate,
+.azc-balloon.azc-balloon-box-right.azc-balloon-position-alternate {
+  top: 68px;
+  vertical-align: super;
+}
+.azc-balloon.azc-balloon-box-right.azc-balloon-box-position-alternate .azc-balloon-pointer,
+.azc-balloon.azc-balloon-box-right.azc-balloon-position-alternate .azc-balloon-pointer {
+  bottom: 33px;
+}
+.azc-balloon.azc-balloon-box-left {
+  left: -10px;
+}
+.azc-balloon.azc-balloon-box-left .azc-balloon-pointer {
+  right: 2px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 10px 0 10px 10px;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+.azc-balloon.azc-balloon-box-left .azc-balloon-content {
+  margin: 21px 12px 0 0;
+}
+.azc-balloon.azc-balloon-box-left.azc-balloon-box-position-preferred,
+.azc-balloon.azc-balloon-box-left.azc-balloon-position-preferred {
+  top: -48px;
+  vertical-align: top;
+}
+.azc-balloon.azc-balloon-box-left.azc-balloon-box-position-preferred .azc-balloon-pointer,
+.azc-balloon.azc-balloon-box-left.azc-balloon-position-preferred .azc-balloon-pointer {
+  top: 33px;
+}
+.azc-balloon.azc-balloon-box-left.azc-balloon-box-position-alternate,
+.azc-balloon.azc-balloon-box-left.azc-balloon-position-alternate {
+  top: 68px;
+  vertical-align: super;
+}
+.azc-balloon.azc-balloon-box-left.azc-balloon-box-position-alternate .azc-balloon-pointer,
+.azc-balloon.azc-balloon-box-left.azc-balloon-position-alternate .azc-balloon-pointer {
+  bottom: 33px;
+}
+.azc-balloon.azc-balloon-box-bottom {
+  top: 10px;
+}
+.azc-balloon.azc-balloon-box-bottom .azc-balloon-pointer {
+  top: 2px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-left-color: transparent !important;
+}
+.azc-balloon.azc-balloon-box-bottom .azc-balloon-content {
+  margin-top: 12px;
+}
+.azc-balloon.azc-balloon-box-bottom.azc-balloon-box-position-preferred,
+.azc-balloon.azc-balloon-box-bottom.azc-balloon-position-preferred {
+  left: -48px;
+  vertical-align: top;
+}
+.azc-balloon.azc-balloon-box-bottom.azc-balloon-box-position-preferred .azc-balloon-pointer,
+.azc-balloon.azc-balloon-box-bottom.azc-balloon-position-preferred .azc-balloon-pointer {
+  left: 48px;
+}
+.azc-balloon.azc-balloon-box-bottom.azc-balloon-box-position-alternate,
+.azc-balloon.azc-balloon-box-bottom.azc-balloon-position-alternate {
+  left: 68px;
+  vertical-align: super;
+}
+.azc-balloon.azc-balloon-box-bottom.azc-balloon-box-position-alternate .azc-balloon-pointer,
+.azc-balloon.azc-balloon-box-bottom.azc-balloon-position-alternate .azc-balloon-pointer {
+  right: 48px;
+}
+.azc-balloon.azc-balloon-box-top {
+  top: -10px;
+}
+.azc-balloon.azc-balloon-box-top .azc-balloon-pointer {
+  bottom: 2px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+  background: transparent;
+}
+.azc-balloon.azc-balloon-box-top .azc-balloon-content {
+  margin-bottom: 12px;
+}
+.azc-balloon.azc-balloon-box-top.azc-balloon-box-position-preferred,
+.azc-balloon.azc-balloon-box-top.azc-balloon-position-preferred {
+  left: -48px;
+  vertical-align: top;
+}
+.azc-balloon.azc-balloon-box-top.azc-balloon-box-position-preferred .azc-balloon-pointer,
+.azc-balloon.azc-balloon-box-top.azc-balloon-position-preferred .azc-balloon-pointer {
+  left: 48px;
+}
+.azc-balloon.azc-balloon-box-top.azc-balloon-box-position-alternate,
+.azc-balloon.azc-balloon-box-top.azc-balloon-position-alternate {
+  left: 68px;
+  vertical-align: super;
+}
+.azc-balloon.azc-balloon-box-top.azc-balloon-box-position-alternate .azc-balloon-pointer,
+.azc-balloon.azc-balloon-box-top.azc-balloon-position-alternate .azc-balloon-pointer {
+  right: 48px;
+}
+.azc-balloon .azc-balloon-help-title {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.azc-balloon .azc-balloon-content {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 15px;
+  white-space: normal;
+  text-transform: none;
+}
+.azc-balloon .azc-balloon-pointer {
+  position: absolute;
+}

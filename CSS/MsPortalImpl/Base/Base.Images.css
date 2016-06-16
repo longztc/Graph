@@ -1,0 +1,156 @@
+.msportalfx-svg-c01 {
+  fill: #ffffff;
+}
+.msportalfx-svg-c02 {
+  fill: #e5e5e5;
+}
+.msportalfx-svg-c03 {
+  fill: #a0a1a2;
+}
+.msportalfx-svg-c04 {
+  fill: #7a7a7a;
+}
+.msportalfx-svg-c05 {
+  fill: #3e3e3e;
+}
+.msportalfx-svg-c06 {
+  fill: #1e1e1e;
+}
+.msportalfx-svg-c07 {
+  fill: #0f0f0f;
+}
+.msportalfx-svg-c08 {
+  fill: #ba141a;
+}
+.msportalfx-svg-c09 {
+  fill: #dd5900;
+}
+.msportalfx-svg-c10 {
+  fill: #ff8c00;
+}
+.msportalfx-svg-c11 {
+  fill: #fcd116;
+}
+.msportalfx-svg-c12 {
+  fill: #fee087;
+}
+.msportalfx-svg-c13 {
+  fill: #b8d432;
+}
+.msportalfx-svg-c14 {
+  fill: #7fba00;
+}
+.msportalfx-svg-c15 {
+  fill: #59b4d9;
+}
+.msportalfx-svg-c16 {
+  fill: #3999c6;
+}
+.msportalfx-svg-c17 {
+  fill: #804998;
+}
+.msportalfx-svg-c18 {
+  fill: #ec008c;
+}
+.msportalfx-svg-c19 {
+  fill: #0072c6;
+}
+.msportalfx-svg-c20 {
+  fill: #68217a;
+}
+.msportalfx-svg-c21 {
+  fill: #00188f;
+}
+.msportalfx-inverted-theme .msportalfx-svg-c05,
+.fxs-hubPane .msportalfx-svg-c05,
+.fxs-theme-dark .msportalfx-svg-c05 {
+  fill: #777777;
+}
+.msportalfx-inverted-theme .msportalfx-svg-c07,
+.fxs-hubPane .msportalfx-svg-c07,
+.fxs-theme-dark .msportalfx-svg-c07 {
+  fill: #f2f2f2;
+}
+.msportalfx-svg-palette-white > * {
+  fill: #ffffff;
+}
+.msportalfx-svg-palette-blue > * {
+  fill: #3999c6;
+}
+.msportalfx-svg-palette-black > * {
+  fill: #1e1e1e;
+}
+.msportalfx-svg-palette-green > * {
+  fill: #7fba00;
+}
+.msportalfx-svg-palette-inherit > * {
+  fill: inherit;
+}
+.msportalfx-svg-badge {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c01 {
+  fill: #ffffff;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c02 {
+  fill: #e5e5e5;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c03 {
+  fill: #a1a1a1;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c04 {
+  fill: #7a7a7a;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c05 {
+  fill: #3e3e3e;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c06 {
+  fill: #1e1e1e;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c07 {
+  fill: #0f0f0f;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c08 {
+  fill: #676767;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c09 {
+  fill: #6f6f6f;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c10 {
+  fill: #808080;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c11 {
+  fill: #898989;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c12 {
+  fill: #c3c3c3;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c13 {
+  fill: #838383;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c14 {
+  fill: #5d5d5d;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c15 {
+  fill: #999999;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c16 {
+  fill: #808080;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c17 {
+  fill: #717171;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c18 {
+  fill: #767676;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c19 {
+  fill: #636363;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c20 {
+  fill: #4e4e4e;
+}
+.msportalfx-svg-disabled .msportalfx-svg-c21 {
+  fill: #484848;
+}

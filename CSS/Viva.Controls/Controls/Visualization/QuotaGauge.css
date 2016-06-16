@@ -1,0 +1,274 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+/*Firefox doesn't work on @fill when it is a svg pattern.  Firefox will pick up the @fillBackup color.*/
+body > svg.azc-quotaGauge-SvgDefs {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  width: 0;
+  height: 0;
+}
+body > svg.azc-quotaGauge-SvgDefs #azc-quotaGauge-outofthreshold rect {
+  fill: #d9d9d9;
+  stroke: #d9d9d9;
+}
+body > svg.azc-quotaGauge-SvgDefs #azc-quotaGauge-outofthreshold line {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 1px;
+  opacity: .3;
+}
+body > svg.azc-quotaGauge-SvgDefs #azc-quotaGauge-total rect {
+  fill: #8fd9ef;
+  stroke: #8fd9ef;
+}
+body > svg.azc-quotaGauge-SvgDefs #azc-quotaGauge-total line {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 1px;
+  opacity: .3;
+}
+body > svg.azc-quotaGauge-SvgDefs #azc-quotaGauge-total-over-quota rect {
+  fill: #ffba66;
+  stroke: #ffba66;
+}
+body > svg.azc-quotaGauge-SvgDefs #azc-quotaGauge-total-over-quota line {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 1px;
+  opacity: .3;
+}
+body > svg.azc-quotaGauge-SvgDefs #azc-quotaGauge-total-over-max rect {
+  fill: #f259b4;
+  stroke: #f259b4;
+}
+body > svg.azc-quotaGauge-SvgDefs #azc-quotaGauge-total-over-max line {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 1px;
+  opacity: .3;
+}
+.azc-quotaGauge {
+  /*default theme: change instance color only if instance-over-quota*/
+  /*alternative theme: change instance color when either instance-over-quota or total-over-quota*/
+}
+.azc-quotaGauge .azc-singleSetting {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+}
+.azc-quotaGauge .azc-gauge .azc-gauge-outofthreshold,
+.azc-quotaGauge .azc-gauge .azc-quotaGauge-none {
+  fill: url(#azc-quotaGauge-outofthreshold) #d9d9d9;
+  stroke: #d9d9d9;
+}
+.azc-quotaGauge .azc-gauge .azc-gauge-current.azc-gauge-currentline {
+  stroke-width: 1px;
+}
+.azc-quotaGauge .azc-gauge .azc-quotaGauge-start,
+.azc-quotaGauge .azc-gauge .azc-quotaGauge-split {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+.azc-quotaGauge .azc-gauge .azc-quotaGauge-instance,
+.azc-quotaGauge .azc-gauge .azc-gauge-current.azc-gauge-currentline {
+  fill: #00bbf1;
+  stroke: #00bbf1;
+}
+.azc-quotaGauge .azc-gauge .azc-quotaGauge-total {
+  fill: url(#azc-quotaGauge-total) #8fd9ef;
+  stroke: #8fd9ef;
+}
+.azc-quotaGauge.azc-quotaGauge-instance-over-quota .azc-gauge .azc-quotaGauge-instance,
+.azc-quotaGauge.azc-quotaGauge-instance-over-quota .azc-gauge .azc-gauge-current.azc-gauge-currentline {
+  fill: #ff8c00;
+  stroke: #ff8c00;
+}
+.azc-quotaGauge.azc-theme-tropical.azc-quotaGauge-total-over-quota .azc-gauge .azc-quotaGauge-instance,
+.azc-quotaGauge.azc-theme-tropical.azc-quotaGauge-instance-over-quota .azc-gauge .azc-quotaGauge-instance,
+.azc-quotaGauge.azc-theme-tropical.azc-quotaGauge-total-over-quota .azc-gauge .azc-gauge-current.azc-gauge-currentline,
+.azc-quotaGauge.azc-theme-tropical.azc-quotaGauge-instance-over-quota .azc-gauge .azc-gauge-current.azc-gauge-currentline {
+  fill: #ff8c00;
+  stroke: #ff8c00;
+}
+.azc-quotaGauge.azc-quotaGauge-total-over-quota .azc-gauge .azc-quotaGauge-total {
+  fill: url(#azc-quotaGauge-total-over-quota) #ffba66;
+  stroke: #ffba66;
+}
+.azc-quotaGauge.azc-quotaGauge-total-over-max .azc-gauge .azc-quotaGauge-instance,
+.azc-quotaGauge.azc-quotaGauge-total-over-max .azc-gauge .azc-gauge-current.azc-gauge-currentline {
+  fill: #ec008c;
+  stroke: #ec008c;
+}
+.azc-quotaGauge.azc-quotaGauge-total-over-max .azc-gauge .azc-quotaGauge-total {
+  fill: url(#azc-quotaGauge-total-over-max) #f259b4;
+  stroke: #f259b4;
+}
+.azc-quotaGauge:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value,
+.azc-quotaGauge:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value {
+  width: 30px;
+  height: 30px;
+}
+.azc-quotaGauge:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before,
+.azc-quotaGauge:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before {
+  text-align: center;
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABWElEQVR4XtXXP0rEQBzF8QUvsEfIEQRbiz2CeIIcYQ5gEewEhcXC0g1YiNgoaG0KURBcF1zwDygRsVhQidhs93MCcR/i+CYzMAkufCHdB5Y3Q9IRkVb6Z/B6p6tTurhpeKSTqoOwMFA1Q9FSOBh/cWGAc103JJwC+1XiD3O0VwGsKASc1YAzd5ij8Q9gWsjs9/HkNTS/QX2+AH67sQzNH+5XIHq/BzwZeg3Nhs4DRDK5AvyceQ3Na1AaA/x47DU066CMPRwBvtsH5nCjsUHlf8K3e4DHKYNzVzih5/V6G/BwE5DDjWZCI11B4cs+4Is1G1yYjhe5j0nnq4DPkgqgpQTGfRyoiMFZbWB3UWRngUD8eJHjQzpdwbhOlAveM8F5bfh1zO7qWseLHB/SaAuwfnbcgCpN8jpD2pgTOVwuK58dUBwvvLw1m8Komi3+HtagQXTQ+idMK30BWFTRnogWDIoAAAAASUVORK5CYII=");
+  width: 30px;
+  height: 30px;
+}
+.azc-quotaGauge:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value {
+  width: 30px;
+  height: 30px;
+}
+.azc-quotaGauge:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value:before {
+  text-align: center;
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABcUlEQVR4XtXXTUrDQBzG4YIX6BFyBMGtix5BPEGOkAO4CO4EheLCpQ24EHGjoGtnIQqCtWDBD1Ai4qJQZfxqUps6DqF96+LvTGYgoxZ+kN1DyzvTtiKE+JX+F9ytLFdlgcx3DbdkYtSOEzh/p0DRXIkwPmJOwLGsWiYcAUMotIP1aE0mNHllwKwAzOxhGvW/A588FePX8O7ZamhWgxo+vALOLh41Q7OH6yMQZddPgAfNjtXQdOg0NaLBWQfwB7u3GprVoCQGuL9/azU07aCo+ns3E3j7ikD1Q1MNKv4R3roEnEZtFRybwiEgonT9HHCy2iRA/dAo1JNxFZzUTwH3lk50MKeOl8l9jHqLxxM4PAKiKFLBuI9LylPBrCjAZzcFn9kwgRkF4/gU6X3hEON6Cw5M8BoFx0XhrN1V3dWFjhdxfPQlay3A8tl0A0EOE98++qZWxMv8bp58NkFxvPDjzXEBRuU4fzyshkO08Rf+wrjvC0nesjkioPCAAAAAAElFTkSuQmCC");
+  width: 30px;
+  height: 30px;
+}
+.azc-quotaGauge.azc-quotaGauge-circle-indicator.azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value,
+.azc-quotaGauge.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value {
+  width: 30px;
+  height: 30px;
+  font-weight: 900;
+  border-radius: calc(15px);
+  color: #ffffff;
+  background-color: #ff8c00;
+}
+.azc-quotaGauge.azc-quotaGauge-circle-indicator.azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before,
+.azc-quotaGauge.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before {
+  content: "!";
+}
+.azc-quotaGauge.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value {
+  width: 30px;
+  height: 30px;
+  font-weight: 900;
+  border-radius: calc(15px);
+  color: #ffffff;
+  background-color: #ec008c;
+}
+.azc-quotaGauge.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value:before {
+  content: "!";
+}
+.azc-quotaGauge.azc-gauge-center-large:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value,
+.azc-quotaGauge.azc-gauge-center-medium:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value,
+.azc-quotaGauge.azc-gauge-center-large:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value,
+.azc-quotaGauge.azc-gauge-center-medium:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value {
+  width: 54px;
+  height: 54px;
+}
+.azc-quotaGauge.azc-gauge-center-large:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before,
+.azc-quotaGauge.azc-gauge-center-medium:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before,
+.azc-quotaGauge.azc-gauge-center-large:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before,
+.azc-quotaGauge.azc-gauge-center-medium:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before {
+  text-align: center;
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAACYElEQVR4Xu3YvUtbYRTHcbsLzdDFTgEHHbMVnDJ3kPsfmKFDuwlFujpK6dBiRSlishgn8SKCSJbrCy3tkttSEGyLGdRB0BsQ+kbt8cC1EPpwOD45/aH3Nhe+EOL0AfnlJH1ElMt6MEM5hj3rK3DBZYVcwBhS4aijNhegYWhUmSOhEhKG/vdrkQyLsgqb5EipgoKhUMUUoNbiClmCRQ5CbhIBww+GXpsrZgHmDoZeDQXDD4ZeGQezD0bbAItuKiz0QMDn/5oGAz//1zQY+PnHDsa3ExKf7wl0/rGDcbonw5JPhvnHw2ociR2+lmFHb6Dzjx2Mz6sy7MuaYf6xsFiFfZiXYR+r0PnvFjXOkdrbKRn27il0/rtBFa58YWxOyLCtJ9D5twyG3vqYDNt4AL3+fVElr0ti+b4MWxl1EXIhGhZ5wRbvybD6CPT690EFHHk1PyjDFoZ8YbEPDHsPvuiXYTN3XIDeuAcM/AXy1w8X9ftcAKi1rzr/1nnXOzt0YV+PNYD5jrTOu95x7MJOdhWAfUis867Xariwg20rLLbCIjNsd8mF7S0rAPuQqPNurvnShb1/pQDsQ6LPOz7IkOjzjg8yJMq8Z6JIgKnzbm9hmCh6nMavAbiKA1Pm3V7jYXppdF4djUcKwD4kyrwbmx0gOv9JzsPv0dzdf4177sCEebcXBiQ+YYAYkpIDg8x7fUT5PoYbEuXHGWu30vPJOal20r8xADUk+A/j6dtEzRmis4M0fs3vIec/7oRRnvovYGGOYM1OWJFLcoBK/kz+3zdilWtmELTPVZ3PsTzVg92werALekUUkySLJKcAAAAASUVORK5CYII=");
+  width: 54px;
+  height: 54px;
+}
+.azc-quotaGauge.azc-gauge-center-large:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value,
+.azc-quotaGauge.azc-gauge-center-medium:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value {
+  width: 54px;
+  height: 54px;
+}
+.azc-quotaGauge.azc-gauge-center-large:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value:before,
+.azc-quotaGauge.azc-gauge-center-medium:not(.azc-quotaGauge-circle-indicator).azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value:before {
+  text-align: center;
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAMAAAC7m5rvAAAA1VBMVEX////sAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzsAIzwOqbtD5P/+v31dMDvKJ7sAYzyULD7w+T3lc///f795PP////+7/j82u7wN6X7x+bvI5zvJ57tDJHtFJX4nNL4n9T95fP2isr70Or81+36u+D+7ff4p9f5rdr3lM/3mtH82+/7xuX0aLv0abvuGZf/+fz5stz96vb2iMn7xOT1dcH1d8LzX7fzZLnySq35tN3yTq/uGpiHpC5DAAAAFHRSTlMAEPDgQMCAoCAwUGBw0LDvn8+Q37wu684AAAFhSURBVHhe3dPFVgQxEIVh2qZ1DO644u7uzvs/EqTrzHSTkxyq2MG3/ze3koW/zUkSR16lANxEWvnIxbLK8SgLZFkFBKmkijDjSWYJMFeR7kHciJ15KAnFexCfuYeLAv8INWhS0R6yI3jQocLe42iaWy6OwNpjhbJz5hFCkAvK1kB85h63lL3xjlAFwTZlO6wjZJi5p2yPcwTHxcwjZU+cI4SYe6bshfETYhReKXvHXI3xObFKWevnn5CgZJ2yDRSqjMe4SdkWSjLG57xR1RhlrmMbv7Crsjt8E9rGL+yr7ADEukoMzaHKhiDWVQJojlV2Ak1mH5+cquwMxLaKB6ZQG5/L18ZnCqzjk16324NBahmfXI6n0/EViHGVwFBdd9SSnQ9Dt2gcnwymuQEMYvv4Lcpa1lUymPSHqnrowyS1X7o9mkxGbRDD04Qcfp/VINb8yqI6hOr5BZxGEwJLDVX9Y5+X43jRhebFawAAAABJRU5ErkJggg==");
+  width: 54px;
+  height: 54px;
+}
+.azc-quotaGauge.azc-gauge-center-large.azc-quotaGauge-circle-indicator.azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value,
+.azc-quotaGauge.azc-gauge-center-medium.azc-quotaGauge-circle-indicator.azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value,
+.azc-quotaGauge.azc-gauge-center-large.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value,
+.azc-quotaGauge.azc-gauge-center-medium.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value {
+  width: 54px;
+  height: 54px;
+  font-weight: 900;
+  border-radius: calc(27px);
+  color: #ffffff;
+  background-color: #ff8c00;
+}
+.azc-quotaGauge.azc-gauge-center-large.azc-quotaGauge-circle-indicator.azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before,
+.azc-quotaGauge.azc-gauge-center-medium.azc-quotaGauge-circle-indicator.azc-quotaGauge-instance-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before,
+.azc-quotaGauge.azc-gauge-center-large.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before,
+.azc-quotaGauge.azc-gauge-center-medium.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-quota .azc-usageGauge-centerSetting .azc-singleSetting-value:before {
+  content: "!";
+}
+.azc-quotaGauge.azc-gauge-center-large.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value,
+.azc-quotaGauge.azc-gauge-center-medium.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value {
+  width: 54px;
+  height: 54px;
+  font-weight: 900;
+  border-radius: calc(27px);
+  color: #ffffff;
+  background-color: #ec008c;
+}
+.azc-quotaGauge.azc-gauge-center-large.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value:before,
+.azc-quotaGauge.azc-gauge-center-medium.azc-quotaGauge-circle-indicator.azc-quotaGauge-total-over-max .azc-usageGauge-centerSetting .azc-singleSetting-value:before {
+  content: "!";
+}
+.azc-quotaGauge .azc-singleSetting .azc-singleSetting-data {
+  line-height: 1;
+}
+.azc-quotaGauge .azc-singleSetting .azc-singleSetting-data .azc-singleSetting-value {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+}
+.azc-quotaGauge .azc-singleSetting .azc-singleSetting-data .azc-singleSetting-unit {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: -0.05em;
+}
+.azc-quotaGauge .azc-singleSetting .azc-singleSetting-data .azc-singleSetting-unit img {
+  max-width: 16px;
+  max-height: 16px;
+}
+.azc-quotaGauge .azc-singleSetting .azc-singleSetting-caption {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: -0.05em;
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 1px 0 0 0;
+}
+.azc-quotaGauge.azc-gauge-center-xsmall .azc-singleSetting .azc-singleSetting-caption {
+  display: none;
+}
+.azc-quotaGauge.azc-gauge-center-medium .azc-singleSetting .azc-singleSetting-data .azc-singleSetting-unit,
+.azc-quotaGauge.azc-gauge-center-large .azc-singleSetting .azc-singleSetting-data .azc-singleSetting-unit {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.02em;
+}
+.azc-quotaGauge.azc-gauge-center-medium .azc-singleSetting .azc-singleSetting-data .azc-singleSetting-unit img,
+.azc-quotaGauge.azc-gauge-center-large .azc-singleSetting .azc-singleSetting-data .azc-singleSetting-unit img {
+  max-width: 28px;
+  max-height: 28px;
+}
+.azc-quotaGauge.azc-gauge-center-medium .azc-singleSetting .azc-singleSetting-data .azc-singleSetting-value {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 30px;
+  letter-spacing: -0.025em;
+}
+.azc-quotaGauge.azc-gauge-center-large .azc-singleSetting .azc-singleSetting-data .azc-singleSetting-value {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 43px;
+  line-height: 43px;
+  letter-spacing: -0.02em;
+}

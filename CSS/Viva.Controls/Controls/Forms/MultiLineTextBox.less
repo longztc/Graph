@@ -1,0 +1,20 @@
+﻿@import "../../Definitions/Common.d.less";
+@import "TextInput.less";
+
+.azc-multiLineTextBox {
+    .box-sizing(border-box);
+    display: inline-block;
+    vertical-align: text-top;
+    overflow: hidden;
+
+    textarea {
+        display: inline-block;
+        margin: 0;
+        .box-sizing(border-box);
+        .azc-font();
+        font-size: @fontSize;
+        resize: none;
+        overflow: auto;
+        height: 100%;
+    }
+}

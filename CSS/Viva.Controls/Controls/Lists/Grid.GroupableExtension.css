@@ -1,0 +1,19 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-grid-groupable.azc-grid table tbody.azc-grid-groupdata tr.azc-grid-groupheader td {
+  padding-top: 15px;
+  font-size: 10px;
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.azc-grid-groupable.azc-grid table tbody.azc-grid-groupdata tr.azc-grid-groupheader:hover {
+  background-color: inherit;
+}
+.azc-grid-groupable.azc-grid table tbody.azc-grid-groupdata tr:not(.azc-grid-groupheader) td:first-of-type {
+  padding-left: 30px;
+}

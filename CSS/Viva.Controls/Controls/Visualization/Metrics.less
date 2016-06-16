@@ -1,0 +1,236 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@heightOfSmallMetric: 32px;
+@heightOfMediumMetric: 35px;
+@heightOfLargeMetric: 45px;
+@heightOfXLargeMetric: 45px;
+@marginTopSmallMetric: 14px;
+@marginTopMediumMetric: 30px;
+@marginTopLargeMetric: 22px;
+@marginTopXLargeMetric: 23px;
+@metricCaptionMaxWidth: 115px;
+@balloonWidth: 12px;
+@marginLeftBalloon: 1px;
+
+.azc-metrics-li-common-internal(@barHeight) when (ispixel(@barHeight)) {
+    .ellipsis();
+
+    .azc-metrics-barColor {
+        display: inline-block;
+        width: 5px;
+        float: left;
+        height: @barHeight;
+        margin-right: 5px;
+    }
+}
+
+.azc-metrics-internal(@height, @marginTop) when (ispixel(@height)) {
+    &.azc-metrics-horizontal {
+        height: @height;
+        overflow: hidden;
+
+        li {
+            display: inline-block;
+            margin-left: 30px;
+            padding-bottom: 15px;
+            height: @height;
+            margin-right: 0;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &.azc-metrics-vertical {
+        overflow: hidden;
+
+        li {
+            margin-top: @marginTop;
+            height: @height;
+            margin-right: 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.azc-metrics {
+    svg {
+        display: block;
+
+        .azc-hatchingPatternStyle {
+            stroke-width: 0;
+            fill: none;
+
+            path {
+                stroke-width: 1;
+                stroke: #ffffff !important;
+            }
+        }
+    }
+
+    .azc-metrics-singleSetting {
+        display: inline-block;
+        text-align: left;
+
+        .azc-singleSetting-data {
+            text-align: left;
+
+            .azc-singleSetting-value {
+                .azc-number-medium();
+            }
+
+            .azc-singleSetting-unit {
+                .azc-number-medium-adorn();
+                .azc-font-bold();
+            }
+        }
+
+        .azc-singleSetting-caption {
+            .azc-number-small-adorn();
+            text-align: left;
+            text-transform: uppercase;
+            .azc-font-semibold();
+            margin-top: 0;
+            display: inline-block;
+            max-width: @metricCaptionMaxWidth;
+            vertical-align: top;
+        }
+
+        .azc-singleSetting-captionWrapper {
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 0;
+
+            .azc-singleSetting-caption {
+                display: inline-block;
+                max-width: @metricCaptionMaxWidth - @balloonWidth - @marginLeftBalloon;
+                height: inherit;
+            }
+
+            .azc-dockedballoon{
+                margin-top: 0;;
+                margin-bottom: 0;;
+                margin-left: @marginLeftBalloon;
+                width: inherit;
+                height: inherit;
+                vertical-align: top;
+            }
+        }
+    }
+
+    .azc-metrics-bar-rectangle {
+        fill: none;
+    }
+
+    &.azc-metrics-sizeSmall {
+        ul {
+            .azc-metrics-internal(@heightOfSmallMetric, @marginTopSmallMetric);
+
+            li {
+                .azc-metrics-li-common-internal(@heightOfSmallMetric);
+            }
+        }
+
+        .azc-singleSetting-data {
+            height: 15px;
+
+            div:first-child {
+                padding-right: 3px;
+            }
+
+            .azc-singleSetting-value {
+                font-size: 20px;
+                line-height: 15px;
+            }
+
+            .azc-singleSetting-unit {
+                font-size: 10px;
+            }
+        }
+    }
+
+    &.azc-metrics-sizeMedium {
+        ul {
+            .azc-metrics-internal(@heightOfMediumMetric, @marginTopMediumMetric);
+
+            li {
+                .azc-metrics-li-common-internal(@heightOfMediumMetric);
+            }
+        }
+
+        .azc-singleSetting-data {
+            height: 20px;
+
+            div:first-child {
+                padding-right: 4px;
+            }
+
+            .azc-singleSetting-value {
+                font-size: 27px;
+                line-height: 14px;
+            }
+
+            .azc-singleSetting-unit {
+                font-size: 13px;
+            }
+        }
+    }
+
+    &.azc-metrics-sizeLarge {
+        ul {
+            .azc-metrics-internal(@heightOfLargeMetric, @marginTopLargeMetric);
+
+            li {
+                .azc-metrics-li-common-internal(@heightOfLargeMetric);
+            }
+        }
+
+        .azc-singleSetting-data {
+            height: 30px;
+
+            div:first-child {
+                padding-right: 5px;
+            }
+
+            .azc-singleSetting-value {
+                font-size: 40px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    &.azc-metrics-sizeXLarge {
+        ul {
+            .azc-metrics-internal(@heightOfXLargeMetric, @marginTopXLargeMetric);
+
+            li {
+                .azc-metrics-li-common-internal(@heightOfXLargeMetric);
+            }
+        }
+
+        .azc-singleSetting-data {
+            height: 30px;
+
+            div:first-child {
+                padding-right: 5px;
+            }
+
+            .azc-singleSetting-value {
+                font-size: 40px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    .azc-metrics-nonvisible {
+        display: none !important;
+    }
+}

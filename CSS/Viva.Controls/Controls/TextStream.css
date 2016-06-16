@@ -1,0 +1,97 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-control.azc-text-stream pre {
+  white-space: pre;
+  margin: 0;
+  padding: 0;
+  tab-size: 4;
+}
+.azc-control.azc-text-stream pre.azc-text-stream-wrap-text {
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-black,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-black,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-black {
+  color: #000000;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-gray,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-gray,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-gray {
+  color: #808080;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-silver,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-silver,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-silver {
+  color: #c0c0c0;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-white,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-white,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-white {
+  color: #ffffff;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-maroon,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-maroon,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-maroon {
+  color: #800000;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-red,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-red,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-red {
+  color: #ff0000;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-olive,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-olive,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-olive {
+  color: #808000;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-lime,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-lime,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-lime {
+  color: #00ff00;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-green,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-green,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-green {
+  color: #008000;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-aqua,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-aqua,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-aqua {
+  color: #00ffff;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-teal,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-teal,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-teal {
+  color: #008080;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-blue,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-blue,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-blue {
+  color: #0000ff;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-navy,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-navy,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-navy {
+  color: #000080;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-fuchsia,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-fuchsia,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-fuchsia {
+  color: #ff00ff;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-purple,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-purple,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-purple {
+  color: #800080;
+}
+.azc-control.azc-text-stream span.azc-text-stream-text-color-yellow,
+.azc-control.azc-text-stream em.azc-text-stream-text-color-yellow,
+.azc-control.azc-text-stream strong.azc-text-stream-text-color-yellow {
+  color: #ffff00;
+}

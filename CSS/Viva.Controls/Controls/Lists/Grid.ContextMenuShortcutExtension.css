@@ -1,0 +1,33 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-grid-contextMenuShortcut .azc-grid-contextMenuShortcut-col {
+  width: 32px;
+}
+.azc-grid-contextMenuShortcut table tbody tr[aria-disabled="true"] td.azc-grid-contextMenuShortcut-cell a {
+  display: none;
+}
+.azc-grid-contextMenuShortcut table tbody tr:not([aria-disabled="true"]) td.azc-grid-contextMenuShortcut-cell {
+  padding: 0 4px 0 0;
+  text-align: center;
+}
+.azc-grid-contextMenuShortcut table tbody tr:not([aria-disabled="true"]) td.azc-grid-contextMenuShortcut-cell a {
+  width: 100%;
+  display: none;
+  height: 28px;
+  font-size: 23px;
+  margin-right: 2px;
+  text-decoration: none;
+  line-height: 14px;
+}
+.azc-grid-contextMenuShortcut table tbody tr:not([aria-disabled="true"]) td.azc-grid-contextMenuShortcut-cell a:before {
+  content: "\2026";
+  /* Ellipsis */
+}
+.azc-grid-contextMenuShortcut table tbody tr.azc-grid-contextMenuShortcut-shown td.azc-grid-contextMenuShortcut-cell a,
+.azc-grid-contextMenuShortcut table tbody tr[aria-selected="true"] td.azc-grid-contextMenuShortcut-cell a {
+  display: block;
+}

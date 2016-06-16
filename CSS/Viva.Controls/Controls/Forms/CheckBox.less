@@ -1,0 +1,42 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@checkBoxWidth: 17px;
+
+.azc-checkBox {
+    display: inline-block;
+    height: @checkBoxHeight;
+    vertical-align: top;
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+
+    input {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+        text-decoration: none;
+        height: @checkBoxHeight;
+    }
+
+    span {
+        display: inline-block;
+        height: @checkBoxHeight;
+        width: @checkBoxWidth;
+        vertical-align: top;
+        border-width: @borderWidth;
+        border-style: solid;
+        box-sizing: border-box;
+    }
+
+    .azc-checkBox-svg {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+    }
+
+    .azc-checkBox-invisible {
+        display: none;
+    }
+}

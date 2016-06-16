@@ -1,0 +1,80 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-filterCombo.azc-editableCombo.azc-editableCombo-has-drop-image .azc-editableCombo-wrapper .azc-editableCombo-drop-image {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  width: 24px;
+  margin-right: -28px;
+  background-color: transparent;
+  vertical-align: middle;
+}
+.azc-filterCombo.azc-editableCombo.azc-editableCombo-has-drop-image .azc-editableCombo-wrapper .azc-editableCombo-drop-image:before {
+  content: '';
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  border-style: solid;
+  border-width: 0 2.1px 2.1px 0;
+  /*border thickness is .3 factor*/
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 7px;
+  width: 7px;
+  top: -webkit-calc(50% - 4.949747468305833px);
+  top: calc(50% - 4.949747468305833px);
+  right: 9.05025253px;
+}
+.azc-filterCombo input::-ms-clear {
+  display: none;
+}
+.azc-filterCombo-drop-popup .azc-grid-container {
+  max-height: 250px;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  border-width: 1px;
+  border-style: solid;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.azc-filterCombo-drop-popup .azc-grid-container .azc-grid-tableHeader,
+.azc-filterCombo-drop-popup .azc-grid-container .azc-grid-full {
+  table-layout: auto;
+}
+.azc-filterCombo-drop-popup .azc-grid-container td:last-child {
+  padding-right: 20px;
+}
+.azc-filterCombo-drop-popup .azc-grid table tbody tr td {
+  height: 23px;
+}
+.azc-filterCombo-drop-popup .azc-grid.azc-grid-scrollable div.azc-grid-container div.azc-grid-tableContainer div.azc-grid-tableScrollContainer {
+  overflow-x: hidden;
+}
+.azc-filterCombo-drop-popup .azc-grid-tableContent table.azc-grid-full {
+  width: auto;
+}
+.azc-filterCombo-drop-popup .azc-grid-tableContent table.azc-grid-full tbody.azc-grid-groupdata {
+  width: inherit;
+}
+.azc-filterCombo-drop-popup .azc-grid-tableContent table.azc-grid-full tbody.azc-grid-groupdata tr {
+  width: inherit;
+}
+.azc-filterCombo-drop-popup .azc-grid-tableContent table.azc-grid-full tbody.azc-grid-groupdata tr td {
+  width: inherit;
+}
+.azc-filterCombo-drop-popup .azc-grid-tableContent table.azc-grid-full tbody.azc-grid-groupdata tr td div.azc-grid-cellContent {
+  width: inherit;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  display: inline-block;
+}

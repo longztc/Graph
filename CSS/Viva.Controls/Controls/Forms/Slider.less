@@ -1,0 +1,52 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@handleBorderSize: @borderWidth;
+@paddingOffset: 7px;
+
+.azc-sliderControl {
+    position: relative;
+    padding: @paddingOffset; /* Make sure we don't get out of our controller */
+    height: @formElementHeight;
+    .box-sizing(border-box);
+
+    .azc-slider-slider {
+        position: relative;
+        height: @formElementHeight - @paddingOffset * 2;
+        border-color: inherit;
+
+        .azc-slider-range {
+            position: absolute;
+        }
+
+        .azc-slider-selection {
+            top: 0;
+            height: 100%;
+        }
+
+        .azc-slider-handle {
+            top: 0;
+            position: absolute;
+            cursor: default;
+            margin-left: -@paddingOffset;
+            margin-top: -@paddingOffset;
+            height: @formElementHeight - @handleBorderSize * 2;
+            width: 9px;
+            border-width: @handleBorderSize;
+            border-style: solid;
+        }
+
+        .azc-slider-markers {
+            .azc-slider-marker {
+                top: @paddingOffset;
+                position: absolute;
+                cursor: default;
+                margin-left: -@paddingOffset;
+                margin-top: -@paddingOffset;
+                height: @formElementHeight - @paddingOffset * 2;
+                width: 2px;
+                outline: none;
+                border: none;
+            }
+        }
+    }
+}

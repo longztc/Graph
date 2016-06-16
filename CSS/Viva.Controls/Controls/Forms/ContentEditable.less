@@ -1,0 +1,81 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@toolbarHeight: 24px;
+
+.azc-contentEditable {
+
+    .azc-contentEditable-wrapper {
+        .box-sizing(border-box);
+        height: 100%;
+        width: 100%;
+        border-width: @borderWidth;
+        border-style: solid;
+
+        .azc-contentEditable-container {
+            height: calc(~"100%" - @toolbarHeight);
+            padding: 0;
+            margin: 0;
+        }
+
+        .azc-contentEditable-toolbar {
+            height: @toolbarHeight;
+
+            .azc-contentEditable-toolbar-group {
+                display: inline;
+                height: 100%;
+
+                .azc-contentEditable-toolbar-button {
+                    .box-sizing(border-box);
+                    width: 24px;
+                    height: 100%;
+                    padding: 6px;
+                    display: inline-block;
+                    overflow: hidden;
+                    text-align: center;
+
+                    &.azc-contentEditable-toolbar-bold {
+                        &:before {
+                            content: data-uri("image/svg+xml;base64", "../../../../Content/Images/Viva.Controls/Toolbar/azc.toolbar.icon-bold.svg");
+                        }
+                    }
+
+                    &.azc-contentEditable-toolbar-italic {
+                        &:before {
+                            content: data-uri("image/svg+xml;base64", "../../../../Content/Images/Viva.Controls/Toolbar/azc.toolbar.icon-italic.svg");
+                        }
+                    }
+
+                    &.azc-contentEditable-toolbar-underline {
+                        &:before {
+                            content: data-uri("image/svg+xml;base64", "../../../../Content/Images/Viva.Controls/Toolbar/azc.toolbar.icon-underline.svg");
+                        }
+                    }
+
+                    &.azc-contentEditable-toolbar-insertunorderedlist {
+                        &:before {
+                            content: data-uri("image/svg+xml;base64", "../../../../Content/Images/Viva.Controls/Toolbar/azc.toolbar.icon-unordered-list.svg");
+                        }
+                    }
+
+                    &.azc-contentEditable-toolbar-insertorderedlist {
+                        &:before {
+                            content: data-uri("image/svg+xml;base64", "../../../../Content/Images/Viva.Controls/Toolbar/azc.toolbar.icon-ordered-list.svg");
+                        }
+                    }
+
+                    &.azc-contentEditable-toolbar-outdent {
+                        &:before {
+                            content: data-uri("image/svg+xml;base64", "../../../../Content/Images/Viva.Controls/Toolbar/azc.toolbar.icon-outdent.svg");
+                        }
+                    }
+
+                    &.azc-contentEditable-toolbar-indent {
+                        &:before {
+                            content: data-uri("image/svg+xml;base64", "../../../../Content/Images/Viva.Controls/Toolbar/azc.toolbar.icon-indent.svg");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-grid-filterable {
+    &.azc-grid {
+        /* Soft dependency until disabling reorder is inherently supported */
+        /* #1385694 */
+        &.azc-grid-filterable-active {
+            .azc-grid-reorderRow-col,
+            .azc-grid-reorderRow-header,
+            .azc-grid-reorderRow-cell {
+                visibility: hidden;
+            }
+        }
+
+        .azc-grid-filterable-searchBox {
+            display: block;
+
+            &.azc-searchBox-state-hidden {
+                display: none;
+            }
+        }
+
+        .azc-grid-filterable-match {
+            font-style: normal;
+        }
+    }
+}

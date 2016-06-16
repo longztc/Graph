@@ -1,0 +1,26 @@
+﻿.azc-grid-focusableRow {
+    table tbody tr {
+        &[aria-disabled="true"] {
+            td {
+                opacity: .5;
+            }
+        }
+
+        &[aria-disabled="true"] {
+            td.azc-grid-infoBalloon {
+                opacity: 1;
+            }
+        }
+    }
+
+    // clicking a row with the mouse will focus the table first
+    // this annoyance is prevented by removing the outline temporarily while the mouse key is down
+    &.azc-grid-mousedown {
+        outline: none;
+    }
+}
+
+.msie_mode10, .mozilla {
+    & .azc-grid-focusableRow table tbody tr:focus {
+    }
+}

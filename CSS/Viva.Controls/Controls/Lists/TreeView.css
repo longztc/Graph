@@ -1,0 +1,77 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-treeView .azc-treeView-node-group {
+  margin-left: 0;
+  list-style-type: none;
+}
+.azc-treeView .azc-treeView-node-group div.azc-treeView-node {
+  position: relative;
+  cursor: default;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.azc-treeView .azc-treeView-node-group div.azc-treeView-node .azc-treeView-icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+}
+.azc-treeView .azc-treeView-node-group div.azc-treeView-node .azc-treeView-icon .azc-treeView-icon-collapsed {
+  margin-top: 3px;
+  margin-left: 5.5px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+.azc-treeView .azc-treeView-node-group div.azc-treeView-node .azc-treeView-icon .azc-treeView-icon-expanded {
+  margin-top: 5.5px;
+  margin-left: 3px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+}
+.azc-treeView .azc-treeView-node-group div.azc-treeView-node .azc-treeView-node-icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  margin-left: 17px;
+}
+.azc-treeView .azc-treeView-node-group div.azc-treeView-node .azc-treeView-node-content {
+  position: relative;
+  margin: 3px 3px 3px 19px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.azc-treeView .azc-treeView-node-group div.azc-treeView-node.azc-treeView-node-has-icon .azc-treeView-node-content {
+  margin-left: 35px;
+}
+.azc-treeView.azc-treeView-always-expanded .azc-treeView-node-group .azc-treeView-node .azc-treeView-node-icon {
+  margin-left: 1px;
+}
+.azc-treeView.azc-treeView-always-expanded .azc-treeView-node-group .azc-treeView-node .azc-treeView-node-content {
+  margin: 3px;
+}
+.azc-treeView.azc-treeView-always-expanded .azc-treeView-node-group .azc-treeView-node.azc-treeView-node-has-icon .azc-treeView-node-content {
+  margin-left: 19px;
+}

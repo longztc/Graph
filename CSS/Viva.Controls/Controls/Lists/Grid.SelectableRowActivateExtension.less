@@ -1,0 +1,27 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@selectedColor: inherit;
+
+.azc-grid-activateableRow {
+    table {
+        tbody tr[role=row] {
+            td[data-activatable="true"] {
+                .azc-font-semibold();
+            }
+
+            &:not([aria-disabled="true"]):hover,
+            &.azc-grid-virtualFocus {
+                td[data-activatable="true"] {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &.azc-grid-activateonselected tbody tr[role=row] {
+            &:not([aria-disabled="true"]):hover,
+            &.azc-grid-virtualFocus {
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,470 @@
+@import "../Definitions/Common.less";
+
+@formElementHeight: 23px;
+
+@labelContainerCompactHeight: 20px;
+@labelContainerCompactMarginBottom: 10px;
+@formElementHeightCompact: @formElementHeight + @labelContainerCompactHeight + @labelContainerCompactMarginBottom;
+
+@labelContainerWidth: 32%;
+@formElementWidth: 66%;
+@formElementMarginLeft: 1.5%;
+@formElementMarginTopBottom: 20px;
+
+@formElementWidthCompact: 48.75%;
+@formElementMarginRightCompact: 1%;
+
+@formColumnWidth: 49%;
+@formColumnMargin: 2%;
+
+@formElementWidthFull: 100%;
+
+@sliderTextBoxWidth: 40px;
+@formDockedBalloonHelpWidth: 25px;
+
+@formCreatePaddingSide: 25px;
+
+@fileUploadButtonWidth: 35px;
+@fileUploadFormElementDefaultHeight: 80px;
+@fileUploadFormElementCompactHeight: 100px;
+
+@checkBoxInlineLabelOffset: 5px;
+
+// Set of rules for creating a two column layout. 
+.msportalfx-form-columns > .msportalfx-form-column-half {
+    width: @formColumnWidth;
+    float: left;
+}
+
+.msportalfx-form-columns > .msportalfx-form-column-half:first-child {
+    margin-right: @formColumnMargin;
+}
+
+// Common set of rules for Regular, Compact & Full
+.msportalfx-form-regular,
+.msportalfx-form-compact,
+.msportalfx-form-full {
+
+    .msportalfx-form-section {
+        margin-bottom: 55px;
+
+        .msportalfx-form-sectionTitle {
+            .fx-text-header();
+            margin-top: 55px;
+            margin-bottom: 20px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        .msportalfx-form-spacer,
+        .msportalfx-form-formelement {
+            display: block;
+            height: @formElementHeight;
+            margin: @formElementMarginTopBottom 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .msportalfx-form-spacer::after {
+            content: '\0000a0'; //add space so it always renders the height
+        }
+
+        .msportalfx-form-formelement {
+            // Because alignment is an inline block, ensure whitespace is not taken into account between div elements.
+            font-size: 0;
+            line-height: 0;
+            
+            // A label container and a control side by side fit to 99% of available width.
+            // 99% ensures both don't overflow to the next line from rounding errors.
+            .msportalfx-form-elementContainer,
+            .azc-formElementContainer {
+                display: inline-block;
+                vertical-align: middle;
+                width: @formElementWidth;
+                margin-left: @formElementMarginLeft;
+                .fx-text-header();
+                line-height: normal;
+            }
+
+            &.azc-selectorField {
+                font-size: medium;
+                line-height: normal;
+            }
+
+            &.azc-multiLineTextField {
+                height: auto;
+            }
+
+            // Workaround due to the lack of FormField for FileUpload control
+            &.msportalfx-form-fileUploadField {
+                height: @fileUploadFormElementDefaultHeight;
+            }
+
+            // Since FormField for FileUpload control is not currently available,
+            // msportalfx-form-elementContainer and msportalfx-form-labelcontainer are added as a workaround.
+            .msportalfx-form-labelcontainer,
+            .azc-form-labelcontainer {
+                width: @labelContainerWidth;
+            }
+
+            .msportalfx-form-labelcontainer,
+            .azc-form-labelcontainer,
+            .azc-checkBoxField-inlineLabelContainer {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: normal;
+            }
+        }
+
+        // Position extra label using negative margin tricks to preserve flow of formelement
+        .msportalfx-form-extralabel {
+            display: block;
+            width: @formElementWidth;
+            margin-top: -@formElementMarginTopBottom;
+            margin-left: @labelContainerWidth + @formElementMarginLeft;
+            margin-right: 0;
+        }
+    }
+}
+
+// Common set of rules for Compact & Full
+.msportalfx-form-compact, 
+.msportalfx-form-full {
+    .msportalfx-form-section {
+        // Because alignment is an inline block, ensure whitespace is not taken into account between div elements.
+        font-size: 0;
+        line-height: 0;
+
+        // Fix for buttons inside .msportalfx-form-sections. 
+        .fxcontrol-button {
+            line-height: normal;
+        }
+
+        // Two columns side by side fit to 99% of available width.
+        // 99% ensures two columns don't overflow to the next line from rounding errors.
+        .msportalfx-form-spacer,
+        .msportalfx-form-formelement {
+            height: @formElementHeightCompact;
+            width: @formElementWidthCompact;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: @formElementMarginRightCompact;
+            // Restore font-size and line-height to browser default values.
+            font-size: medium;
+            line-height: normal;
+            margin-top: 0;
+            margin-bottom: 20px;
+
+            &:first-child,
+            &:last-child {
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            &.azc-optionsGroupField,
+            &.azc-multiLineTextField {
+                height: auto;
+            }
+
+            // Workaround due to the lack of FormField for FileUpload control
+            &.msportalfx-form-fileUploadField {
+                height: @fileUploadFormElementCompactHeight;
+            }
+
+            .msportalfx-form-labelcontainer,
+            .azc-form-labelcontainer {
+                display: block;
+                margin-bottom: @labelContainerCompactMarginBottom;
+                width: auto;
+                height: @labelContainerCompactHeight;
+            }
+            .msportalfx-form-elementContainer,
+            .azc-formElementContainer {
+                display: block;
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+// Rules for Compact only
+.msportalfx-form-compact {
+     .msportalfx-form-section {
+            // Position extra label using negative margin tricks to preserve flow of formelement
+        .msportalfx-form-extralabel {
+            display: inline-block;
+            width: @formElementWidthCompact;
+            margin-top: @formElementHeightCompact;
+            margin-bottom: 0;
+            margin-left: -(@formElementWidthCompact + @formElementMarginRightCompact);
+            margin-right: @formElementMarginRightCompact;
+        }
+    }
+}
+
+// Rules for Full only
+.msportalfx-form-full {
+    .msportalfx-form-section {
+        .msportalfx-form-spacer,
+        .msportalfx-form-formelement {
+            width: @formElementWidthFull;
+        }
+    }
+}
+
+// Rules for Custom only
+.msportalfx-form-custom {
+    .msportalfx-form-elementContainer,
+    .azc-formElementContainer {
+        width: 100%;
+    }
+}
+
+// Rules for Create only
+.fxs-blade.fxs-bladestyle-create .msportalfx-form,
+.msportalfx-form-create {
+    .msportalfx-form-section {
+        margin-bottom: 55px;
+
+        .msportalfx-form-sectionTitle {
+            .fx-text-header();
+            margin-top: 55px;
+            margin-bottom: 20px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .msportalfx-form-spacer,
+    :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section),
+    > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section) {
+        display: block;
+        height: 50px;
+        padding: 10px @formCreatePaddingSide 20px;
+
+        &.azc-multiLineTextField {
+            height: auto;
+        }
+
+        &::after {
+            content: '\0000a0'; //add space so it always renders the height
+        }
+    }
+
+    :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section),
+    > .msportalfx-form-formelement:not(.msportalfx-form-section) {
+        .msportalfx-form-labelcontainer,
+        .azc-form-labelcontainer {
+            height: @labelContainerCompactHeight;
+        }
+
+        .msportalfx-form-elementContainer,
+        .azc-formElementContainer {
+            display: block;
+            width: 100%;
+            .fx-text-header();
+            line-height: normal;
+        }
+
+        &.azc-textField .azc-textBox,
+        &.azc-passwordField .azc-password,
+        &.azc-dropdownField .azc-dropdown,
+        &.azc-multiselectDropDownField .azc-multiSelectDropDown,
+        &.azc-numericTextBoxField .azc-numericTextBox,
+        &.azc-dateTimeComboField .azc-editableCombo,
+        &.azc-listComboField .azc-editableCombo,
+        &.azc-sliderField .azc-slider,
+        &.azc-sliderField .azc-textBox,
+        &.azc-rangeSliderField .azc-slider,
+        &.azc-rangeSliderField .azc-textBox {
+            height: @formElementHeight;
+
+            input,
+            textarea {
+                font-size: 12px;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+        }
+
+        // Workaround due to the lack of FormField for FileUpload control
+        &.msportalfx-form-fileUploadField {
+            height: @fileUploadFormElementCompactHeight;
+        }
+    }
+    // Position extra label using negative margin tricks to preserve flow of formelement
+    .msportalfx-form-extralabel {
+        display: block;
+        position: relative;
+        top: -20px;
+        right: -25px;
+        width: calc(~"100% - 2*@{formCreatePaddingSide}");
+        margin-bottom: -18px; // same as line-height applied to this element (12px/18px font)
+    }
+}
+
+// .msportalfx-form-vertical-compact shrinks the vertical spacing between form elements, this will be removed in favor of sweeping changes.
+// Currently only works on create blades. 
+.fxs-blade.fxs-bladestyle-create .msportalfx-form.msportalfx-form-vertical-compact,
+.msportalfx-form-create.msportalfx-form-vertical-compact {
+    .msportalfx-form-spacer,
+    :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section),
+    > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section) {
+            height: auto;
+            padding: 5px @formCreatePaddingSide 0;
+        }
+}
+
+/**
+ * Top level styling for the formElement controls.
+ *
+ * These applies to all forms, custom or pre-defined.
+ * It consist of two parts of styles.
+ *
+ * Part 1: Label container
+ * The label container is a piece of text combined with an optionally displayed help balloon.
+ *
+ * Part 2: Form controls container content
+ * This is for the controls content of the field, not the field container itself.
+ * Therefore, each rule start with the field but reach to the controls within it.
+ * Each controls is styled with their specific requirements to fill the width of the container to 100%.
+ * This requires styling composite controls for each of their inner components.
+ */
+.msportalfx-form {
+    // Label container
+    .msportalfx-form-labelcontainer,
+    .azc-form-labelcontainer,
+    .azc-checkBoxField-inlineLabelContainer {
+        box-sizing: border-box;
+
+        label,
+        .azc-dockedballoon-info {
+            display: inline-block;
+
+            .azc-dockedballoon-anchor-image {
+                margin-bottom: 2px;
+            }
+        }
+        // Within the label container, the label and the info balloon fit to 99% of available width.
+        label {
+            max-width: calc(~"100% - @{formDockedBalloonHelpWidth}");
+        }
+    }
+
+    .azc-checkBoxField-inlineLabelContainer {
+        width: calc(~"100% - @{formDockedBalloonHelpWidth} - @{checkBoxInlineLabelOffset}");
+
+        label {
+            .fx-text-label();
+        }
+    }
+
+    .msportalfx-form-labelcontainer,
+    .azc-form-labelcontainer {
+        label {
+            .fx-text-label();
+        }
+    }
+
+    .msportalfx-form-extralabel {
+        .fx-text-regular();
+        .ellipsis();
+        text-align: right;
+    }
+    // Controls container content
+    .azc-checkBoxField .azc-checkBox,
+    .azc-textField .azc-textBox,
+    .azc-passwordField .azc-password,
+    .azc-dropdownField .azc-dropdown,
+    .azc-multiselectDropDownField .azc-multiSelectDropDown,
+    .azc-optionsGroupField .azc-optionPicker,
+    .azc-numericTextBoxField .azc-numericTextBox,
+    .azc-dateTimeComboField .azc-editableCombo,
+    .azc-listComboField .azc-editableCombo,
+    .azc-fileUpload,
+    .azc-multiLineTextField .azc-multiLineTextBox {
+        display: block;
+        width: 100%;
+    }
+
+    .azc-multiLineTextField .azc-multiLineTextBox {
+        height: 100%;
+        width: 100%;
+    }
+
+    .azc-sliderField {
+        .azc-slider,
+        .azc-textBox {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .azc-slider {
+            width: calc(~"100% - @{sliderTextBoxWidth}");
+        }
+
+        .azc-textBox {
+            width: @sliderTextBoxWidth !important;
+            text-align: center;
+        }
+    }
+
+    .azc-rangeSliderField {
+        .azc-rangeSlider {
+            display: inline-block;
+            width: calc(~"100% - @{sliderTextBoxWidth} * 2");
+        }
+
+        .azc-textBox {
+            width: @sliderTextBoxWidth !important;
+            text-align: center;
+
+            &.azc-rangeSlider-textBoxLeft {
+                float: left;
+            }
+
+            &.azc-rangeSlider-textBoxRight {
+                float: right;
+            }
+        }
+    }
+
+    .azc-selectorField {
+        .fxcontrol-selector {
+            box-sizing: border-box;
+        }
+    }
+
+    // Workaround due to the lack of FormField for FileUpload control
+    .msportalfx-form-fileUploadField {
+        height: @fileUploadFormElementDefaultHeight;
+
+        .azc-fileUpload {
+            padding-right: 0;
+
+            .azc-fileUpload-wrapper {
+                .azc-fileUpload-selectedFile {
+                    width: calc(~"100% - @{fileUploadButtonWidth}");
+                }
+            }
+        }
+
+        .fxcontrol-fileUpload-uploadTasks {
+            .fxcontrol-fileUpload-uploadTask {
+                width: 100%;
+            }
+        }
+    }
+}

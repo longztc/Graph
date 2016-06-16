@@ -1,0 +1,152 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@borderSize: 1px;
+@rowHeight: 35px;
+
+@headerBorderSize: @borderSize;
+@headerRowHeight: 42px;
+@headerCellPaddingTop: 1px;
+@headerCellPaddingBottom: 1px;
+@headerCellPaddingLeft: 10px;
+@headerCellPaddingRight: 0;
+@headerTextTransform: uppercase;
+
+@bodyRowHeight: @rowHeight;
+@bodyBorderSize: @borderSize;
+@bodyFontSize: 12px;
+@bodyCellPaddingTop: 1px;
+@bodyCellPaddingBottom: 1px;
+@bodyCellPaddingLeft: 10px;
+@bodyCellPaddingRight: 0;
+
+@firstCellPaddingLeft: 7px;
+
+.azc-grid {
+    position: relative;
+    /*Font should be specified here to allow inline style to override.*/
+    font-size: @bodyFontSize;
+
+    .azc-grid-container {
+        overflow-x: auto;
+        overflow-y: visible;
+    }
+
+    &.azc-grid-headerHidden {
+        table thead {
+            display: none;
+        }
+    }
+
+    .azc-grid-cellContent,
+    .azc-vivaControl {
+        width: 100%;
+        .ellipsis();
+    }
+
+    .azc-grid-cell-fullheight {
+        height: 100%;
+    }
+
+    .azc-grid-cell-ellipse {
+        .ellipsis();
+    }
+
+    table {
+        width: 100%;
+        border: 0;
+        background-color: transparent;
+        table-layout: fixed;
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        caption {
+            display: none; // By default, the caption is only for accessibility purposes.
+        }
+
+        th:first-child a,
+        td:first-of-type {
+            padding-left: @firstCellPaddingLeft;
+        }
+
+        th:first-child {
+            padding-left: 0; // To reset the padding-left assign on a tag
+        }
+        // Header
+        thead tr th {
+            .azc-font();
+            text-transform: @headerTextTransform;
+            text-align: left;
+            font-size: @gridHeaderFontSize;
+            padding: 0;
+            height: (@headerRowHeight - @headerCellPaddingTop - @headerCellPaddingBottom);
+            position: relative;
+            .azc-font-bold();
+
+            a {
+                line-height: (@headerRowHeight - @headerCellPaddingTop - @headerCellPaddingBottom - @borderSize * 2);
+                display: block;
+                text-decoration: none;
+                color: inherit;
+                position: relative; // Required by Firefox
+                span {
+                    .ellipsis();
+                }
+            }
+
+            & > a {
+                padding: @headerCellPaddingTop @headerCellPaddingRight @headerCellPaddingBottom @headerCellPaddingLeft;
+
+                .azc-grid-headerlabel {
+                    display: block;
+                }
+            }
+
+            &.azc-grid-unsortablecolumnheader {
+                cursor: default;
+            }
+        }
+        // Body
+        tbody {
+            tr {
+                td {
+                    padding: @bodyCellPaddingTop @bodyCellPaddingRight @bodyCellPaddingBottom @bodyCellPaddingLeft;
+                    height: (@bodyRowHeight - @bodyCellPaddingTop - @bodyCellPaddingBottom); // Act as min-height
+                    border-top-width: @bodyBorderSize;
+                    border-top-style: solid;
+                    border-bottom-width: @bodyBorderSize;
+                    border-bottom-style: solid;
+                    .ellipsis();
+
+                    input,
+                    select,
+                    textarea,
+                    button,
+                    .azc-button,
+                    .azc-editableCombo,
+                    .azc-fileUpload,
+                    .azc-dropdown,
+                    .azc-optionPicker {
+                        font-size: @bodyFontSize !important;
+                    }
+
+                    .azc-dropdown {
+                        display: block;
+                    }
+                }
+            }
+
+            &:last-child {
+                tr:last-child {
+                    td {
+                        border-bottom-width: @bodyBorderSize;
+                        border-bottom-style: solid;
+                    }
+                }
+            }
+        }
+    }
+
+    a img {
+        border: 0;
+    }
+}

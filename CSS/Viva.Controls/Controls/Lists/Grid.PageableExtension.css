@@ -1,0 +1,31 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-grid-pageable.azc-grid .azc-grid-pageable-loadMoreContainer {
+  display: block;
+  height: 38px;
+  text-decoration: none;
+  text-align: center;
+}
+.azc-grid-pageable.azc-grid .azc-grid-pageable-loadMoreContainer .azc-grid-pageable-loadMoreLabel {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 38px;
+}
+.azc-grid-pageable.azc-grid .azc-grid-pageable-loadMoreContainer .azc-grid-pageable-loadMoreIcon {
+  display: inline-block;
+  margin-top: 10px;
+}
+.azc-grid-pageable.azc-grid .azc-grid-pageable-loadMoreContainer .azc-grid-pageable-loadMoreIcon:before {
+  content: url("data:image/gif;base64,R0lGODlhDgAOAJEAAMzMzGNze////wAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFGAACACwLAAAAAwADAAACA4x/BQAh+QQFGAACACwMAAMAAQAJAAACA4R/BQAh+QQFGAACACwLAAsAAwADAAACA4x/BQAh+QQFGAACACwDAAwACAABAAACA4RvBQAh+QQFGAACACwAAAsAAwADAAACA4x/BQAh+QQFGAACACwAAAMAAgAIAAACBBSMp1kAIfkEBRgAAgAsAAAAAAMAAwAAAgOMfwUAIfkECRgAAgAsAAAAAA4ADgAAAg+Uj2nAzQqjnLTai7PeuAAAIfkECRgAAgAsAAAAAA4ADgAAAiCMhYnGAQ9fOyoxAapGedfuJWCIkaLJoaV5bZMTQa/HFAAh+QQJGAACACwAAAAADgAOAAACIIyFicYBD187KjEBqkZ51+4lYIiRosmhpXmRTARnbVgAACH5BAkYAAIALAAAAAAOAA4AAAIejIWJxgEPXzsqMQGqRnnX7iVgiJGiyaGleZFt+HoFACH5BAkYAAIALAAAAAAOAAwAAAIbjIWJxgEPXzsqMQGqRnnX7iVgiJGiyaElOnoFACH5BAkYAAIALAAAAAAOAAMAAAILjIWJxgEPXzsqsQIAIfkECRgAAgAsAwAAAAsAAwAAAgmUb6HAzRoQggUAOw==");
+}
+.azc-grid-pageable.azc-grid .azc-grid-pageable-pager {
+  float: right;
+}
+.azc-grid-pageable.azc-grid.azc-grid-pageable-onePage .azc-grid-pageable-pager {
+  display: none;
+}

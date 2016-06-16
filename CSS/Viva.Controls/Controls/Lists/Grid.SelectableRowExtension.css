@@ -1,0 +1,25 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-grid-selectableRow table thead th.azc-grid-selectableRow-overlay-header {
+  width: 0;
+}
+.azc-grid-selectableRow table tbody tr td.azc-grid-selectableRow-overlay-cell {
+  overflow: visible;
+  padding: 0;
+  vertical-align: top;
+  width: 0;
+}
+.azc-grid-selectableRow table tbody tr td.azc-grid-selectableRow-overlay-cell div.azc-grid-selectableRow-overlay-origin {
+  position: relative;
+  overflow: visible;
+  height: 100%;
+}
+.azc-grid-selectableRow table tbody tr td.azc-grid-selectableRow-overlay-cell div.azc-grid-selectableRow-overlay-origin div.azc-grid-selectableRow-overlay-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

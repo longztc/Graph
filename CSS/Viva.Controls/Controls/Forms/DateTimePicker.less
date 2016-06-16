@@ -1,0 +1,22 @@
+@import "../../Definitions/Common.d.less";
+
+@horizontalSpaceBetweenTwoTextboxes: 2%;
+
+.azc-dateTimePicker {
+    white-space: nowrap;
+    width: 100%;
+    .azc-datePicker {
+        width: 49%;
+        display: inline-block;
+        margin-right: @horizontalSpaceBetweenTwoTextboxes;
+    }
+
+    .azc-timePicker {
+        width: 49%;
+        display: inline-block;
+    }
+
+    .azc-timezoneDropDown {
+        display: block;
+    }
+}

@@ -1,0 +1,30 @@
+﻿@import "../Definitions/Common.d.less";
+@console-color: #000;
+@consoleText: @Color_Palette_C01;
+
+.azc-console {
+    height: 100%;
+    width: 100%;
+    background-color: @console-color;
+
+    &:focus {
+        outline: none;
+    }
+
+    .azc-console-log, .azc-console-cli {
+        background-color: @console-color;
+        color: @consoleText;
+    }
+
+    .azc-console-cli {
+        min-height: 32px;
+    }
+
+    .azc-console-cli-cursor {
+        border-right: 3px solid #fff;
+    }
+
+    .azc-console-scroll {
+        overflow: auto;
+    }
+}

@@ -1,0 +1,801 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-control-loading {
+  display: none !important;
+}
+.azc-control svg {
+  overflow: hidden;
+}
+.azc-control ol,
+.azc-control ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.azc-control table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.azc-control a img {
+  border: 0;
+}
+.azc-control a {
+  text-decoration: none;
+}
+body > div[data-popup='true'].azc-control {
+  z-index: 150;
+}
+div div.msportalfx-bgcolor-k0t2,
+div .azc-color-index-76,
+div div.azc-color-k0t2,
+div div.azc-color-63707e,
+div div.azc-chart-color-63707e,
+div .azc-before-color-index-76::before,
+div div.azc-before-color-63707e::before,
+div div.azc-before-color-k0t2::before {
+  background-color: #63707e !important;
+}
+div div.msportalfx-bgcolor-j0t2,
+div .azc-color-index-75,
+div div.azc-color-j0t2,
+div div.azc-color-f0f7b2,
+div div.azc-chart-color-f0f7b2,
+div .azc-before-color-index-75::before,
+div div.azc-before-color-f0f7b2::before,
+div div.azc-before-color-j0t2::before {
+  background-color: #f0f7b2 !important;
+}
+div div.msportalfx-bgcolor-i0t2,
+div .azc-color-index-74,
+div div.azc-color-i0t2,
+div div.azc-color-ccecdb,
+div div.azc-chart-color-ccecdb,
+div .azc-before-color-index-74::before,
+div div.azc-before-color-ccecdb::before,
+div div.azc-before-color-i0t2::before {
+  background-color: #ccecdb !important;
+}
+div div.msportalfx-bgcolor-h0t2,
+div .azc-color-index-73,
+div div.azc-color-h0t2,
+div div.azc-color-ccf0ea,
+div div.azc-chart-color-ccf0ea,
+div .azc-before-color-index-73::before,
+div div.azc-before-color-ccf0ea::before,
+div div.azc-before-color-h0t2::before {
+  background-color: #ccf0ea !important;
+}
+div div.msportalfx-bgcolor-g0t2,
+div .azc-color-index-72,
+div div.azc-color-g0t2,
+div div.azc-color-ccf2fc,
+div div.azc-chart-color-ccf2fc,
+div .azc-before-color-index-72::before,
+div div.azc-before-color-ccf2fc::before,
+div div.azc-before-color-g0t2::before {
+  background-color: #ccf2fc !important;
+}
+div div.msportalfx-bgcolor-f0t2,
+div .azc-color-index-71,
+div div.azc-color-f0t2,
+div div.azc-color-ccd1e9,
+div div.azc-chart-color-ccd1e9,
+div .azc-before-color-index-71::before,
+div div.azc-before-color-ccd1e9::before,
+div div.azc-before-color-f0t2::before {
+  background-color: #ccd1e9 !important;
+}
+div div.msportalfx-bgcolor-e0t2,
+div .azc-color-index-70,
+div div.azc-color-e0t2,
+div div.azc-color-e1d3e4,
+div div.azc-chart-color-e1d3e4,
+div .azc-before-color-index-70::before,
+div div.azc-before-color-e1d3e4::before,
+div div.azc-before-color-e0t2::before {
+  background-color: #e1d3e4 !important;
+}
+div div.msportalfx-bgcolor-d0t2,
+div .azc-color-index-69,
+div div.azc-color-d0t2,
+div div.azc-color-fbcce8,
+div div.azc-chart-color-fbcce8,
+div .azc-before-color-index-69::before,
+div div.azc-before-color-fbcce8::before,
+div div.azc-before-color-d0t2::before {
+  background-color: #fbcce8 !important;
+}
+div div.msportalfx-bgcolor-c0t2,
+div .azc-color-index-68,
+div div.azc-color-c0t2,
+div div.azc-color-facfd3,
+div div.azc-chart-color-facfd3,
+div .azc-before-color-index-68::before,
+div div.azc-before-color-facfd3::before,
+div div.azc-before-color-c0t2::before {
+  background-color: #facfd3 !important;
+}
+div div.msportalfx-bgcolor-b0t2,
+div .azc-color-index-67,
+div div.azc-color-b0t2,
+div div.azc-color-ffe8cc,
+div div.azc-chart-color-ffe8cc,
+div .azc-before-color-index-67::before,
+div div.azc-before-color-ffe8cc::before,
+div div.azc-before-color-b0t2::before {
+  background-color: #ffe8cc !important;
+}
+div div.msportalfx-bgcolor-a0t2,
+div .azc-color-index-66,
+div div.azc-color-a0t2,
+div div.azc-color-fffccc,
+div div.azc-chart-color-fffccc,
+div .azc-before-color-index-66::before,
+div div.azc-before-color-fffccc::before,
+div div.azc-before-color-a0t2::before {
+  background-color: #fffccc !important;
+}
+div div.msportalfx-bgcolor-k0t1,
+div .azc-color-index-65,
+div div.azc-color-k0t1,
+div div.azc-color-8f9ca8,
+div div.azc-chart-color-8f9ca8,
+div .azc-before-color-index-65::before,
+div div.azc-before-color-8f9ca8::before,
+div div.azc-before-color-k0t1::before {
+  background-color: #8f9ca8 !important;
+}
+div div.msportalfx-bgcolor-j0t1,
+div .azc-color-index-64,
+div div.azc-color-j0t1,
+div div.azc-color-d6e86c,
+div div.azc-chart-color-d6e86c,
+div .azc-before-color-index-64::before,
+div div.azc-before-color-d6e86c::before,
+div div.azc-before-color-j0t1::before {
+  background-color: #d6e86c !important;
+}
+div div.msportalfx-bgcolor-i0t1,
+div .azc-color-index-63,
+div div.azc-color-i0t1,
+div div.azc-color-66c592,
+div div.azc-chart-color-66c592,
+div .azc-before-color-index-63::before,
+div div.azc-before-color-66c592::before,
+div div.azc-before-color-i0t1::before {
+  background-color: #66c592 !important;
+}
+div div.msportalfx-bgcolor-h0t1,
+div .azc-color-index-62,
+div div.azc-color-h0t1,
+div div.azc-color-66d1bf,
+div div.azc-chart-color-66d1bf,
+div .azc-before-color-index-62::before,
+div div.azc-before-color-66d1bf::before,
+div div.azc-before-color-h0t1::before {
+  background-color: #66d1bf !important;
+}
+div div.msportalfx-bgcolor-g0t1,
+div .azc-color-index-61,
+div div.azc-color-g0t1,
+div div.azc-color-66d7f7,
+div div.azc-chart-color-66d7f7,
+div .azc-before-color-index-61::before,
+div div.azc-before-color-66d7f7::before,
+div div.azc-before-color-g0t1::before {
+  background-color: #66d7f7 !important;
+}
+div div.msportalfx-bgcolor-f0t1,
+div .azc-color-index-60,
+div div.azc-color-f0t1,
+div div.azc-color-6674bc,
+div div.azc-chart-color-6674bc,
+div .azc-before-color-index-60::before,
+div div.azc-before-color-6674bc::before,
+div div.azc-before-color-f0t1::before {
+  background-color: #6674bc !important;
+}
+div div.msportalfx-bgcolor-e0t1,
+div .azc-color-index-59,
+div div.azc-color-e0t1,
+div div.azc-color-a47aaf,
+div div.azc-chart-color-a47aaf,
+div .azc-before-color-index-59::before,
+div div.azc-before-color-a47aaf::before,
+div div.azc-before-color-e0t1::before {
+  background-color: #a47aaf !important;
+}
+div div.msportalfx-bgcolor-d0t1,
+div .azc-color-index-58,
+div div.azc-color-d0t1,
+div div.azc-color-f466ba,
+div div.azc-chart-color-f466ba,
+div .azc-before-color-index-58::before,
+div div.azc-before-color-f466ba::before,
+div div.azc-before-color-d0t1::before {
+  background-color: #f466ba !important;
+}
+div div.msportalfx-bgcolor-c0t1,
+div .azc-color-index-57,
+div div.azc-color-c0t1,
+div div.azc-color-f1707b,
+div div.azc-chart-color-f1707b,
+div .azc-before-color-index-57::before,
+div div.azc-before-color-f1707b::before,
+div div.azc-before-color-c0t1::before {
+  background-color: #f1707b !important;
+}
+div div.msportalfx-bgcolor-b0t1,
+div .azc-color-index-56,
+div div.azc-color-b0t1,
+div div.azc-color-ffba66,
+div div.azc-chart-color-ffba66,
+div .azc-before-color-index-56::before,
+div div.azc-before-color-ffba66::before,
+div div.azc-before-color-b0t1::before {
+  background-color: #ffba66 !important;
+}
+div div.msportalfx-bgcolor-a0t1,
+div .azc-color-index-55,
+div div.azc-color-a0t1,
+div div.azc-color-fcf37e,
+div div.azc-chart-color-fcf37e,
+div .azc-before-color-index-55::before,
+div div.azc-before-color-fcf37e::before,
+div div.azc-before-color-a0t1::before {
+  background-color: #fcf37e !important;
+}
+div div.msportalfx-bgcolor-k0s1,
+div .azc-color-index-54,
+div div.azc-color-k0s1,
+div div.azc-color-464f59,
+div div.azc-chart-color-464f59,
+div .azc-before-color-index-54::before,
+div div.azc-before-color-464f59::before,
+div div.azc-before-color-k0s1::before {
+  background-color: #464f59 !important;
+}
+div div.msportalfx-bgcolor-j0s1,
+div .azc-color-index-53,
+div div.azc-color-j0s1,
+div div.azc-color-8ba208,
+div div.azc-chart-color-8ba208,
+div .azc-before-color-index-53::before,
+div div.azc-before-color-8ba208::before,
+div div.azc-before-color-j0s1::before {
+  background-color: #8ba208 !important;
+}
+div div.msportalfx-bgcolor-i0s1,
+div .azc-color-index-52,
+div div.azc-color-i0s1,
+div div.azc-color-0f5b2f,
+div div.azc-chart-color-0f5b2f,
+div .azc-before-color-index-52::before,
+div div.azc-before-color-0f5b2f::before,
+div div.azc-before-color-i0s1::before {
+  background-color: #0f5b2f !important;
+}
+div div.msportalfx-bgcolor-h0s1,
+div .azc-color-index-51,
+div div.azc-color-h0s1,
+div div.azc-color-00856f,
+div div.azc-chart-color-00856f,
+div .azc-before-color-index-51::before,
+div div.azc-before-color-00856f::before,
+div div.azc-before-color-h0s1::before {
+  background-color: #00856f !important;
+}
+div div.msportalfx-bgcolor-g0s1,
+div .azc-color-index-50,
+div div.azc-color-g0s1,
+div div.azc-color-008db5,
+div div.azc-chart-color-008db5,
+div .azc-before-color-index-50::before,
+div div.azc-before-color-008db5::before,
+div div.azc-before-color-g0s1::before {
+  background-color: #008db5 !important;
+}
+div div.msportalfx-bgcolor-f0s1,
+div .azc-color-index-49,
+div div.azc-color-f0s1,
+div div.azc-color-00126b,
+div div.azc-chart-color-00126b,
+div .azc-before-color-index-49::before,
+div div.azc-before-color-00126b::before,
+div div.azc-before-color-f0s1::before {
+  background-color: #00126b !important;
+}
+div div.msportalfx-bgcolor-e0s1,
+div .azc-color-index-48,
+div div.azc-color-e0s1,
+div div.azc-color-4e195c,
+div div.azc-chart-color-4e195c,
+div .azc-before-color-index-48::before,
+div div.azc-before-color-4e195c::before,
+div div.azc-before-color-e0s1::before {
+  background-color: #4e195c !important;
+}
+div div.msportalfx-bgcolor-d0s1,
+div .azc-color-index-47,
+div div.azc-color-d0s1,
+div div.azc-color-b10069,
+div div.azc-chart-color-b10069,
+div .azc-before-color-index-47::before,
+div div.azc-before-color-b10069::before,
+div div.azc-before-color-d0s1::before {
+  background-color: #b10069 !important;
+}
+div div.msportalfx-bgcolor-c0s1,
+div .azc-color-index-46,
+div div.azc-color-c0s1,
+div div.azc-color-ae0d1a,
+div div.azc-chart-color-ae0d1a,
+div .azc-before-color-index-46::before,
+div div.azc-before-color-ae0d1a::before,
+div div.azc-before-color-c0s1::before {
+  background-color: #ae0d1a !important;
+}
+div div.msportalfx-bgcolor-b0s1,
+div .azc-color-index-45,
+div div.azc-color-b0s1,
+div div.azc-color-bf6900,
+div div.azc-chart-color-bf6900,
+div .azc-before-color-index-45::before,
+div div.azc-before-color-bf6900::before,
+div div.azc-before-color-b0s1::before {
+  background-color: #bf6900 !important;
+}
+div div.msportalfx-bgcolor-a0s1,
+div .azc-color-index-44,
+div div.azc-color-a0s1,
+div div.azc-color-bfb500,
+div div.azc-chart-color-bfb500,
+div .azc-before-color-index-44::before,
+div div.azc-before-color-bfb500::before,
+div div.azc-before-color-a0s1::before {
+  background-color: #bfb500 !important;
+}
+div div.msportalfx-bgcolor-k0s2,
+div .azc-color-index-43,
+div div.azc-color-k0s2,
+div div.azc-color-32383f,
+div div.azc-chart-color-32383f,
+div .azc-before-color-index-43::before,
+div div.azc-before-color-32383f::before,
+div div.azc-before-color-k0s2::before {
+  background-color: #32383f !important;
+}
+div div.msportalfx-bgcolor-j0s2,
+div .azc-color-index-42,
+div div.azc-color-j0s2,
+div div.azc-color-3d460a,
+div div.azc-chart-color-3d460a,
+div .azc-before-color-index-42::before,
+div div.azc-before-color-3d460a::before,
+div div.azc-before-color-j0s2::before {
+  background-color: #3d460a !important;
+}
+div div.msportalfx-bgcolor-i0s2,
+div .azc-color-index-41,
+div div.azc-color-i0s2,
+div div.azc-color-063d20,
+div div.azc-chart-color-063d20,
+div .azc-before-color-index-41::before,
+div div.azc-before-color-063d20::before,
+div div.azc-before-color-i0s2::before {
+  background-color: #063d20 !important;
+}
+div div.msportalfx-bgcolor-h0s2,
+div .azc-color-index-40,
+div div.azc-color-h0s2,
+div div.azc-color-084c41,
+div div.azc-chart-color-084c41,
+div .azc-before-color-index-40::before,
+div div.azc-before-color-084c41::before,
+div div.azc-before-color-h0s2::before {
+  background-color: #084c41 !important;
+}
+div div.msportalfx-bgcolor-g0s2,
+div .azc-color-index-39,
+div div.azc-color-g0s2,
+div div.azc-color-005e79,
+div div.azc-chart-color-005e79,
+div .azc-before-color-index-39::before,
+div div.azc-before-color-005e79::before,
+div div.azc-before-color-g0s2::before {
+  background-color: #005e79 !important;
+}
+div div.msportalfx-bgcolor-f0s2,
+div .azc-color-index-38,
+div div.azc-color-f0s2,
+div div.azc-color-000c48,
+div div.azc-chart-color-000c48,
+div .azc-before-color-index-38::before,
+div div.azc-before-color-000c48::before,
+div div.azc-before-color-f0s2::before {
+  background-color: #000c48 !important;
+}
+div div.msportalfx-bgcolor-e0s2,
+div .azc-color-index-37,
+div div.azc-color-e0s2,
+div div.azc-color-34113d,
+div div.azc-chart-color-34113d,
+div .azc-before-color-index-37::before,
+div div.azc-before-color-34113d::before,
+div div.azc-before-color-e0s2::before {
+  background-color: #34113d !important;
+}
+div div.msportalfx-bgcolor-d0s2,
+div .azc-color-index-36,
+div div.azc-color-d0s2,
+div div.azc-color-760046,
+div div.azc-chart-color-760046,
+div .azc-before-color-index-36::before,
+div div.azc-before-color-760046::before,
+div div.azc-before-color-d0s2::before {
+  background-color: #760046 !important;
+}
+div div.msportalfx-bgcolor-c0s2,
+div .azc-color-index-35,
+div div.azc-color-c0s2,
+div div.azc-color-740912,
+div div.azc-chart-color-740912,
+div .azc-before-color-index-35::before,
+div div.azc-before-color-740912::before,
+div div.azc-before-color-c0s2::before {
+  background-color: #740912 !important;
+}
+div div.msportalfx-bgcolor-b0s2,
+div .azc-color-index-34,
+div div.azc-color-b0s2,
+div div.azc-color-804600,
+div div.azc-chart-color-804600,
+div .azc-before-color-index-34::before,
+div div.azc-before-color-804600::before,
+div div.azc-before-color-b0s2::before {
+  background-color: #804600 !important;
+}
+div div.msportalfx-bgcolor-a0s2,
+div .azc-color-index-33,
+div div.azc-color-a0s2,
+div div.azc-color-807900,
+div div.azc-chart-color-807900,
+div .azc-before-color-index-33::before,
+div div.azc-before-color-807900::before,
+div div.azc-before-color-a0s2::before {
+  background-color: #807900 !important;
+}
+div div.msportalfx-bgcolor-k2,
+div .azc-color-index-32,
+div div.azc-color-k2,
+div div.azc-color-d6d7d8,
+div div.azc-chart-color-d6d7d8,
+div .azc-before-color-index-32::before,
+div div.azc-before-color-d6d7d8::before,
+div div.azc-before-color-k2::before {
+  background-color: #d6d7d8 !important;
+}
+div div.msportalfx-bgcolor-j2,
+div .azc-color-index-31,
+div div.azc-color-j2,
+div div.azc-color-e2e584,
+div div.azc-chart-color-e2e584,
+div .azc-before-color-index-31::before,
+div div.azc-before-color-e2e584::before,
+div div.azc-before-color-j2::before {
+  background-color: #e2e584 !important;
+}
+div div.msportalfx-bgcolor-i2,
+div .azc-color-index-30,
+div div.azc-color-i2,
+div div.azc-color-55d455,
+div div.azc-chart-color-55d455,
+div .azc-before-color-index-30::before,
+div div.azc-before-color-55d455::before,
+div div.azc-before-color-i2::before {
+  background-color: #55d455 !important;
+}
+div div.msportalfx-bgcolor-h2,
+div .azc-color-index-29,
+div div.azc-color-h2,
+div div.azc-color-00d8cc,
+div div.azc-chart-color-00d8cc,
+div .azc-before-color-index-29::before,
+div div.azc-before-color-00d8cc::before,
+div div.azc-before-color-h2::before {
+  background-color: #00d8cc !important;
+}
+div div.msportalfx-bgcolor-g2,
+div .azc-color-index-28,
+div div.azc-color-g2,
+div div.azc-color-6dc2e9,
+div div.azc-chart-color-6dc2e9,
+div .azc-before-color-index-28::before,
+div div.azc-before-color-6dc2e9::before,
+div div.azc-before-color-g2::before {
+  background-color: #6dc2e9 !important;
+}
+div div.msportalfx-bgcolor-f2,
+div .azc-color-index-27,
+div div.azc-color-f2,
+div div.azc-color-4668c5,
+div div.azc-chart-color-4668c5,
+div .azc-before-color-index-27::before,
+div div.azc-before-color-4668c5::before,
+div div.azc-before-color-f2::before {
+  background-color: #4668c5 !important;
+}
+div div.msportalfx-bgcolor-e2,
+div .azc-color-index-26,
+div div.azc-color-e2,
+div div.azc-color-9b4f96,
+div div.azc-chart-color-9b4f96,
+div .azc-before-color-index-26::before,
+div div.azc-before-color-9b4f96::before,
+div div.azc-before-color-e2::before {
+  background-color: #9b4f96 !important;
+}
+div div.msportalfx-bgcolor-d2,
+div .azc-color-index-25,
+div div.azc-color-d2,
+div div.azc-color-f472d0,
+div div.azc-chart-color-f472d0,
+div .azc-before-color-index-25::before,
+div div.azc-before-color-f472d0::before,
+div div.azc-before-color-d2::before {
+  background-color: #f472d0 !important;
+}
+div div.msportalfx-bgcolor-c2,
+div .azc-color-index-24,
+div div.azc-color-c2,
+div div.azc-color-dd5900,
+div div.azc-chart-color-dd5900,
+div .azc-before-color-index-24::before,
+div div.azc-before-color-dd5900::before,
+div div.azc-before-color-c2::before {
+  background-color: #dd5900 !important;
+}
+div div.msportalfx-bgcolor-b2,
+div .azc-color-index-23,
+div div.azc-color-b2,
+div div.azc-color-ffb900,
+div div.azc-chart-color-ffb900,
+div .azc-before-color-index-23::before,
+div div.azc-before-color-ffb900::before,
+div div.azc-before-color-b2::before {
+  background-color: #ffb900 !important;
+}
+div div.msportalfx-bgcolor-a2,
+div .azc-color-index-22,
+div div.azc-color-a2,
+div div.azc-color-fffc9e,
+div div.azc-chart-color-fffc9e,
+div .azc-before-color-index-22::before,
+div div.azc-before-color-fffc9e::before,
+div div.azc-before-color-a2::before {
+  background-color: #fffc9e !important;
+}
+div div.msportalfx-bgcolor-k0,
+div .azc-color-index-21,
+div div.azc-color-k0,
+div div.azc-color-bbc2ca,
+div div.azc-chart-color-bbc2ca,
+div .azc-before-color-index-21::before,
+div div.azc-before-color-bbc2ca::before,
+div div.azc-before-color-k0::before {
+  background-color: #bbc2ca !important;
+}
+div div.msportalfx-bgcolor-j0,
+div .azc-color-index-20,
+div div.azc-color-j0,
+div div.azc-color-bad80a,
+div div.azc-chart-color-bad80a,
+div .azc-before-color-index-20::before,
+div div.azc-before-color-bad80a::before,
+div div.azc-before-color-j0::before {
+  background-color: #bad80a !important;
+}
+div div.msportalfx-bgcolor-i0,
+div .azc-color-index-19,
+div div.azc-color-i0,
+div div.azc-color-009e49,
+div div.azc-chart-color-009e49,
+div .azc-before-color-index-19::before,
+div div.azc-before-color-009e49::before,
+div div.azc-before-color-i0::before {
+  background-color: #009e49 !important;
+}
+div div.msportalfx-bgcolor-h0,
+div .azc-color-index-18,
+div div.azc-color-h0,
+div div.azc-color-00b294,
+div div.azc-chart-color-00b294,
+div .azc-before-color-index-18::before,
+div div.azc-before-color-00b294::before,
+div div.azc-before-color-h0::before {
+  background-color: #00b294 !important;
+}
+div div.msportalfx-bgcolor-g0,
+div .azc-color-index-17,
+div div.azc-color-g0,
+div div.azc-color-00bcf2,
+div div.azc-chart-color-00bcf2,
+div .azc-before-color-index-17::before,
+div div.azc-before-color-00bcf2::before,
+div div.azc-before-color-g0::before {
+  background-color: #00bcf2 !important;
+}
+div div.msportalfx-bgcolor-f0,
+div .azc-color-index-16,
+div div.azc-color-f0,
+div div.azc-color-00188f,
+div div.azc-chart-color-00188f,
+div .azc-before-color-index-16::before,
+div div.azc-before-color-00188f::before,
+div div.azc-before-color-f0::before {
+  background-color: #00188f !important;
+}
+div div.msportalfx-bgcolor-e0,
+div .azc-color-index-15,
+div div.azc-color-e0,
+div div.azc-color-68217a,
+div div.azc-chart-color-68217a,
+div .azc-before-color-index-15::before,
+div div.azc-before-color-68217a::before,
+div div.azc-before-color-e0::before {
+  background-color: #68217a !important;
+}
+div div.msportalfx-bgcolor-d0,
+div .azc-color-index-14,
+div div.azc-color-d0,
+div div.azc-color-ec008c,
+div div.azc-chart-color-ec008c,
+div .azc-before-color-index-14::before,
+div div.azc-before-color-ec008c::before,
+div div.azc-before-color-d0::before {
+  background-color: #ec008c !important;
+}
+div div.msportalfx-bgcolor-c0,
+div .azc-color-index-13,
+div div.azc-color-c0,
+div div.azc-color-e81123,
+div div.azc-chart-color-e81123,
+div .azc-before-color-index-13::before,
+div div.azc-before-color-e81123::before,
+div div.azc-before-color-c0::before {
+  background-color: #e81123 !important;
+}
+div div.msportalfx-bgcolor-b0,
+div .azc-color-index-12,
+div div.azc-color-b0,
+div div.azc-color-ff8c00,
+div div.azc-chart-color-ff8c00,
+div .azc-before-color-index-12::before,
+div div.azc-before-color-ff8c00::before,
+div div.azc-before-color-b0::before {
+  background-color: #ff8c00 !important;
+}
+div div.msportalfx-bgcolor-a0,
+div .azc-color-index-11,
+div div.azc-color-a0,
+div div.azc-color-fff100,
+div div.azc-chart-color-fff100,
+div .azc-before-color-index-11::before,
+div div.azc-before-color-fff100::before,
+div div.azc-before-color-a0::before {
+  background-color: #fff100 !important;
+}
+div div.msportalfx-bgcolor-k1,
+div .azc-color-index-10,
+div div.azc-color-k1,
+div div.azc-color-a0a5a8,
+div div.azc-chart-color-a0a5a8,
+div .azc-before-color-index-10::before,
+div div.azc-before-color-a0a5a8::before,
+div div.azc-before-color-k1::before {
+  background-color: #a0a5a8 !important;
+}
+div div.msportalfx-bgcolor-j1,
+div .azc-color-index-9,
+div div.azc-color-j1,
+div div.azc-color-7fba00,
+div div.azc-chart-color-7fba00,
+div .azc-before-color-index-9::before,
+div div.azc-before-color-7fba00::before,
+div div.azc-before-color-j1::before {
+  background-color: #7fba00 !important;
+}
+div div.msportalfx-bgcolor-i1,
+div .azc-color-index-8,
+div div.azc-color-i1,
+div div.azc-color-007233,
+div div.azc-chart-color-007233,
+div .azc-before-color-index-8::before,
+div div.azc-before-color-007233::before,
+div div.azc-before-color-i1::before {
+  background-color: #007233 !important;
+}
+div div.msportalfx-bgcolor-h1,
+div .azc-color-index-7,
+div div.azc-color-h1,
+div div.azc-color-008272,
+div div.azc-chart-color-008272,
+div .azc-before-color-index-7::before,
+div div.azc-before-color-008272::before,
+div div.azc-before-color-h1::before {
+  background-color: #008272 !important;
+}
+div div.msportalfx-bgcolor-g1,
+div .azc-color-index-6,
+div div.azc-color-g1,
+div div.azc-color-0072c6,
+div div.azc-chart-color-0072c6,
+div .azc-before-color-index-6::before,
+div div.azc-before-color-0072c6::before,
+div div.azc-before-color-g1::before {
+  background-color: #0072c6 !important;
+}
+div div.msportalfx-bgcolor-f1,
+div .azc-color-index-5,
+div div.azc-color-f1,
+div div.azc-color-002050,
+div div.azc-chart-color-002050,
+div .azc-before-color-index-5::before,
+div div.azc-before-color-002050::before,
+div div.azc-before-color-f1::before {
+  background-color: #002050 !important;
+}
+div div.msportalfx-bgcolor-e1,
+div .azc-color-index-4,
+div div.azc-color-e1,
+div div.azc-color-442359,
+div div.azc-chart-color-442359,
+div .azc-before-color-index-4::before,
+div div.azc-before-color-442359::before,
+div div.azc-before-color-e1::before {
+  background-color: #442359 !important;
+}
+div div.msportalfx-bgcolor-d1,
+div .azc-color-index-3,
+div div.azc-color-d1,
+div div.azc-color-b4009e,
+div div.azc-chart-color-b4009e,
+div .azc-before-color-index-3::before,
+div div.azc-before-color-b4009e::before,
+div div.azc-before-color-d1::before {
+  background-color: #b4009e !important;
+}
+div div.msportalfx-bgcolor-c1,
+div .azc-color-index-2,
+div div.azc-color-c1,
+div div.azc-color-ba141a,
+div div.azc-chart-color-ba141a,
+div .azc-before-color-index-2::before,
+div div.azc-before-color-ba141a::before,
+div div.azc-before-color-c1::before {
+  background-color: #ba141a !important;
+}
+div div.msportalfx-bgcolor-b1,
+div .azc-color-index-1,
+div div.azc-color-b1,
+div div.azc-color-eb3c00,
+div div.azc-chart-color-eb3c00,
+div .azc-before-color-index-1::before,
+div div.azc-before-color-eb3c00::before,
+div div.azc-before-color-b1::before {
+  background-color: #eb3c00 !important;
+}
+div div.msportalfx-bgcolor-a1,
+div .azc-color-index-0,
+div div.azc-color-a1,
+div div.azc-color-fcd116,
+div div.azc-chart-color-fcd116,
+div .azc-before-color-index-0::before,
+div div.azc-before-color-fcd116::before,
+div div.azc-before-color-a1::before {
+  background-color: #fcd116 !important;
+}

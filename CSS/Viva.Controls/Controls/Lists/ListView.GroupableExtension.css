@@ -1,0 +1,15 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-listView-groupable .azc-listView-group {
+  margin: 0 0 20px 0;
+}
+.azc-listView-groupable .azc-listView-groupheader {
+  margin: 0 5px 5px 0;
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}

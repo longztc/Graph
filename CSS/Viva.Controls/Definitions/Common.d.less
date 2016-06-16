@@ -1,0 +1,530 @@
+﻿@import "../../../../Framework/Less/Definitions/Common.less";
+@import "../../../../Framework/Less/Definitions/Color.less";
+@import "../../../../Framework/Less/Definitions/Text.less";
+
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+@zindexBodyPopup: 150;
+@zindexMouseCompanion: 2147483647;
+@formElementHeight: 23px;
+@buttonHeight: @formElementHeight;
+@gridHeaderFontSize: 10px;
+@checkBoxHeight: 17px;
+
+@azcDropdownArrowWidth: 28px;
+@azcDropdownMinHeight:  @formElementHeight - 4px;  /*Match the @formElementHeight with border into consideration. */
+@halfArrowWidth: @azcDropdownArrowWidth / 2;
+@quarterArrowWidth: @azcDropdownArrowWidth / 4;
+@quarterArrowWidthAfterRotate: @quarterArrowWidth * sqrt(2.0) / 2.0;
+
+@borderWidth: 1px; // Set the border across all controls.
+@commonTextBoxPadding: 3px 8px 4px;
+@inputFontSize: 12px;
+@inputValidationWidth: 14px;
+
+.ellipsis() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box-sizing(@boxSizing) {
+    -moz-box-sizing: @boxSizing;
+    box-sizing: @boxSizing;
+}
+
+.unselectable() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.selection-bg-transparent() {
+     ::-moz-selection {
+        background: transparent;
+    }
+
+    ::selection {
+        background: transparent;
+    }
+}
+
+.transition(@value) {
+    -webkit-transition: @value;
+    transition: @value;
+}
+
+.transform(@value) {
+    -ms-transform: @value;
+    -webkit-transform: @value;
+    transform: @value;
+}
+
+.animation(@value) {
+    -webkit-animation: @value;
+    animation: @value;
+}
+
+.calc(width, @value) {
+    width: -webkit-calc(@value);
+    width: calc(@value);
+}
+
+.calc(maxwidth, @value) {
+    max-width: -webkit-calc(@value);
+    max-width: calc(@value);
+}
+
+.calc(height, @value) {
+    height: -webkit-calc(@value);
+    height: calc(@value);
+}
+
+.calc(top, @value) {
+    top: -webkit-calc(@value);
+    top: calc(@value);
+}
+
+.zeroSize() {
+    width: 0;
+    height: 0;
+    background: none;
+    border-style: solid;
+}
+
+/* !importants ensure that we override theming */
+.top-triangle(@width, @height) {
+    .zeroSize();
+    border-width: @width @height 0 @height;
+    border-right-color:  transparent !important;
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+}
+
+.top-triangle(@width) {
+    .top-triangle(@width, @width / 2);
+}
+
+.right-triangle(@width, @height) {
+    .zeroSize();
+    border-width: @height @width @height 0;
+    border-top-color:  transparent !important;
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+}
+
+.right-triangle(@width) {
+    .right-triangle(@width, @width / 2);
+}
+
+.bottom-triangle(@width, @height) {
+    .zeroSize();
+    border-width: 0 @height @width @height;
+    border-top-color:  transparent !important;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+}
+
+.bottom-triangle(@width) {
+    .bottom-triangle(@width, @width / 2);
+}
+
+.left-triangle(@width, @height) {
+    .zeroSize();
+    border-width: @height 0 @height @width;
+    border-top-color:  transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+}
+
+.left-triangle(@width) {
+    .left-triangle(@width, @width / 2);
+}
+
+.topRight-triangle(@width, @height) {
+    .zeroSize();
+    border-width: @width 0 0 @height;
+    border-right-color:  transparent !important;
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+}
+
+.topRight-triangle(@width) {
+    .topRight-triangle(@width, @width);
+}
+
+.topLeft-triangle(@width, @height) {
+    .zeroSize();
+    border-width: @width @height 0 0;
+    border-right-color:  transparent !important;
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+}
+
+.topLeft-triangle(@width) {
+    .topLeft-triangle(@width, @width);
+}
+
+.bottomRight-triangle(@width, @height) {
+    .zeroSize();
+    border-width: 0 0 @width @height;
+    border-top-color:  transparent !important;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+}
+
+.bottomRight-triangle(@width) {
+    .bottomRight-triangle(@width, @width);
+}
+
+.bottomLeft-triangle(@width, @height) {
+    .zeroSize();
+    border-width: 0 @height @width 0;
+    border-top-color:  transparent !important;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+}
+
+.bottomLeft-triangle(@width) {
+    .bottomLeft-triangle(@width, @width);
+}
+
+.bodyPopupZindex() {
+    z-index: @zindexBodyPopup;
+}
+
+.azc-dropdown-slimbox() {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    text-decoration: none;
+}
+
+.downArrow(@quarterWidth, @quarterWidthAfterRotate) {
+    .box-sizing(border-box);
+    position: absolute;
+    border-style: solid;
+    border-width: 0 (.3 * @quarterWidth) (.3 * @quarterWidth) 0; /*border thickness is .3 factor*/
+    .transform(rotate(45deg));
+    height: @quarterWidth;
+    width: @quarterWidth;
+    .calc(top, ~"50% - @{quarterWidthAfterRotate}");
+    right: 2 * @quarterWidth - @quarterWidthAfterRotate;
+}
+
+.display-flex() {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-align-items(@alignment) {
+    -ms-flex-align:@alignment;
+    -webkit-align-items:@alignment;
+    align-items:@alignment;
+}
+
+.flex-direction(@direction) {
+    -ms-flex-direction: @direction;
+    -webkit-flex-direction: @direction;
+    flex-direction: @direction;
+}
+
+.flex-wrap(@wrap) {
+    -ms-flex-wrap: @wrap;
+    -webkit-flex-wrap: @wrap;
+    flex-wrap: @wrap;
+}
+
+.flex-flow(@direction, @wrap) {
+    -ms-flex-flow: @direction @wrap;
+    -webkit-flex-flow: @direction @wrap;
+    flex-flow: @direction @wrap;
+}
+
+.flex(@positive, @negative, @basis) {
+    -ms-flex: @positive @negative @basis;
+    -webkit-flex: @positive @negative @basis;
+    flex: @positive @negative @basis;
+}
+
+.justify-content(@alignment) {
+    -ms-flex-pack: @alignment;
+    -webkit-justify-content: @alignment;
+    justify-content: @alignment;
+}
+
+
+
+///  REPLACE WITH FRAMEWORK VERSIONS
+.azc-font() {
+    font-family: ~"wf_segoe-ui_normal", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-weight: 400;
+}
+
+// Font weight should be 700, but the file for the downloaded font mentions normal (400).
+.azc-font-bold() {
+    font-family: ~"wf_segoe-ui_bold", "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-weight: 400;
+}
+
+// Font weight should be 600, but the file for the downloaded font mentions normal (400).
+.azc-font-semibold() {
+    font-family: ~"wf_segoe-ui_semibold", "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-weight: 400;
+}
+
+// Font weight should be 300, but the file for the downloaded font mentions normal (400).
+.azc-font-light() {
+    font-family: ~"wf_segoe-ui_light", "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-weight: 400;
+}
+
+// Font weight should be some value (undefined), but the file for the downloaded font mentions normal (400).
+.azc-font-semilight() {
+    font-family: ~"wf_segoe-ui_semilight", "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-weight: 400;
+}
+
+// helper method, not meant to be used directly.
+.azc-text-internal(@fontSize, @lineHeight) when (ispixel(@fontSize)) and (ispixel(@lineHeight)) {
+    font-size: @fontSize;
+    line-height: @lineHeight;
+}
+
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-number-common(@fontSize, @tracking) when (ispixel(@fontSize)) and (isem(@tracking)) {
+    .azc-font-semibold();
+    .azc-text-internal(@fontSize, @fontSize);
+    letter-spacing: @tracking;
+}
+
+.azc-number-adorn-common(@fontSize, @tracking, @color: @Color_SlateTints_G04) when (ispixel(@fontSize)) and (isem(@tracking)) {
+    .azc-font-bold();
+    .azc-text-internal(@fontSize, @fontSize);
+    letter-spacing: @tracking;
+}
+
+.azc-number-jumbo() {
+    .azc-number-common(60px, -0.02em);
+}
+
+.azc-number-large() {
+    .azc-number-common(43px, -0.02em);
+}
+
+.azc-number-medium() {
+    .azc-number-common(30px, -0.025em);
+}
+
+.azc-number-small() {
+    .azc-number-common(17px, -0.02em);
+}
+
+.azc-number-jumbo-adorn() {
+    .azc-number-adorn-common(20px, -0.02em);
+}
+
+.azc-number-large-adorn() {
+    .azc-number-adorn-common(15px, -0.02em);
+}
+
+.azc-number-medium-adorn() {
+    // same as large
+    .azc-number-large-adorn();
+}
+
+.azc-number-small-adorn() {
+    .azc-number-adorn-common(10px, -0.05em);
+}
+
+// TODO REMOVE
+
+@disabledTextColor: @Color_SlateTints_G09;
+@disabledBorderColor: @Color_SlateTints_G11;
+@disabledBackgroundColor: @Color_SlateTints_G15;
+
+@disabledDefaultTextColor: @Color_Palette_C01;
+@disabledDefaultBorderColor: @Color_SlateTints_G09;
+@disabledDefaultBackgroundColor: @Color_SlateTints_G09;
+
+@activeColor: @Color_Palette_C02;
+@dirtyColor: #8b7dc4;
+@invalidColor: @Color_Palette_C10;
+@focusColor: @Color_Palette_C02;
+
+@darkThemeBackgroundColor: @Color_SlateTints_G04;
+@darkThemeBorderColor: @Color_SlateTints_G10;
+@darkThemeColor: @Color_Palette_C01;
+@darkThemeDisabledColor: @Color_SlateTints_G09;
+
+// Graph color System in full rainbow.
+@mscolor0: "fcd116";
+@mscolor1: "eb3c00";
+@mscolor2: "ba141a";
+@mscolor3: "b4009e";
+@mscolor4: "442359";
+@mscolor5: "002050";
+@mscolor6: "0072c6";
+@mscolor7: "008272";
+@mscolor8: "007233";
+@mscolor9: "7fba00";
+@mscolor10: "a0a5a8"; // set 1 end Gray.
+@mscolor11: "fff100";
+@mscolor12: "ff8c00";
+@mscolor13: "e81123";
+@mscolor14: "ec008c";
+@mscolor15: "68217a";
+@mscolor16: "00188f";
+@mscolor17: "00bcf2";
+@mscolor18: "00b294";
+@mscolor19: "009e49";
+@mscolor20: "bad80a";
+@mscolor21: "bbc2ca"; // set 2 end Gray.
+@mscolor22: "fffc9e";
+@mscolor23: "ffb900";
+@mscolor24: "dd5900";
+@mscolor25: "f472d0";
+@mscolor26: "9b4f96";
+@mscolor27: "4668c5";
+@mscolor28: "6dc2e9";
+@mscolor29: "00d8cc";
+@mscolor30: "55d455";
+@mscolor31: "e2e584";
+@mscolor32: "d6d7d8"; // set 3 end Gray.
+
+// shades/tint
+@mscolor33: "807900";
+@mscolor34: "804600";
+@mscolor35: "740912";
+@mscolor36: "760046";
+@mscolor37: "34113d";
+@mscolor38: "000c48";
+@mscolor39: "005e79";
+@mscolor40: "084c41";
+@mscolor41: "063d20";
+@mscolor42: "3d460a";
+@mscolor43: "32383f"; // @Color_SlateTints_G04
+
+@mscolor44: "bfb500";
+@mscolor45: "bf6900";
+@mscolor46: "ae0d1a";
+@mscolor47: "b10069";
+@mscolor48: "4e195c";
+@mscolor49: "00126b";
+@mscolor50: "008db5";
+@mscolor51: "00856f";
+@mscolor52: "0f5b2f";
+@mscolor53: "8ba208";
+@mscolor54: "464f59"; // @Color_SlateTints_G06;
+
+@mscolor55: "fcf37e";
+@mscolor56: "ffba66";
+@mscolor57: "f1707b";
+@mscolor58: "f466ba";
+@mscolor59: "a47aaf";
+@mscolor60: "6674bc";
+@mscolor61: "66d7f7";
+@mscolor62: "66d1bf";
+@mscolor63: "66c592";
+@mscolor64: "d6e86c";
+@mscolor65: "8f9ca8"; // @Color_SlateTints_G10;
+
+@mscolor66: "fffccc";
+@mscolor67: "ffe8cc";
+@mscolor68: "facfd3";
+@mscolor69: "fbcce8";
+@mscolor70: "e1d3e4";
+@mscolor71: "ccd1e9";
+@mscolor72: "ccf2fc";
+@mscolor73: "ccf0ea";
+@mscolor74: "ccecdb";
+@mscolor75: "f0f7b2";
+@mscolor76: "63707e";
+
+@max-mscolor-index: 76;
+
+@mscolorcode0: "a1";
+@mscolorcode1: "b1";
+@mscolorcode2: "c1";
+@mscolorcode3: "d1";
+@mscolorcode4: "e1";
+@mscolorcode5: "f1";
+@mscolorcode6: "g1";
+@mscolorcode7: "h1";
+@mscolorcode8: "i1";
+@mscolorcode9: "j1";
+@mscolorcode10: "k1"; // set 1 end grey.
+@mscolorcode11: "a0";
+@mscolorcode12: "b0";
+@mscolorcode13: "c0";
+@mscolorcode14: "d0";
+@mscolorcode15: "e0";
+@mscolorcode16: "f0";
+@mscolorcode17: "g0";
+@mscolorcode18: "h0";
+@mscolorcode19: "i0";
+@mscolorcode20: "j0";
+@mscolorcode21: "k0"; // set 2 end.
+@mscolorcode22: "a2";
+@mscolorcode23: "b2";
+@mscolorcode24: "c2";
+@mscolorcode25: "d2";
+@mscolorcode26: "e2";
+@mscolorcode27: "f2";
+@mscolorcode28: "g2";
+@mscolorcode29: "h2";
+@mscolorcode30: "i2";
+@mscolorcode31: "j2";
+@mscolorcode32: "k2"; // set 3 end.
+// Tint set 1
+@mscolorcode33: "a0s2";
+@mscolorcode34: "b0s2";
+@mscolorcode35: "c0s2";
+@mscolorcode36: "d0s2";
+@mscolorcode37: "e0s2";
+@mscolorcode38: "f0s2";
+@mscolorcode39: "g0s2";
+@mscolorcode40: "h0s2";
+@mscolorcode41: "i0s2";
+@mscolorcode42: "j0s2";
+@mscolorcode43: "k0s2"; // gray
+// tint set 2
+@mscolorcode44: "a0s1";
+@mscolorcode45: "b0s1";
+@mscolorcode46: "c0s1";
+@mscolorcode47: "d0s1";
+@mscolorcode48: "e0s1";
+@mscolorcode49: "f0s1";
+@mscolorcode50: "g0s1";
+@mscolorcode51: "h0s1";
+@mscolorcode52: "i0s1";
+@mscolorcode53: "j0s1";
+@mscolorcode54: "k0s1"; // gray
+// tint set 3
+@mscolorcode55: "a0t1";
+@mscolorcode56: "b0t1";
+@mscolorcode57: "c0t1";
+@mscolorcode58: "d0t1";
+@mscolorcode59: "e0t1";
+@mscolorcode60: "f0t1";
+@mscolorcode61: "g0t1";
+@mscolorcode62: "h0t1";
+@mscolorcode63: "i0t1";
+@mscolorcode64: "j0t1";
+@mscolorcode65: "k0t1"; // gray
+// tint set 4
+@mscolorcode66: "a0t2";
+@mscolorcode67: "b0t2";
+@mscolorcode68: "c0t2";
+@mscolorcode69: "d0t2";
+@mscolorcode70: "e0t2";
+@mscolorcode71: "f0t2";
+@mscolorcode72: "g0t2";
+@mscolorcode73: "h0t2";
+@mscolorcode74: "i0t2";
+@mscolorcode75: "j0t2";
+@mscolorcode76: "k0t2"; // gray

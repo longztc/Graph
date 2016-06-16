@@ -1,0 +1,48 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@loadingIconSize: 10px;
+@loadingIconColor: @Color_SlateTints_G09;
+
+.azc-treeView-onDemandLoadable {
+    .azc-treeView-icon-loading {
+        position: absolute;
+        width: @loadingIconSize;
+        height: @loadingIconSize;
+        border: 2px solid @loadingIconColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        .animation(azc-treeView-loading 1s linear infinite);
+    }
+
+    .azc-treeView-icon-expanded {
+        .animation(none);
+    }
+
+    @keyframes azc-treeView-loading {
+        from {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @-webkit-keyframes azc-treeView-loading {
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+
+        50% {
+            -webkit-transform: rotate(180deg);
+        }
+
+        to {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+}

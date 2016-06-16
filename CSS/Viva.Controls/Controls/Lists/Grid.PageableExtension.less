@@ -1,0 +1,39 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@loadMoreHeight: 38px;
+
+.azc-grid-pageable {
+    &.azc-grid {
+        .azc-grid-pageable-loadMoreContainer {
+            display: block;
+            height: @loadMoreHeight;
+            text-decoration: none;
+            text-align: center;
+
+            .azc-grid-pageable-loadMoreLabel {
+                .azc-font();
+                font-size: 12px;
+                line-height: @loadMoreHeight;
+            }
+
+            .azc-grid-pageable-loadMoreIcon {
+                display: inline-block;
+                margin-top: 10px;
+
+                &:before {
+                    content: data-uri("../../../../Content/Images/Viva.Controls/azc-validatableControl-pending.gif");
+                }
+            }
+        }
+
+        .azc-grid-pageable-pager {
+            float: right;
+        }
+
+        &.azc-grid-pageable-onePage {
+            .azc-grid-pageable-pager {
+                display: none;
+            }
+        }
+    }
+}

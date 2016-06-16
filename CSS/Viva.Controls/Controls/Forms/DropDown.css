@@ -1,0 +1,124 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-dropdown {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  /*Font should be specified here to allow inline style to override.*/
+  font-size: 12px;
+  height: 23px;
+  line-height: 21px;
+}
+.azc-dropdown .azc-dropdown-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  min-height: 19px;
+  padding-right: 28px;
+  border-width: 1px;
+  border-style: solid;
+}
+.azc-dropdown .azc-dropdown-wrapper .azc-dropdown-current {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  padding-left: 8px;
+  height: 100%;
+  top: -webkit-calc(50% - 14px);
+  top: calc(50% - 14px);
+}
+.azc-dropdown .azc-dropdown-wrapper .azc-dropdown-arrow {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 28px;
+  height: 100%;
+  margin-right: -28px;
+  min-height: 19px;
+  min-width: 28px;
+  background-color: transparent;
+  vertical-align: middle;
+}
+.azc-dropdown .azc-dropdown-wrapper .azc-dropdown-arrow-normal:before {
+  /*css before require content*/
+  content: '';
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  border-style: solid;
+  border-width: 0 2.1px 2.1px 0;
+  /*border thickness is .3 factor*/
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 7px;
+  width: 7px;
+  top: -webkit-calc(50% - 4.949747468305833px);
+  top: calc(50% - 4.949747468305833px);
+  right: 9.05025253px;
+}
+.azc-dropdown .azc-dropdown-wrapper .azc-dropdown-arrow-hover:before {
+  /*css before require content*/
+  content: '';
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  border-style: solid;
+  border-width: 0 2.1px 2.1px 0;
+  /*border thickness is .3 factor*/
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 7px;
+  width: 7px;
+  top: -webkit-calc(50% - 4.949747468305833px);
+  top: calc(50% - 4.949747468305833px);
+  right: 9.05025253px;
+}
+.azc-dropdown .azc-dropdown-wrapper .azc-dropdown-select {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  padding-left: 3px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*DO NOT REMOVE: workaround IE9 and IE10 layering incorrect.*/
+  opacity: 0;
+}

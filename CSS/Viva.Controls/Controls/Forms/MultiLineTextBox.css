@@ -1,0 +1,25 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-multiLineTextBox {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: text-top;
+  overflow: hidden;
+}
+.azc-multiLineTextBox textarea {
+  display: inline-block;
+  margin: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  resize: none;
+  overflow: auto;
+  height: 100%;
+}

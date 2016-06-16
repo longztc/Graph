@@ -1,0 +1,83 @@
+﻿.azc-gauge {
+    font-weight: lighter;
+    position: relative;
+    overflow: hidden;
+    
+    > svg {
+        position: absolute;
+    }
+
+    .azc-gauge-outofthreshold {
+        fill: transparent;
+        stroke: #d3d3d3;
+    }
+
+    .azc-gauge-currentbar {
+        fill: #d3d3d3;
+        stroke: #a9a9a9;
+    }
+
+    .azc-gauge-thresholdstyle-0 {
+        fill: #add8e6;
+        stroke: #0000ff;
+    }
+
+    .azc-gauge-thresholdstyle-1 {
+        fill: #90ee90;
+        stroke: #006400;
+    }
+
+    .azc-gauge-thresholdstyle-2 {
+        fill: #ffff00;
+        stroke: #ffa500;
+    }
+
+    .azc-gauge-thresholdstyle-3 {
+        fill: #ff0000;
+        stroke: #8b0000;
+    }
+
+    .azc-gauge-thresholdlabel {
+        font-size: 14px;
+    }
+
+    .azc-gauge-label {
+        tspan {
+            /*SVG only style*/
+            dominant-baseline: no-change;
+        }
+    }
+
+    .azc-gauge-center-label {
+        text {
+            text-anchor: middle;
+            /*SVG only style*/
+            dominant-baseline: middle;
+        }
+    }
+
+    .azc-gauge-label-0 {
+        font-size: 28px;
+    }
+
+    .azc-gauge-label-1 {
+        font-size: 10px;
+    }
+
+    .azc-gauge-label-2 {
+        font-size: 18px;
+    }
+
+    .azc-gauge-current.azc-gauge-currentline {
+        fill: #00008b;
+        stroke: #00008b;
+        stroke-width: 3px;
+    }
+
+    .azc-gauge-current.azc-gauge-currentlinelabel {
+        fill: #000;
+        stroke: #000;
+        font-size: 14px;
+        stroke-width: 1px;
+    }
+}

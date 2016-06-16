@@ -1,0 +1,160 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+/* HELP/INFO ANCHORS */
+.azc-dockedballoon.azc-dockedballoon-info,
+.azc-dockedballoon.azc-dockedballoon-help {
+  display: inline-block;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+.azc-dockedballoon.azc-dockedballoon-info .azc-dockedballoon-anchor,
+.azc-dockedballoon.azc-dockedballoon-help .azc-dockedballoon-anchor {
+  width: 100%;
+  height: 100%;
+}
+.azc-dockedballoon.azc-dockedballoon-info .azc-dockedballoon-anchor img,
+.azc-dockedballoon.azc-dockedballoon-help .azc-dockedballoon-anchor img {
+  display: inline-block;
+  margin-top: 5px;
+}
+.azc-dockedballoon-anchor-target {
+  height: 9px;
+  width: 9px;
+  margin-left: 3px;
+}
+/* VALIDATION ANCHOR */
+.azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  vertical-align: top;
+}
+.azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 0 5px;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+.azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor svg {
+  display: none;
+}
+.azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor:before {
+  content: "!";
+}
+/* VALIDATION BALLOON OVERRIDES */
+div.azc-dockedballoon-validation.azc-balloon {
+  width: auto;
+  height: auto;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-bottom .azc-balloon-pointer {
+  top: 0;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-left-color: transparent !important;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-bottom .azc-balloon-content {
+  margin-top: 4px;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-bottom.azc-balloon-box-position-preferred,
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-bottom.azc-balloon-position-preferred {
+  left: 0;
+  vertical-align: baseline;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-bottom.azc-balloon-box-position-preferred .azc-balloon-pointer,
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-bottom.azc-balloon-position-preferred .azc-balloon-pointer {
+  left: 0;
+  top: -5px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-left-color: transparent !important;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-bottom.azc-balloon-box-position-alternate,
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-bottom.azc-balloon-position-alternate {
+  left: 0;
+  vertical-align: bottom;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-bottom.azc-balloon-box-position-alternate .azc-balloon-pointer,
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-bottom.azc-balloon-position-alternate .azc-balloon-pointer {
+  right: 0;
+  top: -5px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 0 0 20px 20px;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-left-color: transparent !important;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-top .azc-balloon-pointer {
+  bottom: 0;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 20px 20px 0 0;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-top .azc-balloon-content {
+  margin-bottom: 0px;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-top.azc-balloon-box-position-preferred,
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-top.azc-balloon-position-preferred {
+  left: 0;
+  vertical-align: baseline;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-top.azc-balloon-box-position-preferred .azc-balloon-pointer,
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-top.azc-balloon-position-preferred .azc-balloon-pointer {
+  left: 0;
+  bottom: -9px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 20px 20px 0 0;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-top.azc-balloon-box-position-alternate,
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-top.azc-balloon-position-alternate {
+  left: 0;
+  vertical-align: bottom;
+}
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-top.azc-balloon-box-position-alternate .azc-balloon-pointer,
+div.azc-dockedballoon-validation.azc-balloon.azc-balloon-box-top.azc-balloon-position-alternate .azc-balloon-pointer {
+  right: 0;
+  bottom: -5px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 20px 0 0 20px;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+}
+div.azc-dockedballoon-validation.azc-balloon .azc-balloon-content {
+  padding: 15px;
+}

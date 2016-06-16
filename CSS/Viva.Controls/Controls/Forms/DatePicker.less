@@ -1,0 +1,22 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-editableCombo {
+    &.azc-editableCombo-has-drop-image {
+        &.azc-datePicker {
+            .azc-editableCombo-wrapper {
+                padding-right: 18px;
+
+                .azc-editableCombo-drop-image {
+                    width: 15px;
+                    height: 15px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// Popup is added to document body. That's why this class is not a child of azc-dateTimeCombo.
+.azc-datePicker-drop-popup {
+    width: 240px;
+}

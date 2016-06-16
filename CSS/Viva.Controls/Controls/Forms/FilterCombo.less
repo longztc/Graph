@@ -1,0 +1,82 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-filterCombo {
+    &.azc-editableCombo.azc-editableCombo-has-drop-image {
+        .azc-editableCombo-wrapper {
+            .azc-editableCombo-drop-image {
+                .azc-dropdown-slimbox();
+                .box-sizing(border-box);
+                height: 100%;
+                width: 24px;
+                margin-right: -@azcDropdownArrowWidth;
+                background-color: transparent;
+                vertical-align: middle;
+            }
+
+            .azc-editableCombo-drop-image:before {
+                content: '';
+                .downArrow(@quarterArrowWidth, @quarterArrowWidthAfterRotate);
+            }
+        }
+    }
+    input::-ms-clear {
+        display: none;
+    }
+}
+
+.azc-filterCombo-drop-popup {
+    .azc-grid-container {
+        max-height: 250px;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        border-width: @borderWidth;
+        border-style: solid;
+        .box-sizing(border-box);
+
+        .azc-grid-tableHeader,
+        .azc-grid-full {
+            table-layout: auto;
+        }
+
+        // Add some extra space for scroll bar scenarios
+        td:last-child {
+            padding-right: 20px;
+        }
+    }
+    .azc-grid table tbody tr td {
+        height: @formElementHeight;
+    }
+    .azc-grid.azc-grid-scrollable {
+        div.azc-grid-container {
+            div.azc-grid-tableContainer {
+                div.azc-grid-tableScrollContainer {
+                    overflow-x: hidden;
+                }
+            }
+        }
+    }
+    .azc-grid-tableContent {
+        table.azc-grid-full {
+            width: auto;
+
+            tbody.azc-grid-groupdata {
+                width: inherit;
+
+                tr {
+                    width: inherit;
+
+                    td {
+                        width: inherit;
+
+                        div.azc-grid-cellContent {
+                            width: inherit;
+                            text-overflow: ellipsis;
+                            overflow-x: hidden;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-grid-contextMenuShortcut {
+    .azc-grid-contextMenuShortcut-col {
+        width: 32px;
+    }
+
+    table {
+        tbody {
+            tr {
+                &[aria-disabled="true"] {
+                    td.azc-grid-contextMenuShortcut-cell a {
+                        display: none;
+                    }
+                }
+
+                &:not([aria-disabled="true"]) {
+                    td.azc-grid-contextMenuShortcut-cell {
+                        padding: 0 4px 0 0;
+                        text-align: center;
+
+                        a {
+                            width: 100%;
+                            display: none;
+                            height: 28px;
+                            font-size: 23px;
+                            margin-right: 2px;
+                            text-decoration: none;
+                            line-height: 14px;
+
+                            &:before {
+                                content: "\2026"; /* Ellipsis */
+                            }
+                        }
+                    }
+                }
+
+                &.azc-grid-contextMenuShortcut-shown,
+                &[aria-selected="true"] {
+                    td.azc-grid-contextMenuShortcut-cell {
+                        a {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

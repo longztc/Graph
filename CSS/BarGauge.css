@@ -1,0 +1,78 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-barGauge {
+  font-weight: lighter;
+  min-height: 30px;
+  position: relative;
+}
+.azc-barGauge .azc-barGauge-container,
+.azc-barGauge .azc-gauge-thresholdsbar-g,
+.azc-barGauge .azc-gauge-currentbar-g {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.azc-barGauge .azc-gauge-thresholdbar,
+.azc-barGauge .azc-gauge-currentbar {
+  line-height: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  float: left;
+}
+.azc-barGauge .azc-gauge-outofthreshold,
+.azc-barGauge .azc-gauge-currentbar {
+  /*background-color: #dcdfe2;*/
+  background-color: transparent;
+}
+.azc-barGauge .azc-gauge-thresholdstyle-0 {
+  background-color: #add8e6;
+}
+.azc-barGauge.azc-gauge-gradient .azc-gauge-thresholdstyle-0 {
+  background: linear-gradient(-90deg, #add8e6, rgba(173, 216, 230, 0.2));
+}
+.azc-barGauge.azc-gauge-gradient.azc-theme-frost-right .azc-gauge-thresholdstyle-0 {
+  background: linear-gradient(90deg, #add8e6, rgba(173, 216, 230, 0.2));
+}
+.azc-barGauge .azc-gauge-thresholdstyle-1 {
+  background-color: #90ee90;
+}
+.azc-barGauge.azc-gauge-gradient .azc-gauge-thresholdstyle-1 {
+  background: linear-gradient(-90deg, #90ee90, rgba(144, 238, 144, 0.2));
+}
+.azc-barGauge.azc-gauge-gradient.azc-theme-frost-right .azc-gauge-thresholdstyle-1 {
+  background: linear-gradient(90deg, #90ee90, rgba(144, 238, 144, 0.2));
+}
+.azc-barGauge .azc-gauge-thresholdstyle-2 {
+  background-color: #ffff00;
+}
+.azc-barGauge.azc-gauge-gradient .azc-gauge-thresholdstyle-2 {
+  background: linear-gradient(-90deg, #ffff00, rgba(255, 255, 0, 0.2));
+}
+.azc-barGauge.azc-gauge-gradient.azc-theme-frost-right .azc-gauge-thresholdstyle-2 {
+  background: linear-gradient(90deg, #ffff00, rgba(255, 255, 0, 0.2));
+}
+.azc-barGauge .azc-gauge-thresholdstyle-3 {
+  background-color: #ff0000;
+}
+.azc-barGauge.azc-gauge-gradient .azc-gauge-thresholdstyle-3 {
+  background: linear-gradient(-90deg, #ff0000, rgba(255, 0, 0, 0.2));
+}
+.azc-barGauge.azc-gauge-gradient.azc-theme-frost-right .azc-gauge-thresholdstyle-3 {
+  background: linear-gradient(90deg, #ff0000, rgba(255, 0, 0, 0.2));
+}
+.azc-barGauge .azc-gauge-current.azc-gauge-currentline {
+  background-color: #00008b;
+  border-width: 0;
+}
+.azc-barGauge.azc-theme-frost-right .azc-gauge-thresholdbar,
+.azc-barGauge.azc-theme-frost-right .azc-gauge-currentbar {
+  float: right;
+}

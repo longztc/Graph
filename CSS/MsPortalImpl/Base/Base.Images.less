@@ -1,0 +1,242 @@
+﻿@import "../../Definitions/CommonImpl.less";
+
+// Light
+@SVG_Color_Palette_C01: #ffffff;
+@SVG_Color_Palette_C02: #e5e5e5;
+@SVG_Color_Palette_C03: #a0a1a2;
+@SVG_Color_Palette_C04: #7a7a7a;
+@SVG_Color_Palette_C05: #3e3e3e; // Updates in dark theme.
+@SVG_Color_Palette_C06: #1e1e1e;
+@SVG_Color_Palette_C07: #0f0f0f; // Updates in dark theme.
+@SVG_Color_Palette_C08: #ba141a;
+@SVG_Color_Palette_C09: #dd5900;
+@SVG_Color_Palette_C10: #ff8c00;
+@SVG_Color_Palette_C11: #fcd116;
+@SVG_Color_Palette_C12: #fee087;
+@SVG_Color_Palette_C13: #b8d432;
+@SVG_Color_Palette_C14: #7fba00;
+@SVG_Color_Palette_C15: #59b4d9;
+@SVG_Color_Palette_C16: #3999c6;
+@SVG_Color_Palette_C17: #804998;
+@SVG_Color_Palette_C18: #ec008c;
+@SVG_Color_Palette_C19: #0072c6;
+@SVG_Color_Palette_C20: #68217a;
+@SVG_Color_Palette_C21: #00188f;
+
+// TODO: Temporary colors for NewRelic logo.
+@SVG_Color_Palette_C90: #2C2C2C;
+@SVG_Color_Palette_C91: #338899;
+@SVG_Color_Palette_C92: #99DDDD;
+
+// Dark / Inverted
+@SVG_Color_Palette_C05_Inverted: #777777;
+@SVG_Color_Palette_C07_Inverted: #f2f2f2;
+
+.msportalfx-svg-c01 {
+    fill: @SVG_Color_Palette_C01;
+}
+
+.msportalfx-svg-c02 {
+    fill: @SVG_Color_Palette_C02;
+}
+
+.msportalfx-svg-c03 {
+    fill: @SVG_Color_Palette_C03;
+}
+
+.msportalfx-svg-c04 {
+    fill: @SVG_Color_Palette_C04;
+}
+
+.msportalfx-svg-c05 {
+    fill: @SVG_Color_Palette_C05;
+}
+
+.msportalfx-svg-c06 {
+    fill: @SVG_Color_Palette_C06;
+}
+
+.msportalfx-svg-c07 {
+    fill: @SVG_Color_Palette_C07;
+}
+
+.msportalfx-svg-c08 {
+    fill: @SVG_Color_Palette_C08;
+}
+
+.msportalfx-svg-c09 {
+    fill: @SVG_Color_Palette_C09;
+}
+
+.msportalfx-svg-c10 {
+    fill: @SVG_Color_Palette_C10;
+}
+
+.msportalfx-svg-c11 {
+    fill: @SVG_Color_Palette_C11;
+}
+
+.msportalfx-svg-c12 {
+    fill: @SVG_Color_Palette_C12;
+}
+
+.msportalfx-svg-c13 {
+    fill: @SVG_Color_Palette_C13;
+}
+
+.msportalfx-svg-c14 {
+    fill: @SVG_Color_Palette_C14;
+}
+
+.msportalfx-svg-c15 {
+    fill: @SVG_Color_Palette_C15;
+}
+
+.msportalfx-svg-c16 {
+    fill: @SVG_Color_Palette_C16;
+}
+
+.msportalfx-svg-c17 {
+    fill: @SVG_Color_Palette_C17;
+}
+
+.msportalfx-svg-c18 {
+    fill: @SVG_Color_Palette_C18;
+}
+
+.msportalfx-svg-c19 {
+    fill: @SVG_Color_Palette_C19;
+}
+
+.msportalfx-svg-c20 {
+    fill: @SVG_Color_Palette_C20;
+}
+
+.msportalfx-svg-c21 {
+    fill: @SVG_Color_Palette_C21;
+}
+
+.msportalfx-inverted-theme, .fxs-hubPane, .fxs-theme-dark {
+
+    .msportalfx-svg-c05 {
+        fill: @SVG_Color_Palette_C05_Inverted;
+    }
+
+    .msportalfx-svg-c07 {
+        fill: @SVG_Color_Palette_C07_Inverted;
+    }
+}
+
+// Palettes, for changing color of monochrome icons.
+.msportalfx-svg-palette-white > * {
+    fill: @SVG_Color_Palette_C01;
+}
+
+.msportalfx-svg-palette-blue > * {
+    fill: @SVG_Color_Palette_C16;
+}
+
+.msportalfx-svg-palette-black > * {
+    fill: @SVG_Color_Palette_C06;
+}
+
+.msportalfx-svg-palette-green > * {
+    fill: @SVG_Color_Palette_C14;
+}
+
+.msportalfx-svg-palette-inherit > * {
+    fill: inherit;
+}
+
+.msportalfx-svg-badge {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+// Force all colors to a shade of grey.
+.msportalfx-svg-disabled {
+    .msportalfx-svg-c01 {
+        fill: greyscale(@SVG_Color_Palette_C01);
+    }
+
+    .msportalfx-svg-c02 {
+        fill: greyscale(@SVG_Color_Palette_C02);
+    }
+
+    .msportalfx-svg-c03 {
+        fill: greyscale(@SVG_Color_Palette_C03);
+    }
+
+    .msportalfx-svg-c04 {
+        fill: greyscale(@SVG_Color_Palette_C04);
+    }
+
+    .msportalfx-svg-c05 {
+        fill: greyscale(@SVG_Color_Palette_C05);
+    }
+
+    .msportalfx-svg-c06 {
+        fill: greyscale(@SVG_Color_Palette_C06);
+    }
+
+    .msportalfx-svg-c07 {
+        fill: greyscale(@SVG_Color_Palette_C07);
+    }
+
+    .msportalfx-svg-c08 {
+        fill: greyscale(@SVG_Color_Palette_C08);
+    }
+
+    .msportalfx-svg-c09 {
+        fill: greyscale(@SVG_Color_Palette_C09);
+    }
+
+    .msportalfx-svg-c10 {
+        fill: greyscale(@SVG_Color_Palette_C10);
+    }
+
+    .msportalfx-svg-c11 {
+        fill: greyscale(@SVG_Color_Palette_C11);
+    }
+
+    .msportalfx-svg-c12 {
+        fill: greyscale(@SVG_Color_Palette_C12);
+    }
+
+    .msportalfx-svg-c13 {
+        fill: greyscale(@SVG_Color_Palette_C13);
+    }
+
+    .msportalfx-svg-c14 {
+        fill: greyscale(@SVG_Color_Palette_C14);
+    }
+
+    .msportalfx-svg-c15 {
+        fill: greyscale(@SVG_Color_Palette_C15);
+    }
+
+    .msportalfx-svg-c16 {
+        fill: greyscale(@SVG_Color_Palette_C16);
+    }
+
+    .msportalfx-svg-c17 {
+        fill: greyscale(@SVG_Color_Palette_C17);
+    }
+
+    .msportalfx-svg-c18 {
+        fill: greyscale(@SVG_Color_Palette_C18);
+    }
+
+    .msportalfx-svg-c19 {
+        fill: greyscale(@SVG_Color_Palette_C19);
+    }
+
+    .msportalfx-svg-c20 {
+        fill: greyscale(@SVG_Color_Palette_C20);
+    }
+
+    .msportalfx-svg-c21 {
+        fill: greyscale(@SVG_Color_Palette_C21);
+    }
+}

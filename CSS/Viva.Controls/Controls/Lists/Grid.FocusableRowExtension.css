@@ -1,0 +1,9 @@
+.azc-grid-focusableRow table tbody tr[aria-disabled="true"] td {
+  opacity: .5;
+}
+.azc-grid-focusableRow table tbody tr[aria-disabled="true"] td.azc-grid-infoBalloon {
+  opacity: 1;
+}
+.azc-grid-focusableRow.azc-grid-mousedown {
+  outline: none;
+}

@@ -1,0 +1,42 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-toolbarButton {
+    display: inline-block;
+    .box-sizing(border-box);
+
+    &.azc-toolbarButton-hover {
+        cursor: pointer;
+    }
+
+    a {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+
+        .azc-toolbarButton-icon {
+            height: 70%;
+            margin: 0 auto;
+    
+            &.azc-toolbarButton-label-hidden {
+                height: 100%;
+            }
+
+            img, svg {
+                height: 100%;
+                width: 100%;
+            }
+        }
+                
+        .azc-toolbarButton-label {
+            .azc-font-semibold();
+            height: 30%;
+            overflow: hidden;
+            font-size: @inputFontSize;
+            text-align: center;
+
+            &.azc-toolbarButton-icon-hidden {
+                height: 100%;
+            }
+        }
+    }
+}

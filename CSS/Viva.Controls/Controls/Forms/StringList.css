@@ -1,0 +1,56 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-stringList .azc-stringList-item {
+  display: inline-block;
+  margin-right: 6px;
+  cursor: pointer;
+  background-color: #63717f;
+  color: white;
+}
+.azc-stringList .azc-stringList-item .azc-stringList-itemText {
+  line-height: 23px;
+  padding: 0 10px 0 10px;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.azc-stringList .azc-stringList-item .azc-stringList-itemRemove {
+  float: right;
+  margin: 5px 4px 0 0;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+.azc-stringList .azc-stringList-item .azc-stringList-itemRemove svg {
+  opacity: 0.7;
+}
+.azc-stringList .azc-stringList-item .azc-stringList-itemRemove svg polygon {
+  fill: white;
+}
+.azc-stringList .azc-stringList-item:hover {
+  background-color: #464f59;
+}
+.azc-stringList .azc-stringList-item:hover svg {
+  opacity: 1.0;
+}
+.azc-stringList .azc-stringList-add {
+  display: inline-block;
+  overflow: hidden;
+}
+.azc-stringList .azc-stringList-addIcon {
+  font-size: large;
+  width: 23px;
+  height: 23px;
+  text-align: center;
+  cursor: pointer;
+  line-height: 22px;
+}
+.azc-stringList .azc-stringList-addIcon svg {
+  width: 23px;
+  height: 23px;
+}

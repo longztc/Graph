@@ -1,0 +1,38 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.setSvgFill(@index, @color, @colorCode) {
+    @msportfxColorCodeName: ~".msportalfx-bgcolor-@{colorCode}";
+    @colorCodeName: ~".azc-color-@{colorCode}";
+    @className: ~".azc-color-@{color}";
+    // ToDo: lmchen REMOVE this after build. Temporary to allow not break the extension author.
+    @legacyChartClassName: ~".azc-chart-color-@{color}";
+    @classIndexName: ~".azc-color-index-@{index}";
+    @colorString: "#@{color}";
+
+    @{classIndexName},
+    g @{className},
+    g @{colorCodeName},
+    g @{legacyChartClassName},
+    g @{msportfxColorCodeName}
+    {
+       fill: color(@colorString) !important;
+       stroke: color(@colorString) !important;
+    }
+}
+
+.svgColorFill(@index) {
+    @currentColor: "mscolor@{index}";
+    @currentColorCode: "mscolorcode@{index}";
+    .setSvgFill(@index, @@currentColor, @@currentColorCode);
+}
+
+.loopingSvgFill(@index) when (@index >= 0) {
+    .svgColorFill(@index);
+    .loopingSvgFill(@index - 1);
+}
+
+div {
+    svg {
+        .loopingSvgFill(@max-mscolor-index);
+    }
+}

@@ -1,0 +1,40 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-checkBox {
+  display: inline-block;
+  height: 17px;
+  vertical-align: top;
+  outline: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.azc-checkBox input {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  height: 17px;
+}
+.azc-checkBox span {
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  vertical-align: top;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+.azc-checkBox .azc-checkBox-svg {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+.azc-checkBox .azc-checkBox-invisible {
+  display: none;
+}

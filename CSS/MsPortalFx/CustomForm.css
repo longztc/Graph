@@ -1,0 +1,574 @@
+.msportalfx-form-columns > .msportalfx-form-column-half {
+  width: 49%;
+  float: left;
+}
+.msportalfx-form-columns > .msportalfx-form-column-half:first-child {
+  margin-right: 2%;
+}
+.msportalfx-form-regular .msportalfx-form-section,
+.msportalfx-form-compact .msportalfx-form-section,
+.msportalfx-form-full .msportalfx-form-section {
+  margin-bottom: 55px;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-sectionTitle,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-sectionTitle,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-sectionTitle {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin-top: 55px;
+  margin-bottom: 20px;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-sectionTitle:first-child,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-sectionTitle:first-child,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-sectionTitle:first-child {
+  margin-top: 0;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-spacer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer,
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement {
+  display: block;
+  height: 23px;
+  margin: 20px 0;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-spacer:first-child,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer:first-child,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer:first-child,
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement:first-child,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement:first-child,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement:first-child {
+  margin-top: 0;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-spacer:last-child,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer:last-child,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer:last-child,
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement:last-child,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement:last-child,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement:last-child {
+  margin-bottom: 0;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-spacer::after,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer::after,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer::after {
+  content: '\0000a0';
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement {
+  font-size: 0;
+  line-height: 0;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-elementContainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-elementContainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-elementContainer,
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement .azc-formElementContainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .azc-formElementContainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .azc-formElementContainer {
+  display: inline-block;
+  vertical-align: middle;
+  width: 66%;
+  margin-left: 1.5%;
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  line-height: normal;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement.azc-selectorField,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement.azc-selectorField,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement.azc-selectorField {
+  font-size: medium;
+  line-height: normal;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement.azc-multiLineTextField,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement.azc-multiLineTextField,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement.azc-multiLineTextField {
+  height: auto;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement.msportalfx-form-fileUploadField,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement.msportalfx-form-fileUploadField,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement.msportalfx-form-fileUploadField {
+  height: 80px;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-labelcontainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-labelcontainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-labelcontainer,
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement .azc-form-labelcontainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .azc-form-labelcontainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .azc-form-labelcontainer {
+  width: 32%;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-labelcontainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-labelcontainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-labelcontainer,
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement .azc-form-labelcontainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .azc-form-labelcontainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .azc-form-labelcontainer,
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-formelement .azc-checkBoxField-inlineLabelContainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .azc-checkBoxField-inlineLabelContainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .azc-checkBoxField-inlineLabelContainer {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+.msportalfx-form-regular .msportalfx-form-section .msportalfx-form-extralabel,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-extralabel,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-extralabel {
+  display: block;
+  width: 66%;
+  margin-top: -20px;
+  margin-left: 33.5%;
+  margin-right: 0;
+}
+.msportalfx-form-compact .msportalfx-form-section,
+.msportalfx-form-full .msportalfx-form-section {
+  font-size: 0;
+  line-height: 0;
+}
+.msportalfx-form-compact .msportalfx-form-section .fxcontrol-button,
+.msportalfx-form-full .msportalfx-form-section .fxcontrol-button {
+  line-height: normal;
+}
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement {
+  height: 53px;
+  width: 48.75%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 1%;
+  font-size: medium;
+  line-height: normal;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer:first-child,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer:first-child,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement:first-child,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement:first-child,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer:last-child,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer:last-child,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement:last-child,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement:last-child {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer.azc-optionsGroupField,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer.azc-optionsGroupField,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement.azc-optionsGroupField,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement.azc-optionsGroupField,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer.azc-multiLineTextField,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer.azc-multiLineTextField,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement.azc-multiLineTextField,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement.azc-multiLineTextField {
+  height: auto;
+}
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer.msportalfx-form-fileUploadField,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer.msportalfx-form-fileUploadField,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement.msportalfx-form-fileUploadField,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement.msportalfx-form-fileUploadField {
+  height: 100px;
+}
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer .msportalfx-form-labelcontainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer .msportalfx-form-labelcontainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-labelcontainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-labelcontainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer .azc-form-labelcontainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer .azc-form-labelcontainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .azc-form-labelcontainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .azc-form-labelcontainer {
+  display: block;
+  margin-bottom: 10px;
+  width: auto;
+  height: 20px;
+}
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer .msportalfx-form-elementContainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer .msportalfx-form-elementContainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-elementContainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-elementContainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-spacer .azc-formElementContainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer .azc-formElementContainer,
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-formelement .azc-formElementContainer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement .azc-formElementContainer {
+  display: block;
+  width: 100%;
+  margin-left: 0;
+}
+.msportalfx-form-compact .msportalfx-form-section .msportalfx-form-extralabel {
+  display: inline-block;
+  width: 48.75%;
+  margin-top: 53px;
+  margin-bottom: 0;
+  margin-left: -49.75%;
+  margin-right: 1%;
+}
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-spacer,
+.msportalfx-form-full .msportalfx-form-section .msportalfx-form-formelement {
+  width: 100%;
+}
+.msportalfx-form-custom .msportalfx-form-elementContainer,
+.msportalfx-form-custom .azc-formElementContainer {
+  width: 100%;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-section,
+.msportalfx-form-create .msportalfx-form-section {
+  margin-bottom: 55px;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-section .msportalfx-form-sectionTitle,
+.msportalfx-form-create .msportalfx-form-section .msportalfx-form-sectionTitle {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin-top: 55px;
+  margin-bottom: 20px;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-section .msportalfx-form-sectionTitle:first-child,
+.msportalfx-form-create .msportalfx-form-section .msportalfx-form-sectionTitle:first-child {
+  margin-top: 0;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-spacer,
+.msportalfx-form-create .msportalfx-form-spacer,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section),
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section),
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section),
+.msportalfx-form-create > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section) {
+  display: block;
+  height: 50px;
+  padding: 10px 25px 20px;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-spacer.azc-multiLineTextField,
+.msportalfx-form-create .msportalfx-form-spacer.azc-multiLineTextField,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section).azc-multiLineTextField,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section).azc-multiLineTextField,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section).azc-multiLineTextField,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section).azc-multiLineTextField {
+  height: auto;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-spacer::after,
+.msportalfx-form-create .msportalfx-form-spacer::after,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section)::after,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section)::after,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section)::after,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section)::after {
+  content: '\0000a0';
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-labelcontainer,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-labelcontainer,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-labelcontainer,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-labelcontainer,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-form-labelcontainer,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-form-labelcontainer,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-form-labelcontainer,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-form-labelcontainer {
+  height: 20px;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-elementContainer,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-elementContainer,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-elementContainer,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-elementContainer,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-formElementContainer,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-formElementContainer,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-formElementContainer,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-formElementContainer {
+  display: block;
+  width: 100%;
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  line-height: normal;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox {
+  height: 23px;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox input,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox input,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox input,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox textarea,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox textarea,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox textarea,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox textarea {
+  font-size: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).msportalfx-form-fileUploadField,
+.msportalfx-form-create :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).msportalfx-form-fileUploadField,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).msportalfx-form-fileUploadField,
+.msportalfx-form-create > .msportalfx-form-formelement:not(.msportalfx-form-section).msportalfx-form-fileUploadField {
+  height: 100px;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-extralabel,
+.msportalfx-form-create .msportalfx-form-extralabel {
+  display: block;
+  position: relative;
+  top: -20px;
+  right: -25px;
+  width: calc(100% - 2*25px);
+  margin-bottom: -18px;
+}
+.fxs-blade.fxs-bladestyle-create .msportalfx-form.msportalfx-form-vertical-compact .msportalfx-form-spacer,
+.msportalfx-form-create.msportalfx-form-vertical-compact .msportalfx-form-spacer,
+.fxs-blade.fxs-bladestyle-create .msportalfx-form.msportalfx-form-vertical-compact :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section),
+.msportalfx-form-create.msportalfx-form-vertical-compact :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section),
+.fxs-blade.fxs-bladestyle-create .msportalfx-form.msportalfx-form-vertical-compact > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section),
+.msportalfx-form-create.msportalfx-form-vertical-compact > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section) {
+  height: auto;
+  padding: 5px 25px 0;
+}
+/**
+ * Top level styling for the formElement controls.
+ *
+ * These applies to all forms, custom or pre-defined.
+ * It consist of two parts of styles.
+ *
+ * Part 1: Label container
+ * The label container is a piece of text combined with an optionally displayed help balloon.
+ *
+ * Part 2: Form controls container content
+ * This is for the controls content of the field, not the field container itself.
+ * Therefore, each rule start with the field but reach to the controls within it.
+ * Each controls is styled with their specific requirements to fill the width of the container to 100%.
+ * This requires styling composite controls for each of their inner components.
+ */
+.msportalfx-form .msportalfx-form-labelcontainer,
+.msportalfx-form .azc-form-labelcontainer,
+.msportalfx-form .azc-checkBoxField-inlineLabelContainer {
+  box-sizing: border-box;
+}
+.msportalfx-form .msportalfx-form-labelcontainer label,
+.msportalfx-form .azc-form-labelcontainer label,
+.msportalfx-form .azc-checkBoxField-inlineLabelContainer label,
+.msportalfx-form .msportalfx-form-labelcontainer .azc-dockedballoon-info,
+.msportalfx-form .azc-form-labelcontainer .azc-dockedballoon-info,
+.msportalfx-form .azc-checkBoxField-inlineLabelContainer .azc-dockedballoon-info {
+  display: inline-block;
+}
+.msportalfx-form .msportalfx-form-labelcontainer label .azc-dockedballoon-anchor-image,
+.msportalfx-form .azc-form-labelcontainer label .azc-dockedballoon-anchor-image,
+.msportalfx-form .azc-checkBoxField-inlineLabelContainer label .azc-dockedballoon-anchor-image,
+.msportalfx-form .msportalfx-form-labelcontainer .azc-dockedballoon-info .azc-dockedballoon-anchor-image,
+.msportalfx-form .azc-form-labelcontainer .azc-dockedballoon-info .azc-dockedballoon-anchor-image,
+.msportalfx-form .azc-checkBoxField-inlineLabelContainer .azc-dockedballoon-info .azc-dockedballoon-anchor-image {
+  margin-bottom: 2px;
+}
+.msportalfx-form .msportalfx-form-labelcontainer label,
+.msportalfx-form .azc-form-labelcontainer label,
+.msportalfx-form .azc-checkBoxField-inlineLabelContainer label {
+  max-width: calc(100% - 25px);
+}
+.msportalfx-form .azc-checkBoxField-inlineLabelContainer {
+  width: calc(100% - 25px - 5px);
+}
+.msportalfx-form .azc-checkBoxField-inlineLabelContainer label {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+}
+.msportalfx-form .msportalfx-form-labelcontainer label,
+.msportalfx-form .azc-form-labelcontainer label {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+}
+.msportalfx-form .msportalfx-form-extralabel {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+.msportalfx-form .azc-checkBoxField .azc-checkBox,
+.msportalfx-form .azc-textField .azc-textBox,
+.msportalfx-form .azc-passwordField .azc-password,
+.msportalfx-form .azc-dropdownField .azc-dropdown,
+.msportalfx-form .azc-multiselectDropDownField .azc-multiSelectDropDown,
+.msportalfx-form .azc-optionsGroupField .azc-optionPicker,
+.msportalfx-form .azc-numericTextBoxField .azc-numericTextBox,
+.msportalfx-form .azc-dateTimeComboField .azc-editableCombo,
+.msportalfx-form .azc-listComboField .azc-editableCombo,
+.msportalfx-form .azc-fileUpload,
+.msportalfx-form .azc-multiLineTextField .azc-multiLineTextBox {
+  display: block;
+  width: 100%;
+}
+.msportalfx-form .azc-multiLineTextField .azc-multiLineTextBox {
+  height: 100%;
+  width: 100%;
+}
+.msportalfx-form .azc-sliderField .azc-slider,
+.msportalfx-form .azc-sliderField .azc-textBox {
+  display: inline-block;
+  vertical-align: middle;
+}
+.msportalfx-form .azc-sliderField .azc-slider {
+  width: calc(100% - 40px);
+}
+.msportalfx-form .azc-sliderField .azc-textBox {
+  width: 40px !important;
+  text-align: center;
+}
+.msportalfx-form .azc-rangeSliderField .azc-rangeSlider {
+  display: inline-block;
+  width: calc(100% - 40px * 2);
+}
+.msportalfx-form .azc-rangeSliderField .azc-textBox {
+  width: 40px !important;
+  text-align: center;
+}
+.msportalfx-form .azc-rangeSliderField .azc-textBox.azc-rangeSlider-textBoxLeft {
+  float: left;
+}
+.msportalfx-form .azc-rangeSliderField .azc-textBox.azc-rangeSlider-textBoxRight {
+  float: right;
+}
+.msportalfx-form .azc-selectorField .fxcontrol-selector {
+  box-sizing: border-box;
+}
+.msportalfx-form .msportalfx-form-fileUploadField {
+  height: 80px;
+}
+.msportalfx-form .msportalfx-form-fileUploadField .azc-fileUpload {
+  padding-right: 0;
+}
+.msportalfx-form .msportalfx-form-fileUploadField .azc-fileUpload .azc-fileUpload-wrapper .azc-fileUpload-selectedFile {
+  width: calc(100% - 35px);
+}
+.msportalfx-form .msportalfx-form-fileUploadField .fxcontrol-fileUpload-uploadTasks .fxcontrol-fileUpload-uploadTask {
+  width: 100%;
+}

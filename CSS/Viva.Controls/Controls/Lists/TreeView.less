@@ -1,0 +1,81 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@expandIconSize: 16px;
+@iconSize: 16px;
+@arrowSize: 5px;
+@nodeMargin: 3px;
+
+.azc-treeView {
+    .azc-treeView-node-group {
+        margin-left: 0;
+        list-style-type: none;
+
+        div.azc-treeView-node {
+            position: relative;
+            cursor: default;
+            border-width: 1px;
+            border-style: solid;
+            border-color: transparent;
+            .unselectable();
+
+            .azc-treeView-icon {
+                position: absolute;
+                width: @expandIconSize;
+                height: @expandIconSize;
+                top: @nodeMargin;
+
+                .azc-treeView-icon-collapsed {
+                    margin-top: (@expandIconSize - @arrowSize * 2) / 2;
+                    margin-left: (@expandIconSize - @arrowSize) / 2;
+                    .left-triangle(@arrowSize, @arrowSize);
+                }
+
+                .azc-treeView-icon-expanded {
+                    margin-top: (@expandIconSize - @arrowSize) / 2;
+                    margin-left: (@expandIconSize - @arrowSize * 2) / 2;
+                    .top-triangle(@arrowSize, @arrowSize);
+                }
+            }
+
+            .azc-treeView-node-icon {
+                position: absolute;
+                width: @iconSize;
+                height: @iconSize;
+                top: @nodeMargin;
+                margin-left: @expandIconSize + 1;
+            }
+
+            .azc-treeView-node-content {
+                position: relative;
+                margin: @nodeMargin @nodeMargin @nodeMargin @expandIconSize + @nodeMargin;
+                .ellipsis();
+            }
+
+            &.azc-treeView-node-has-icon {
+                .azc-treeView-node-content {
+                    margin-left: @expandIconSize + @iconSize + @nodeMargin;
+                }
+            }
+        }
+    }
+
+    &.azc-treeView-always-expanded {
+        .azc-treeView-node-group {
+            .azc-treeView-node {
+                .azc-treeView-node-icon {
+                    margin-left: 1px;
+                }
+
+                .azc-treeView-node-content {
+                    margin: @nodeMargin;
+                }
+
+                &.azc-treeView-node-has-icon {
+                    .azc-treeView-node-content {
+                        margin-left: @iconSize + @nodeMargin;
+                    }
+                }
+            }
+        }
+    }
+}

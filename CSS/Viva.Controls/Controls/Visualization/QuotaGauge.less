@@ -1,0 +1,279 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@quotaGauge_color_outofrange: #d9d9d9;
+@quotaGauge_color_normal_dark: #00bbf1;
+@quotaGauge_color_normal_light: #8fd9ef;
+@quotaGauge_color_warning_dark: #ff8c00;
+@quotaGauge_color_warning_light: #ffba66;
+@quotaGauge_color_error_dark: #ec008c;
+@quotaGauge_color_error_light: #f259b4;
+@quotaGauge_color_error: #ec008c;
+@quotaGauge_color_error_font: #ffffff;
+@quotaGauge_color_strip_line: #ffffff;
+@quotaGauge_color_split_line: #ffffff;
+@quotaGauge_image_large_error: data-uri("../../../../Content/Images/Viva.Controls/azc.quotagauge.error-large.png");
+@quotaGauge_image_small_error: data-uri("../../../../Content/Images/Viva.Controls/azc.quotagauge.error-small.png");
+@quotaGauge_image_large_warning: data-uri("../../../../Content/Images/Viva.Controls/azc.quotagauge.warning-large.png");
+@quotaGauge_image_small_warning: data-uri("../../../../Content/Images/Viva.Controls/azc.quotagauge.warning-small.png");
+@gauge_center_large: 54px;
+@gauge_center_small: 30px;
+
+/*Firefox doesn't work on @fill when it is a svg pattern.  Firefox will pick up the @fillBackup color.*/
+.quotagauge-svg-bar-color(@fill, @fillBackup, @stroke) {
+    fill: @fill @fillBackup;
+    stroke: @stroke;
+}
+
+.quotagauge-svg-bar-color(@fill, @stroke) {
+    fill: @fill;
+    stroke: @stroke;
+}
+
+.quotagauge-svg-bar-color(@color) {
+    .quotagauge-svg-bar-color(@color, @color);
+}
+
+.quotagauge-error-warning-circle(@bkcolor, @size) {
+    width: @size;
+    height: @size;
+    font-weight: 900;
+    border-radius: calc(@size /2 );
+    color: @quotaGauge_color_error_font;
+        background-color: @bkcolor;
+
+    &:before {
+        content: "!";
+    }
+}
+
+.quotagauge-error-warning-image(@img, @size) {
+    width: @size;
+    height: @size;
+
+    &:before {
+        text-align: center;
+        content: @img;
+        width: @size;
+        height: @size;
+    }
+}
+
+.quotagauge-error-warning-size(@image_warning, @image_error, @size) {
+    &:not(.azc-quotaGauge-circle-indicator) {
+        &.azc-quotaGauge-instance-over-quota, &.azc-quotaGauge-total-over-quota {
+            .azc-usageGauge-centerSetting .azc-singleSetting-value {
+                .quotagauge-error-warning-image(@image_warning, @size);
+            }
+        }
+
+        &.azc-quotaGauge-total-over-max {
+            .azc-usageGauge-centerSetting .azc-singleSetting-value {
+                .quotagauge-error-warning-image(@image_error, @size);
+            }
+        }
+    }
+
+    &.azc-quotaGauge-circle-indicator {
+        &.azc-quotaGauge-instance-over-quota, &.azc-quotaGauge-total-over-quota {
+            .azc-usageGauge-centerSetting .azc-singleSetting-value {
+                .quotagauge-error-warning-circle(@quotaGauge_color_warning_dark, @size);
+            }
+        }
+
+        &.azc-quotaGauge-total-over-max {
+            .azc-usageGauge-centerSetting .azc-singleSetting-value {
+                .quotagauge-error-warning-circle(@quotaGauge_color_error, @size);
+            }
+        }
+    }
+}
+
+.quotagauge-error-warning() {
+    .quotagauge-error-warning-size(@quotaGauge_image_small_warning, @quotaGauge_image_small_error, @gauge_center_small);
+
+    &.azc-gauge-center-large, &.azc-gauge-center-medium {
+        .quotagauge-error-warning-size(@quotaGauge_image_large_warning, @quotaGauge_image_large_error, @gauge_center_large);
+    }
+
+    & .azc-singleSetting {
+        .azc-singleSetting-data {
+            line-height: 1;
+
+            .azc-singleSetting-value {
+                .azc-number-small();
+            }
+
+            .azc-singleSetting-unit {
+                .azc-number-small-adorn();
+
+                img {
+                    max-width: 16px;
+                    max-height: 16px;
+                }
+            }
+        }
+
+        .azc-singleSetting-caption {
+            .azc-number-small-adorn();
+            .azc-font();
+            text-transform: uppercase;
+            margin: 1px 0 0 0;
+        }
+    }
+
+    &.azc-gauge-center-xsmall {
+        .azc-singleSetting {
+            .azc-singleSetting-caption {
+                display: none;
+            }
+        }
+    }
+
+    &.azc-gauge-center-medium, &.azc-gauge-center-large {
+        .azc-singleSetting {
+            .azc-singleSetting-data {
+                .azc-singleSetting-unit {
+                    .azc-number-large-adorn();
+
+                    img {
+                        max-width: 28px;
+                        max-height: 28px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.azc-gauge-center-medium {
+        .azc-singleSetting {
+            .azc-singleSetting-data {
+                .azc-singleSetting-value {
+                    .azc-number-medium();
+                }
+            }
+        }
+    }
+
+    &.azc-gauge-center-large {
+        .azc-singleSetting {
+            .azc-singleSetting-data {
+                .azc-singleSetting-value {
+                    .azc-number-large();
+                }
+            }
+        }
+    }
+}
+
+.svg-stripped-def(@color) {
+    rect {
+        .quotagauge-svg-bar-color(@color);
+    }
+
+    line {
+        .quotagauge-svg-bar-color(@quotaGauge_color_strip_line);
+        stroke-width: 1px;
+        opacity: .3;
+    }
+}
+
+.svg-stripped-def-initialize() {
+    >svg.azc-quotaGauge-SvgDefs {
+        position: absolute;
+        top: -1000px;
+        left: -1000px;
+        width: 0;
+        height: 0;
+
+        #azc-quotaGauge-outofthreshold {
+            .svg-stripped-def(@quotaGauge_color_outofrange)
+        }
+
+        #azc-quotaGauge-total {
+            .svg-stripped-def(@quotaGauge_color_normal_light)
+        }
+
+        #azc-quotaGauge-total-over-quota {
+            .svg-stripped-def(@quotaGauge_color_warning_light)
+        }
+
+        #azc-quotaGauge-total-over-max {
+            .svg-stripped-def(@quotaGauge_color_error_light)
+        }
+    }
+}
+
+body {
+    .svg-stripped-def-initialize();
+}
+
+.azc-quotaGauge {
+
+    .azc-singleSetting {
+        .azc-font-bold();
+    }
+
+    .azc-gauge {
+        .azc-gauge-outofthreshold, .azc-quotaGauge-none {
+            .quotagauge-svg-bar-color(url(#azc-quotaGauge-outofthreshold), @quotaGauge_color_outofrange, @quotaGauge_color_outofrange);
+        }
+
+        .azc-gauge-current.azc-gauge-currentline {
+            stroke-width: 1px;
+        }
+
+        .azc-quotaGauge-start, .azc-quotaGauge-split {
+            .quotagauge-svg-bar-color(@quotaGauge_color_split_line);
+        }
+
+        .azc-quotaGauge-instance, .azc-gauge-current.azc-gauge-currentline {
+            .quotagauge-svg-bar-color(@quotaGauge_color_normal_dark);
+        }
+
+        .azc-quotaGauge-total {
+            .quotagauge-svg-bar-color(url(#azc-quotaGauge-total), @quotaGauge_color_normal_light, @quotaGauge_color_normal_light);
+        }
+    }
+
+    /*default theme: change instance color only if instance-over-quota*/
+    &.azc-quotaGauge-instance-over-quota {
+        .azc-gauge {
+            .azc-quotaGauge-instance, .azc-gauge-current.azc-gauge-currentline {
+                .quotagauge-svg-bar-color(@quotaGauge_color_warning_dark);
+            }
+        }
+    }
+
+    /*alternative theme: change instance color when either instance-over-quota or total-over-quota*/
+    &.azc-theme-tropical {
+        &.azc-quotaGauge-total-over-quota, &.azc-quotaGauge-instance-over-quota {
+            .azc-gauge {
+                .azc-quotaGauge-instance, .azc-gauge-current.azc-gauge-currentline {
+                    .quotagauge-svg-bar-color(@quotaGauge_color_warning_dark);
+                }
+            }
+        }
+    }
+    
+    &.azc-quotaGauge-total-over-quota {
+        .azc-gauge {
+            .azc-quotaGauge-total {
+                .quotagauge-svg-bar-color(url(#azc-quotaGauge-total-over-quota), @quotaGauge_color_warning_light, @quotaGauge_color_warning_light);
+            }
+        }
+    }
+
+    &.azc-quotaGauge-total-over-max {
+        .azc-gauge {
+            .azc-quotaGauge-instance, .azc-gauge-current.azc-gauge-currentline {
+                .quotagauge-svg-bar-color(@quotaGauge_color_error_dark);
+            }
+
+            .azc-quotaGauge-total {
+                .quotagauge-svg-bar-color(url(#azc-quotaGauge-total-over-max), @quotaGauge_color_error_light, @quotaGauge_color_error_light);
+            }
+        }
+    }
+
+    .quotagauge-error-warning();
+}

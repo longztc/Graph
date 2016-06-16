@@ -1,0 +1,60 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-multiSelectDropDown-popup {
+  border-width: 1px;
+  border-style: solid;
+  cursor: default;
+  z-index: 150;
+  position: fixed;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.azc-multiSelectDropDown-popup .azc-grid-container {
+  max-height: 200px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.azc-multiSelectDropDown-popup .azc-grid-container table {
+  table-layout: auto;
+  /*DO NOT REMOVE: Vertical scroll bar cause the horizonal scroll bar to shown.*/
+  margin-right: 20px;
+  outline: none;
+}
+.azc-multiSelectDropDown-popup .azc-grid-container table td span,
+.azc-multiSelectDropDown-popup .azc-grid-container table td div {
+  vertical-align: middle;
+}
+.azc-multiSelectDropDown-popup .azc-grid-container table td:first-of-type {
+  padding-left: 8px;
+}
+.azc-multiSelectDropDown-popup .azc-grid-container table td:first-of-type span.azc-multiSelectDropDown-popup-checkbox {
+  height: 17px;
+  width: 17px;
+  vertical-align: middle;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  position: relative;
+}
+.azc-multiSelectDropDown-popup .azc-grid-container table td:first-of-type span.azc-multiSelectDropDown-popup-checkbox .azc-check-svg {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+.azc-multiSelectDropDown-popup .azc-grid-container table td:first-of-type span.azc-multiSelectDropDown-popup-value {
+  padding: 2px 4px;
+}
+.azc-multiSelectDropDown-popup .azc-grid-container table tbody.azc-grid-groupdata div.azc-multiSelectDropDown-popup-value {
+  display: inline-block;
+  padding-left: 7px;
+}
+.azc-multiSelectDropDown-popup .azc-grid-container table tbody.azc-grid-groupdata tr[aria-selected="false"] span .azc-check-svg {
+  display: none;
+}

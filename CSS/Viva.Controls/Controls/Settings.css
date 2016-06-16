@@ -1,0 +1,56 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-settings ul li {
+  white-space: nowrap;
+}
+.azc-settings ul li span {
+  display: inline-block;
+  text-transform: uppercase;
+}
+.azc-settings .azc-settings-disabled {
+  opacity: .35;
+}
+.azc-settings .azc-settings-value {
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.azc-settings .azc-settings-value-small {
+  width: 32px;
+  font-size: 11px;
+}
+.azc-settings .azc-settings-value-small img {
+  width: 11px;
+  height: 11px;
+}
+.azc-settings .azc-settings-value-large {
+  width: 84px;
+  font-size: 48px;
+}
+.azc-settings .azc-settings-value-large img {
+  width: 48px;
+  height: 48px;
+}
+.azc-settings .azc-settings-label {
+  width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.azc-settings .azc-settings-label-small {
+  font-size: 11px;
+}
+.azc-settings .azc-settings-label-small img {
+  width: 11px;
+  height: 11px;
+}
+.azc-settings .azc-settings-label-large {
+  font-size: 14px;
+}
+.azc-settings .azc-settings-label-large img {
+  width: 14px;
+  height: 14px;
+}

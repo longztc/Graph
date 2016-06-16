@@ -1,0 +1,28 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-console {
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+}
+.azc-console:focus {
+  outline: none;
+}
+.azc-console .azc-console-log,
+.azc-console .azc-console-cli {
+  background-color: #000000;
+  color: #ffffff;
+}
+.azc-console .azc-console-cli {
+  min-height: 32px;
+}
+.azc-console .azc-console-cli-cursor {
+  border-right: 3px solid #fff;
+}
+.azc-console .azc-console-scroll {
+  overflow: auto;
+}

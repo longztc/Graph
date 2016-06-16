@@ -1,0 +1,37 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-optionPicker {
+  display: inline-block;
+  height: 23px;
+  /* Clearfix */
+}
+.azc-optionPicker li {
+  min-width: 46px;
+  line-height: 13px;
+  font-size: 12px;
+  padding: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: default;
+  float: left;
+  border: 1px solid;
+  margin-right: -1px;
+  outline: none;
+}
+.azc-optionPicker li input {
+  display: none;
+}
+.azc-optionPicker li[aria-checked="true"] {
+  position: relative;
+}
+.azc-optionPicker:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

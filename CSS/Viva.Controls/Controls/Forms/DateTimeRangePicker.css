@@ -1,0 +1,21 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-dateTimeRangePicker {
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+}
+.azc-dateTimeRangePicker.inline .azc-dateTimePicker-startDateTime {
+  width: 49%;
+  padding-right: 2%;
+}
+.azc-dateTimeRangePicker.inline .azc-dateTimePicker-endDateTime {
+  width: 49%;
+}
+.azc-dateTimeRangePicker.inline .azc-timezoneDropDown {
+  margin-left: -104%;
+}

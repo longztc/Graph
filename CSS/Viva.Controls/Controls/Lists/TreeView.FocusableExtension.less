@@ -1,0 +1,9 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-treeView-focusable {
+    // clicking a node with the mouse will focus the widget first
+    // this annoyance is prevented by removing the outline temporarily while the mouse key is down
+    &.azc-treeView-mousedown {
+        outline: none;
+    }
+}

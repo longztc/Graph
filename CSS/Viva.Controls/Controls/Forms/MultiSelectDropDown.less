@@ -1,0 +1,76 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@checkboxSize: 17px;
+@halfCheckboxSize: @checkboxSize / 2;
+
+.azc-multiSelectDropDown-popup {
+    border-width: @borderWidth;
+    border-style: solid;
+    cursor: default;
+    z-index: @zindexBodyPopup;
+    position: fixed;
+    overflow: hidden;
+
+    .unselectable();
+
+    .azc-grid-container {
+        max-height: 200px;
+        overflow: auto;
+        overflow-x: hidden;
+
+        table {
+            table-layout: auto;
+            /*DO NOT REMOVE: Vertical scroll bar cause the horizonal scroll bar to shown.*/
+            margin-right: 20px;
+            outline: none;
+
+            td {
+                span, div {
+                    vertical-align: middle;
+                }
+
+                &:first-of-type {
+                    padding-left: 8px;
+
+                    span {
+                        &.azc-multiSelectDropDown-popup-checkbox {
+                            position: relative;
+                            height: @checkboxSize;
+                            width: @checkboxSize;
+                            vertical-align: middle;
+                            display: inline-block;
+                            border-width: @borderWidth;
+                            border-style: solid;
+                            position: relative;
+
+                                .azc-check-svg {
+                                    position: absolute;
+                                    top: 3px;
+                                    left: 3px;
+                                }
+                        }
+
+                        &.azc-multiSelectDropDown-popup-value {
+                            padding: 2px 4px;
+                        }
+                    }
+                }
+            }
+
+            tbody.azc-grid-groupdata {
+                div.azc-multiSelectDropDown-popup-value {
+                    display: inline-block;
+                    padding-left: 7px;
+                }
+
+                tr[aria-selected="false"] {
+                    span {
+                        .azc-check-svg {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

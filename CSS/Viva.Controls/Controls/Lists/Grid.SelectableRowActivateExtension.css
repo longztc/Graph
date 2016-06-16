@@ -1,0 +1,18 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-grid-activateableRow table tbody tr[role=row] td[data-activatable="true"] {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+}
+.azc-grid-activateableRow table tbody tr[role=row]:not([aria-disabled="true"]):hover td[data-activatable="true"],
+.azc-grid-activateableRow table tbody tr[role=row].azc-grid-virtualFocus td[data-activatable="true"] {
+  cursor: pointer;
+}
+.azc-grid-activateableRow table.azc-grid-activateonselected tbody tr[role=row]:not([aria-disabled="true"]):hover,
+.azc-grid-activateableRow table.azc-grid-activateonselected tbody tr[role=row].azc-grid-virtualFocus {
+  cursor: pointer;
+}

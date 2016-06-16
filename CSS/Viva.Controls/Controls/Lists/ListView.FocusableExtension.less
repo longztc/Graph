@@ -1,0 +1,17 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-listView-focusable {
+    .azc-listView-item {
+        &:not([aria-disabled="true"]):not([aria-selected="true"]) {
+            &:focus {
+                outline-style: solid;
+                outline-width: 1px;
+            }
+
+            &:not(:focus):hover {
+                outline-style: solid;
+                outline-width: 1px;
+            }
+        }
+    }
+}

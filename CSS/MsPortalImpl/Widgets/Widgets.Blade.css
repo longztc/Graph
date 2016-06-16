@@ -1,0 +1,813 @@
+@-webkit-keyframes fxs-blade-progress-animatedEllipses {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: .6;
+  }
+  60% {
+    opacity: .3;
+  }
+}
+@keyframes fxs-blade-progress-animatedEllipses {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: .6;
+  }
+  60% {
+    opacity: .3;
+  }
+}
+.fxs-blade {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  transition: width 0.1s ease-out, opacity 0.2s ease;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.fxs-blade .fxs-blade-header,
+.fxs-blade .fxs-blade-actionBar {
+  -ms-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.fxs-blade .fxs-blade-content {
+  -ms-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.fxs-blade.fxs-blade-initializing {
+  transition: none !important;
+}
+.fxs-blade .fxs-blade-maximized-content {
+  display: none;
+}
+.fxs-blade .fxs-blade-header {
+  min-height: 130px;
+}
+.fxs-blade .fxs-blade-header.fxs-blade-header-hideCommandBarLabels {
+  min-height: 105px;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title-text-container {
+  height: 44px;
+}
+.fxs-blade .fxs-blade-header > img {
+  background-color: transparent;
+  margin-top: 4px;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-icon {
+  display: none;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title {
+  margin: 0 25px;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title .fxs-blade-title-image {
+  display: none;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title h2,
+.fxs-blade .fxs-blade-header .fxs-blade-title h3 {
+  margin: 0;
+  padding-left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title h2 {
+  font-family: wf_segoe-ui_semilight, "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: normal;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title h3 {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  text-transform: uppercase;
+  line-height: normal;
+  padding-bottom: 6px;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title.fxs-blade-header-icon h2,
+.fxs-blade .fxs-blade-header .fxs-blade-title.fxs-blade-header-icon h3 {
+  padding-left: 42px;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title.fxs-blade-header-icon .fxs-blade-header-icon-holder {
+  position: absolute;
+  height: 43px;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title.fxs-blade-header-icon .fxs-blade-header-icon-holder svg {
+  height: 30px;
+  width: 30px;
+  margin-top: 7px;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title .fxs-blade-title-description {
+  margin: 7px 0 0;
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 14px;
+  height: 44px;
+  overflow: hidden;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title .fxs-blade-title-description .fxs-blade-title-help-link {
+  white-space: nowrap;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title .fxs-blade-title-description .fxs-blade-title-help-link .fxs-blade-title-help-icon > svg {
+  width: 10px;
+  height: 10px;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-title h2::after,
+.fxs-blade .fxs-blade-header .fxs-blade-title h3::after {
+  content: '\0000a0';
+}
+.fxs-blade .fxs-blade-header.fxs-blade-disabled .fxs-blade-commandBarContainer {
+  display: none;
+}
+.fxs-blade .fxs-blade-header .fxs-blade-commandBarContainer {
+  margin: 0 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fxs-blade .fxs-blade-dialoghost {
+  display: block;
+  position: absolute;
+  z-index: 200;
+  width: 100%;
+  left: 0;
+}
+.fxs-blade .fxs-blade-content {
+  position: relative;
+  padding: 25px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.fxs-blade .fxs-blade-content::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.fxs-blade .fxs-blade-stacklayout {
+  position: absolute;
+  top: 10px;
+  bottom: 25px;
+}
+.fxs-blade .fxs-blade-disabled-message > div {
+  float: left;
+}
+.fxs-blade .fxs-blade-disabled-message svg {
+  width: 200px;
+  height: 200px;
+}
+.fxs-blade .fxs-blade-disabled-message h2 {
+  font-family: wf_segoe-ui_semilight, "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  text-transform: uppercase;
+  margin: 0 0 3px;
+  padding-top: 23px;
+}
+.fxs-blade .fxs-blade-disabled-message h3 {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0;
+}
+.fxs-blade-statusbar-wrapper {
+  height: 25px;
+}
+.fxs-blade .fxs-blade-loading-status {
+  background-image: url("data:image/gif;base64,R0lGODlhEAAZAKIGAC4uLi0tLScnJysrKyYmJjAwMP///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDphNTk5OWJhNi1iMjZlLTcxNDUtYjRhYi1kODY3ZTFkYTc1YTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MkQ2NkY5QTgxMkFCMTFFNDk3RjVDNEIxRjQ0OERERkMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MkQ2NkY5QTcxMkFCMTFFNDk3RjVDNEIxRjQ0OERERkMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU0MTBhYWI5LTViMGQtOTg0OC1iYmI2LTI4YjgwNzBjYTM3OSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDphNTk5OWJhNi1iMjZlLTcxNDUtYjRhYi1kODY3ZTFkYTc1YTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94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");
+  background-repeat: repeat-x;
+}
+.fxs-blade .fxs-blade-statusbar,
+.fxs-blade .fxs-blade-loading-status {
+  padding: 5px 100px 5px 25px;
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: .7;
+}
+.fxs-blade .fxs-blade-statusbar::after,
+.fxs-blade .fxs-blade-loading-status::after {
+  content: '\0000a0';
+}
+.fxs-blade .fxs-blade-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+}
+.fxs-blade .fxs-blade-actions button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  margin: 0;
+  padding: 5px 7px 9px;
+  opacity: .5;
+  transition: opacity 0.2s ease-out;
+}
+.fxs-blade .fxs-blade-actions button img,
+.fxs-blade .fxs-blade-actions button svg {
+  display: block;
+  height: 16px;
+  width: 16px;
+}
+.fxs-blade .fxs-blade-statusbar {
+  transition: opacity 0.2s, background-color 0.2s;
+}
+.fxs-blade .fxs-blade-statusbar.fxs-blade-contentstate-success.fxs-blade-statusbar-fadeout,
+.fxs-blade .fxs-blade-statusbar.fxs-blade-contentstate-warning.fxs-blade-statusbar-fadeout,
+.fxs-blade .fxs-blade-statusbar.fxs-blade-contentstate-error.fxs-blade-statusbar-fadeout,
+.fxs-blade .fxs-blade-statusbar.fxs-blade-contentstate-dirty.fxs-blade-statusbar-fadeout,
+.fxs-blade .fxs-blade-statusbar.fxs-blade-contentstate-info.fxs-blade-statusbar-fadeout {
+  background-color: transparent;
+}
+.fxs-blade .fxs-blade-loading-status:hover,
+.fxs-blade .fxs-blade-statusbar:hover,
+.fxs-blade .fxs-blade-statusbar:hover + .fxs-blade-actions > button,
+.fxs-blade .fxs-blade-actions > button:hover {
+  opacity: 1;
+}
+.fxs-blade {
+  width: 585px;
+}
+.fxs-blade .fxs-blade-stacklayout {
+  width: 535px;
+}
+.fxs-blade.fxs-bladesize-small {
+  width: 315px;
+}
+.fxs-blade.fxs-bladesize-small .fxs-blade-stacklayout {
+  width: 265px;
+}
+.fxs-blade.fxs-bladesize-medium {
+  width: 585px;
+}
+.fxs-blade.fxs-bladesize-medium .fxs-blade-stacklayout {
+  width: 535px;
+}
+.fxs-blade.fxs-bladesize-large {
+  width: 855px;
+}
+.fxs-blade.fxs-bladesize-large .fxs-blade-stacklayout {
+  width: 805px;
+}
+.fxs-blade.fxs-bladesize-xlarge {
+  width: 1125px;
+}
+.fxs-blade.fxs-bladesize-xlarge .fxs-blade-stacklayout {
+  width: 1075px;
+}
+.fxs-blade.fxs-bladesize-expandable {
+  width: auto;
+  min-width: 855px;
+}
+.fxs-blade.fxs-bladesize-expandable .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 805px;
+}
+.fxs-blade.fxs-bladesize-expandable .fxs-blade-stacklayout {
+  width: auto;
+}
+.fxs-blade.fxs-blade-maximized {
+  min-width: 585px;
+}
+.fxs-blade.fxs-blade-maximized .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 535px;
+}
+.fxs-blade.fxs-blade-maximized.fxs-bladesize-small {
+  min-width: 315px;
+}
+.fxs-blade.fxs-blade-maximized.fxs-bladesize-small .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 265px;
+}
+.fxs-blade.fxs-blade-maximized.fxs-bladesize-medium {
+  min-width: 585px;
+}
+.fxs-blade.fxs-blade-maximized.fxs-bladesize-medium .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 535px;
+}
+.fxs-blade.fxs-blade-maximized.fxs-bladesize-large {
+  min-width: 855px;
+}
+.fxs-blade.fxs-blade-maximized.fxs-bladesize-large .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 805px;
+}
+.fxs-blade.fxs-blade-maximized.fxs-bladesize-xlarge {
+  min-width: 1125px;
+}
+.fxs-blade.fxs-blade-maximized.fxs-bladesize-xlarge .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 1075px;
+}
+.fxs-blade.fxs-blade-maximized.fxs-blade-maximized-reflow .fxs-blade-maximized-content {
+  display: block;
+  height: auto;
+}
+.fxs-blade.fxs-blade-maximized.fxs-blade-maximized-reflow .fxs-blade-stacklayout {
+  display: none;
+}
+.fxs-blade.fxs-blade-minimized {
+  width: 40px !important;
+  min-width: 40px !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.fxs-blade.fxs-blade-minimized .fxs-blade-statusbar-wrapper,
+.fxs-blade.fxs-blade-minimized .fxs-blade-content,
+.fxs-blade.fxs-blade-minimized .fxs-blade-actions,
+.fxs-blade.fxs-blade-minimized .fxs-blade-actionBar,
+.fxs-blade.fxs-blade-minimized .fxs-blade-title-description,
+.fxs-blade.fxs-blade-minimized .fxs-blade-commandBarContainer {
+  display: none;
+}
+.fxs-blade.fxs-blade-minimized.fxs-bladestyle-info .fxs-blade-header .fxs-blade-title .fxs-blade-title-image {
+  display: none;
+}
+.fxs-blade.fxs-blade-minimized.fxs-bladestyle-info .fxs-blade-header .fxs-blade-title.fxs-blade-title-image-visible .fxs-blade-title-text-container {
+  margin-left: 0;
+}
+.fxs-blade.fxs-blade-minimized .fxs-blade-header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.fxs-blade.fxs-blade-minimized .fxs-blade-header:hover {
+  cursor: pointer;
+}
+.fxs-blade.fxs-blade-minimized .fxs-blade-header .fxs-blade-title {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.fxs-blade.fxs-blade-minimized .fxs-blade-header .fxs-blade-title .fxs-blade-header-icon-holder {
+  display: none;
+}
+.fxs-blade.fxs-blade-minimized .fxs-blade-header .fxs-blade-title h2 {
+  -webkit-transform: rotate(90deg) translateX(50%) translateX(25px);
+  transform: rotate(90deg) translateX(50%) translateX(25px);
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  text-transform: uppercase;
+  overflow: visible;
+}
+.fxs-blade.fxs-blade-minimized .fxs-blade-header .fxs-blade-title h3 {
+  display: none;
+}
+.fxs-blade .fxs-blade-progress {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 25px;
+  background-color: #dcdfe2;
+  z-index: 198;
+}
+.fxs-blade .fxs-blade-progress .fxs-blade-progress-dots {
+  position: absolute;
+  top: calc(50% - 6px/2);
+  width: 100%;
+  line-height: 0;
+  text-align: center;
+}
+.fxs-blade .fxs-blade-progress .fxs-blade-progress-dots span {
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  -webkit-animation: fxs-blade-progress-animatedEllipses 1.5s infinite;
+  animation: fxs-blade-progress-animatedEllipses 1.5s infinite;
+  background: #aab3bd;
+  margin: 0 2.5px;
+}
+.fxs-blade .fxs-blade-progress .fxs-blade-progress-dots .fxs-blade-progress-dots-one {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.fxs-blade .fxs-blade-progress .fxs-blade-progress-dots .fxs-blade-progress-dots-two {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.fxs-blade .fxs-blade-progress .fxs-blade-progress-dots .fxs-blade-progress-dots-three {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.fxs-blade .fxs-blade-content {
+  padding-top: 10px;
+}
+.fxs-blade .fxs-blade-stacklayout {
+  top: 10px;
+}
+.fxs-blade .fxs-blade-content,
+.fxs-blade .fxs-blade-header,
+.fxs-blade .fxs-blade-progress,
+.fxs-blade .fxs-blade-actionBar,
+.fxs-blade .fxs-blade-summary-container {
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-color: inherit;
+}
+.fxs-blade.fxs-bladestyle-default .fxs-blade-content {
+  padding-top: 10px;
+}
+.fxs-blade.fxs-bladestyle-default .fxs-blade-stacklayout {
+  top: 10px;
+}
+.fxs-blade.fxs-bladestyle-info .fxs-blade-commandBarContainer,
+.fxs-blade.fxs-bladestyle-create .fxs-blade-commandBarContainer,
+.fxs-blade.fxs-bladestyle-context .fxs-blade-commandBarContainer {
+  display: none;
+}
+.fxs-blade.fxs-bladestyle-info .fxs-blade-header .fxs-blade-title .fxs-blade-title-image {
+  position: absolute;
+  margin-top: 5px;
+  width: 75px;
+  height: 75px;
+  display: block;
+}
+.fxs-blade.fxs-bladestyle-info .fxs-blade-header .fxs-blade-title.fxs-blade-title-image-visible {
+  padding-bottom: 0;
+}
+.fxs-blade.fxs-bladestyle-info .fxs-blade-header .fxs-blade-title.fxs-blade-title-image-visible h2,
+.fxs-blade.fxs-bladestyle-info .fxs-blade-header .fxs-blade-title.fxs-blade-title-image-visible h3,
+.fxs-blade.fxs-bladestyle-info .fxs-blade-header .fxs-blade-title.fxs-blade-title-image-visible .fxs-blade-title-description {
+  padding-left: 95px;
+}
+.fxs-blade.fxs-bladestyle-basic,
+.fxs-blade.fxs-bladestyle-basicwithcommands,
+.fxs-blade.fxs-bladestyle-context,
+.fxs-blade.fxs-bladestyle-create {
+  width: 585px;
+}
+.fxs-blade.fxs-bladestyle-basic .fxs-blade-content,
+.fxs-blade.fxs-bladestyle-basicwithcommands .fxs-blade-content,
+.fxs-blade.fxs-bladestyle-context .fxs-blade-content,
+.fxs-blade.fxs-bladestyle-create .fxs-blade-content {
+  padding: 0;
+}
+.fxs-blade.fxs-bladestyle-basic .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create .fxs-blade-stacklayout {
+  top: 0;
+  bottom: 0;
+}
+.fxs-blade.fxs-bladestyle-basic .fxs-lens .fxs-lens-drag-handle,
+.fxs-blade.fxs-bladestyle-basicwithcommands .fxs-lens .fxs-lens-drag-handle,
+.fxs-blade.fxs-bladestyle-context .fxs-lens .fxs-lens-drag-handle,
+.fxs-blade.fxs-bladestyle-create .fxs-lens .fxs-lens-drag-handle {
+  display: none;
+}
+.fxs-blade.fxs-bladestyle-basic .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create .fxs-blade-stacklayout {
+  width: 585px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-small,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-small,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-small,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-small {
+  width: 315px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-small .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-small .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-small .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-small .fxs-blade-stacklayout {
+  width: 315px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-medium,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-medium,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-medium,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-medium {
+  width: 585px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-medium .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-medium .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-medium .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-medium .fxs-blade-stacklayout {
+  width: 585px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-large,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-large,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-large,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-large {
+  width: 855px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-large .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-large .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-large .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-large .fxs-blade-stacklayout {
+  width: 855px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-xlarge,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-xlarge,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-xlarge,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-xlarge {
+  width: 1125px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-xlarge .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-xlarge .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-xlarge .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-xlarge .fxs-blade-stacklayout {
+  width: 1125px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-expandable,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-expandable,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-expandable,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-expandable {
+  width: auto;
+  min-width: 855px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-expandable .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-expandable .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-expandable .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-expandable .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 855px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-bladesize-expandable .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-bladesize-expandable .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-bladesize-expandable .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-bladesize-expandable .fxs-blade-stacklayout {
+  width: auto;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-blade-maximized,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-blade-maximized,
+.fxs-blade.fxs-bladestyle-context.fxs-blade-maximized,
+.fxs-blade.fxs-bladestyle-create.fxs-blade-maximized {
+  min-width: 585px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-blade-maximized .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-blade-maximized .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-blade-maximized .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-blade-maximized .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 585px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-blade-maximized.fxs-bladesize-small,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-blade-maximized.fxs-bladesize-small,
+.fxs-blade.fxs-bladestyle-context.fxs-blade-maximized.fxs-bladesize-small,
+.fxs-blade.fxs-bladestyle-create.fxs-blade-maximized.fxs-bladesize-small {
+  min-width: 315px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-blade-maximized.fxs-bladesize-small .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-blade-maximized.fxs-bladesize-small .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-blade-maximized.fxs-bladesize-small .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-blade-maximized.fxs-bladesize-small .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 315px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-blade-maximized.fxs-bladesize-medium,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-blade-maximized.fxs-bladesize-medium,
+.fxs-blade.fxs-bladestyle-context.fxs-blade-maximized.fxs-bladesize-medium,
+.fxs-blade.fxs-bladestyle-create.fxs-blade-maximized.fxs-bladesize-medium {
+  min-width: 585px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-blade-maximized.fxs-bladesize-medium .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-blade-maximized.fxs-bladesize-medium .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-blade-maximized.fxs-bladesize-medium .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-blade-maximized.fxs-bladesize-medium .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 585px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-blade-maximized.fxs-bladesize-large,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-blade-maximized.fxs-bladesize-large,
+.fxs-blade.fxs-bladestyle-context.fxs-blade-maximized.fxs-bladesize-large,
+.fxs-blade.fxs-bladestyle-create.fxs-blade-maximized.fxs-bladesize-large {
+  min-width: 855px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-blade-maximized.fxs-bladesize-large .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-blade-maximized.fxs-bladesize-large .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-blade-maximized.fxs-bladesize-large .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-blade-maximized.fxs-bladesize-large .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 855px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-blade-maximized.fxs-bladesize-xlarge,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-blade-maximized.fxs-bladesize-xlarge,
+.fxs-blade.fxs-bladestyle-context.fxs-blade-maximized.fxs-bladesize-xlarge,
+.fxs-blade.fxs-bladestyle-create.fxs-blade-maximized.fxs-bladesize-xlarge {
+  min-width: 1125px;
+}
+.fxs-blade.fxs-bladestyle-basic.fxs-blade-maximized.fxs-bladesize-xlarge .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-basicwithcommands.fxs-blade-maximized.fxs-bladesize-xlarge .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-context.fxs-blade-maximized.fxs-bladesize-xlarge .fxs-blade-stacklayout,
+.fxs-blade.fxs-bladestyle-create.fxs-blade-maximized.fxs-bladesize-xlarge .fxs-blade-stacklayout {
+  width: 100%;
+  min-width: 1125px;
+}
+.fxs-blade.fxs-bladestyle-context .fxs-blade-content .fxs-tile {
+  background: none;
+}
+.fxs-blade.fxs-bladestyle-context .fxs-blade-content .fxs-part-content h1 {
+  font-family: wf_segoe-ui_light, "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  margin: 0 0 25px 0;
+}
+.fxs-blade.fxs-bladestyle-context .fxs-blade-content .fxs-part-content .fxcontrol-hotspot {
+  padding: 5px 10px;
+}
+.fxs-blade.fxs-bladestyle-context .fxs-blade-content .fxs-part-content button.fxcontrol-hotspot {
+  padding: 3px 10px 5px 10px;
+}
+.fxs-blade.fxs-bladestyle-context .fxs-blade-content .fxs-part-content .msportalfx-partdivider::after {
+  margin: 0;
+}
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-tile,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-tile {
+  background: none;
+}
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-part-content .msportalfx-svg-placeholder *,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-part-content .msportalfx-svg-placeholder * {
+  fill: #ffffff;
+}
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-part-content h1,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-part-content h1,
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-part-content h2,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-part-content h2 {
+  font-family: wf_segoe-ui_light, "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+}
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-part-content h1,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-part-content h1 {
+  font-size: 34px;
+  margin: 14px 0 33px;
+}
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-part-content h2,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-part-content h2 {
+  font-size: 22px;
+  margin: 0 0 17px;
+}
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-part-content h3,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-part-content h3 {
+  font-size: 16px;
+  margin: 10px 0 8px;
+  line-height: 20px;
+  font-weight: normal;
+}
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-part-content h4,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-part-content h4 {
+  text-transform: uppercase;
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-part-content div,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-part-content div,
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-part-content span,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-part-content span {
+  line-height: 16px;
+  font-size: 12px;
+}
+.fxs-blade.fxs-bladestyle-help .fxs-blade-content .fxs-part-content button.fxcontrol-hotspot,
+.fxs-blade.fxs-bladestyle-help.fxs-blade-locked .fxs-blade-content .fxs-part-content button.fxcontrol-hotspot {
+  padding: 3px 10px 5px;
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster,
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-smallmaster {
+  width: 315px;
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster .fxs-blade-stacklayout,
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-smallmaster .fxs-blade-stacklayout {
+  width: 265px;
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster + .fxs-blade-pairdetails,
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-smallmaster + .fxs-blade-pairdetails {
+  width: calc(100vw - 85px - 315px);
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster + .fxs-blade-pairdetails .fxs-blade-stacklayout,
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-smallmaster + .fxs-blade-pairdetails .fxs-blade-stacklayout {
+  width: calc(100vw - 85px - 315px - 2 * 25px);
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-mediummaster {
+  width: 585px;
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-mediummaster .fxs-blade-stacklayout {
+  width: 535px;
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-mediummaster + .fxs-blade-pairdetails {
+  width: calc(100vw - 85px - 585px);
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-mediummaster + .fxs-blade-pairdetails .fxs-blade-stacklayout {
+  width: calc(100vw - 85px - 585px - 2 * 25px);
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-collapsed {
+  width: 0 !important;
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-collapsed + .fxs-blade-pairdetails {
+  width: calc(100vw - 85px);
+}
+.fxs-blade.fxs-blade-paired.fxs-blade-pairmaster.fxs-blade-paired-collapsed + .fxs-blade-pairdetails .fxs-blade-stacklayout {
+  width: calc(100vw - 85px - 2 * 25px);
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-blade-stacklayout {
+  top: 0;
+  bottom: 0;
+  -ms-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  width: 100% !important;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-blade-stacklayout .fxs-stacklayout-child:first-child {
+  -ms-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-width: 315px;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-blade-stacklayout .fxs-stacklayout-child:not(:first-child).fxs-lens {
+  width: 315px;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-blade-stacklayout .fxs-stacklayout-child:not(:first-child).fxs-lens .fxs-lens-layout {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: inherit;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-blade-stacklayout .fxs-stacklayout-child:not(:first-child).fxs-lens.fxs-lens-collapsed {
+  width: 30px;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-blade-stacklayout .fxs-stacklayout-child:not(:first-child).fxs-lens.fxs-lens-collapsed .fxs-lens-title-container {
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-blade-stacklayout .fxs-stacklayout-child:not(:first-child) .fxs-lens-title-container {
+  background-color: #464f59;
+  color: #ffffff;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-lens {
+  padding-bottom: 0;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-lens .fxs-lens-title {
+  padding: 0 10px;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-lens .fxs-lens-layout {
+  padding: 0 25px;
+  overflow-y: auto;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-lens .fxs-part {
+  padding-bottom: 0;
+}
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-lens .fxs-tilesize-fittocontainer .fxs-part {
+  overflow: visible;
+}
+.fxs-journey-layout .fxs-stacklayout-child:first-child .fxs-blade-content,
+.fxs-journey-layout .fxs-stacklayout-child:first-child .fxs-blade-header,
+.fxs-journey-layout .fxs-stacklayout-child:first-child .fxs-blade-actionBar,
+.fxs-journey-layout .fxs-stacklayout-child:first-child .fxs-blade-progress,
+.fxs-journey-layout .fxs-stacklayout-child:first-child .fxs-blade-summary-container {
+  border-left-width: 0;
+}
+.fxs-contextpane .fxs-blade {
+  position: fixed;
+  background-color: inherit !important;
+}
+.fxs-contextpane .fxs-blade .fxs-blade-actions .fxs-blade-button-bladeactions,
+.fxs-contextpane .fxs-blade .fxs-blade-actions .fxs-blade-maximizeOrRestore {
+  display: none;
+}
+.fxs-contextpane .fxs-blade .fxs-blade-content,
+.fxs-contextpane .fxs-blade .fxs-blade-header,
+.fxs-contextpane .fxs-blade .fxs-blade-progress,
+.fxs-contextpane .fxs-blade .fxs-blade-actionBar,
+.fxs-contextpane .fxs-blade .fxs-blade-commandBarContainer {
+  border: none;
+}
+.fxs-contextpane .fxs-blade .fxs-blade-header,
+.fxs-contextpane .fxs-blade .fxs-blade-statusbar-wrapper {
+  background-color: inherit;
+}
+.fxs-contextpane .fxs-blade .fxs-blade-stacklayout {
+  width: inherit !important;
+}

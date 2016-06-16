@@ -1,0 +1,37 @@
+﻿@import "../../Definitions/Common.d.less";
+@import "Themes.Control.Classes.less";
+
+.azc-dark-theme {
+    @themeBaseColor: #444;
+
+    // Base shade of gray
+    @themeShade: shade(@themeBaseColor, 90%);
+
+    // Grays go from light to dark
+    @themeGray01: tint(@themeBaseColor, 100%);
+    @themeGray02: tint(@themeShade, 90%);
+    @themeGray03: tint(@themeShade, 70%);
+    @themeGray04: tint(@themeShade, 50%);
+    @themeGray05: tint(@themeShade, 30%);
+    @themeGray06: tint(@themeShade, 20%);
+    @themeGray07: tint(@themeShade, 15%);
+    @themeGray08: tint(@themeShade, 10%);
+    @themeGray09: tint(@themeShade, 5%);
+    @themeGray10: tint(@themeShade, 0%);
+    
+    background-color: @themeGray07;
+    color: @themeGray01;
+
+    .controlClass(
+        @controlBackground: @themeGray07,
+        @controlBorder: @themeGray05,
+        @controlText: @themeGray01,
+        @priorityPrimary: @Color_Palette_C02,
+        @stateDirty: @Color_Palette_C15,
+        @stateError: @Color_Palette_C14,
+        @stateInfo: @Color_Palette_C02,
+        @stateInvalid: @Color_Palette_C10,
+        @stateSuccess: @Color_Palette_C04,
+        @stateWarning: @Color_Palette_C08
+    );
+}

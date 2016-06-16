@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Graph</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+
+    <script src="jquery-2.1.0.js"></script>
+
+    <script src="CommonJS/d3.v3.js"></script>
+    <script src="CommonJS/hammer.js"></script>
+    <script src="CommonJS/jquery.plugin.js"></script>
+    <script src="CommonJS/jquery.mousewheel.js"></script>
+    <script src="CommonJS/jquery.dateentry.modified.js"></script>
+    <script src="CommonJS/jquery.timeentry.modified.js"></script>
+
+    <script src="CommonJS/knockout-3.2.0.debug.js"></script>
+    <script src="CommonJS/knockout-projections.js"></script>
+    <script src="CommonJS/q.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/PipelineGraph/site.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Balloon.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Console.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/DockedBalloon.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/LogStream.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/MouseCompanion.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Pager.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Settings.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/SingleSetting.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/TextStream.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Base/Base.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Base/ValidationPlacements.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/Button.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/CheckBox.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/CommandButton.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/CommandLink.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/ContentEditable.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/DatePanel.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/DatePicker.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/DateTimeCombo.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/DateTimePicker.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/DateTimeRangePicker.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/DropDown.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/EditableCombo.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/FileUpload.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/FileUpload2.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/FilterCombo.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/MultiLineTextBox.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/MultiSelectDropDown.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/NumericTextBox.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/OptionPicker.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/Password.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/SearchBox.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/Slider.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/Splitter.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/StringList.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/TextBox.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/TextInput.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Forms/TimePicker.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.ContextMenuShortcutExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.EditableRowExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.FilterableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.FocusableRowExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.Formatters.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.GroupableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.HierarchicalExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.PageableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.ReorderRowExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.ResizableColumnExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.ScrollableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.SelectableRowActivateExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.SelectableRowExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/Grid.SortableColumnExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/List.FocusableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/List.GroupableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/List.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/List.SelectableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/ListView.FocusableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/ListView.GroupableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/ListView.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/ListView.SelectableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/TreeView.FocusableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/TreeView.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Lists/TreeView.OnDemandLoadableExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Themes/DarkTheme.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Themes/LightTheme.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Toolbars/CommandButton.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Toolbars/ToggleCommandButton.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Toolbars/Toolbar.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Toolbars/ToolbarButton.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/BarGauge.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/Chart.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/ChartBase.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/ColorBar.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/Donut.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/Gauge.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/Graph.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/Legend.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/Map.HexagonLayoutExtension.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/Map.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/Metrics.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/QuotaGauge.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/SparkLine.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/SvgBase.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Viva.Controls/Controls/Visualization/UsageGauge.css">
+    <link rel="stylesheet" type="text/css" href="CSS/MsPortalFx/CustomPart.css">
+
+    <script data-main="PipelineGraphViewModel" src="require.js"></script>
+    <script>
+        function Refresh()
+        {
+            //TODO: Use Observable Instead of Creating Layout Again
+            window.graphViewModel.layout();
+        }
+    </script>
+</head>
+<body class="azc-light-theme">
+    <div id="pipelineGraphDiv" style="height: 100%">
+        <div id="graph" style="height: 100%; position: relative;" class="azc-control azc-graph" data-control="true" data-canfocus="true">
+            <div class="azc-graph-feedback-container" style="touch-action: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                <div tabindex="0" data-bind="style: {left: (func._overlayLeft() - func._overlayRight()) + &quot;px&quot;, top:(func._overlayTop() - func._overlayBottom()) + &quot;px&quot;}, attr:{class: func._classes()}, event:{mousedown: func._canvasMouseDown, mouseup: func._canvasMouseUp}" class="azc-graph-container azc-bg-light graph-skin-style-blade idle " style="left: 0px; top: 0px;">
+                    <svg class="azc-graph-connections-container" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="edge-start-marker" stroke-width="2" viewBox="-10 -10 20 20" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" refX="-2" refY="0" orient="auto" class="azc-graph-edge-marker azc-fill-default azc-stroke-heavy">
+                                <circle r="5"></circle>
+                            </marker>
+                            <marker id="edge-end-marker" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto" class="azc-graph-edge-marker azc-fill-heavy"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker>
+                        </defs>
+                        <g class="azc-graph-transform" transform="matrix(1 0 0 1 0 0)"><!-- ko mapForEach: {data: func.graphEdges, afterRender: func._updateScrollbars } --><!-- /ko --><!-- ko mapForEach: {data: func.graphNodes, afterRender: func._updateScrollbars } --><!-- /ko --></g>
+                    </svg>
+                    <div class="azc-graph-overlay">
+                        <!-- ko mapForEach: func.graphNodes --><!-- /ko -->
+                        <div class="azc-graph-selection-box azc-br-selected" data-bind="style:{left: func.selectionManager.selectionRect().x + &quot;px&quot;, top: func.selectionManager.selectionRect().y + &quot;px&quot;, width: func.selectionManager.selectionRect().width + &quot;px&quot;, height: func.selectionManager.selectionRect().height + &quot;px&quot;, &quot;border-width&quot;:String(1 / func.scale() * 2) + &quot;px&quot;}" style="left: 0px; top: 0px; width: 0px; height: 0px; border-width: 2px;"></div>
+                        <!-- ko with: func.edgeCreator -->
+                        <div class="azc-graph-edgeDraft azc-stroke-heavy" data-bind="visible:visible" style="display: none;">
+                            <svg style="overflow:visible" pointer-events="none">
+                                <line data-bind="attr:{x1: x1() + &quot;px&quot;, y1: y1() + &quot;px&quot;, x2: x2() + &quot;px&quot;, y2: y2() + &quot;px&quot;}" pointer-events="none" x1="0px" y1="0px" x2="0px" y2="0px">
+                                </line>
+                                <g data-bind="attr:{transform:translation}" transform="translate(-7.5,0)">
+                                    <polygon points="0,0 6,8 12,0">
+                                    </polygon>
+                                </g>
+                            </svg>
+                        </div><!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <div class="azc-graph-horizontal-scrollbar azc-scrollbar-default" data-bind="event:{mousedown:func._scrollBarMouseDown},style:{right: func._scrollBarSizes.vertical + &quot;px&quot;, height: func._scrollBarSizes.horizontal + &quot;px&quot;}" style="right: 18px; height: 18px;">
+                <div class="azc-graph-horizontal-scroll-range"></div>
+            </div>
+            <div class="azc-graph-vertical-scrollbar azc-scrollbar-default" data-bind="event:{mousedown:func._scrollBarMouseDown},style:{bottom: func._scrollBarSizes.horizontal + &quot;px&quot;, width: func._scrollBarSizes.vertical + &quot;px&quot;}" style="bottom: 18px; width: 18px;">
+                <div class="azc-graph-vertical-scroll-range"></div>
+            </div>
+            <div class="azc-underflow" style="position:absolute; left: 0; top:0; width:100%; height:100%; overflow:hidden; z-index:-1">
+                <div class="azc-underflow-content"></div>
+            </div>
+            <div class="azc-overflow" style="position:absolute; left:0; top:0; width:100%; height:100%; overflow:hidden; z-index:-1">
+                <div class="azc-overflow-content"></div>
+            </div>
+        </div>
+        <div id="sampleControls" style="display:table; margin: 0 auto; position: absolute; top: 0px; right: 50px; z-index:10000">
+            <button id="zoomToFit" title="Zoom to fit" style="background:url(&quot;Content/Images/ZoomToFit.png&quot;); background-repeat:no-repeat; width:24px; height:24px; padding:5px;" ></button>
+            <button id="zoomToActual" title="Zoom to actual" style="background:url(&quot;Content/Images/ZoomToActual.png&quot;); background-repeat:no-repeat; width:24px; height:24px; padding:5px;"></button>
+            <button id="zoomIn" title="Zoom in" style="background:url(&quot;Content/Images/ZoomIn.png&quot;); background-repeat:no-repeat; width:24px; height:24px; padding:5px;"></button>
+            <button id="zoomOut" title="Zoom out" style="background:url(&quot;Content/Images/ZoomOut.png&quot;); background-repeat:no-repeat; width:24px; height:24px; padding:5px;"></button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-datePanel {
+  border-width: 1px;
+  border-style: solid;
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+}
+.azc-datePanel a {
+  text-decoration: none;
+  outline: none;
+  border: 1px solid transparent;
+  display: block;
+}
+.azc-datePanel .azc-datePanel-quick-navigation {
+  text-align: center;
+  padding: 6px 0 7px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+}
+.azc-datePanel .azc-datePanel-quick-navigation .azc-datePanel-prev-month,
+.azc-datePanel .azc-datePanel-quick-navigation .azc-datePanel-next-month {
+  height: 15px;
+  width: 15px;
+  margin-top: -1px;
+}
+.azc-datePanel .azc-datePanel-quick-navigation .azc-datePanel-prev-month {
+  float: left;
+  margin-left: 7px;
+}
+.azc-datePanel .azc-datePanel-quick-navigation .azc-datePanel-prev-month:before {
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAJCAQAAAC7k5UWAAAAN0lEQVR4XmWN0QkAIBQCnaUVbpa2fiu8FVrBIAiJ8OdATuUTBgUXG9PBBUEsURgzLett4vxr+dnG9i8WSWJR8AAAAABJRU5ErkJggg==");
+}
+.azc-datePanel .azc-datePanel-quick-navigation .azc-datePanel-next-month {
+  float: right;
+  margin-right: 7px;
+}
+.azc-datePanel .azc-datePanel-quick-navigation .azc-datePanel-next-month:before {
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAJCAQAAAC7k5UWAAAAOElEQVR4Xl2NwQ0AIAwCmaUr3AqO3xU6C0bjozV8uEBAQBLWkUhMcVEExUO54e2yMCZH0uy3Nn42kvcuW9fidXcAAAAASUVORK5CYII=");
+}
+.azc-datePanel .azc-datePanel-days {
+  border-spacing: 0;
+  border-collapse: collapse;
+  table-layout: auto;
+  margin: 5px auto;
+  border-color: inherit;
+}
+.azc-datePanel .azc-datePanel-days th {
+  text-align: center;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.azc-datePanel .azc-datePanel-days td {
+  text-align: center;
+}
+.azc-datePanel .azc-datePanel-days td a {
+  padding: 4px 6px 5px 7px;
+  font-size: 13px;
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+}
+.azc-datePanel .azc-datePanel-days td.azc-datePanel-today {
+  padding: 4px 0;
+}
+.azc-datePanel .azc-datePanel-days td.azc-datePanel-other-month a {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+}
+.azc-datePanel .azc-datePanel-days .azc-datePanel-day-names {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: inherit;
+}
+.azc-datePanel .azc-datePanel-days .azc-datePanel-day-names th {
+  padding: 5px 0 7px 0;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+}
+.azc-datePanel .azc-datePanel-legend span.azc-datePanel-legend-today {
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin: 3px;
+  border-width: 1px;
+  border-style: solid;
+}

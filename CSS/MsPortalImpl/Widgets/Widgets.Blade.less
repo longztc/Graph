@@ -1,0 +1,819 @@
+﻿@import "../../Definitions/CommonImpl.less";
+
+@fxsBladeHorizontalPadding: 25px;
+@fxsBladeMinimizedWidth: 40px;
+@fxsBladeBorderLeft: 2px;
+@fxsImageTopMargin: 4px;
+@fxsBladeHeaderHeightWithoutCommandBarLabels: 105px;
+@fxsBladeHeaderHeightWithCommandBarLabels: 130px;
+@fxsBladeStatusBarHeight: 25px;
+@fxsBladeStatusBarPaddingTop: 5px;
+@fxsBladeStatusBarPaddingBottom: 5px;
+@fxsBladeStatusBarPaddingRight: 100px;
+@fxsBladeHeaderIconSpacing: 42px;
+@fxsBladeHeaderIconSideLength: 30px;
+@fxsBladeHeaderIconTopMargin: 7px;
+@fxsBladeHeaderIconHolderHeight: @fxsBladeHeaderIconSideLength + (@fxsBladeHeaderIconTopMargin * 2) - 1;
+
+@fxsBladeTitleImageWidth: 75px;
+@fxsBladeTitleImageHeight: 75px;
+
+@fxsBladeTitleHelpIconSideLength: 10px;
+
+@progressBoxSize: 6px;
+
+.keyframesForAnimatedEllipses() {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: .6;
+    }
+
+    60% {
+        opacity: .3;
+    }
+}
+
+@-webkit-keyframes fxs-blade-progress-animatedEllipses {
+    .keyframesForAnimatedEllipses();
+}
+
+@keyframes fxs-blade-progress-animatedEllipses {
+    .keyframesForAnimatedEllipses();
+}
+
+.bladeContentBaseWidth(@colSpan) {
+    @bladeContentBaseWidth: @colSpan * @fxsGridCellWidth + (@colSpan - 1) * @fxsGridCellSpacing;
+}
+
+.bladeContentWidth(@colSpan, @extraStackLayoutSpacing: 0) {
+    .bladeContentBaseWidth(@colSpan);
+    @bladeContentWidth: @bladeContentBaseWidth + @extraStackLayoutSpacing;
+}
+
+.bladeWidth(@colSpan) {
+    .bladeContentBaseWidth(@colSpan);
+    @bladeWidth: @bladeContentBaseWidth + 2 * @fxsBladeHorizontalPadding;
+}
+
+.calculateWidth(@colSpan, @extraStackLayoutSpacing: 0) {
+    .bladeWidth(@colSpan);
+    width: @bladeWidth;
+
+    .fxs-blade-stacklayout {
+        .bladeContentWidth(@colSpan, @extraStackLayoutSpacing);
+        width: @bladeContentWidth;
+    }
+}
+
+.calculateMinWidth(@colSpan, @extraStackLayoutSpacing: 0) {
+    .bladeWidth(@colSpan);
+    min-width: @bladeWidth;
+
+    .fxs-blade-stacklayout {
+        width: 100%;
+        .bladeContentWidth(@colSpan, @extraStackLayoutSpacing);
+        min-width: @bladeContentWidth;
+    }
+}
+
+.fxsBladeSizing(@extraStackLayoutSpacing: 0) {
+    .calculateWidth(6, @extraStackLayoutSpacing);
+
+    &.fxs-bladesize-small {
+        .calculateWidth(3, @extraStackLayoutSpacing);
+    }
+
+    &.fxs-bladesize-medium {
+        .calculateWidth(6, @extraStackLayoutSpacing);
+    }
+
+    &.fxs-bladesize-large {
+        .calculateWidth(9, @extraStackLayoutSpacing);
+    }
+
+    &.fxs-bladesize-xlarge {
+        .calculateWidth(12, @extraStackLayoutSpacing);
+    }
+
+    &.fxs-bladesize-expandable {
+        width: auto;
+        .calculateMinWidth(9, @extraStackLayoutSpacing);
+
+        .fxs-blade-stacklayout {
+            width: auto;
+        }
+    }
+
+    &.fxs-blade-maximized {
+        .calculateMinWidth(6, @extraStackLayoutSpacing);
+
+        &.fxs-bladesize-small {
+            .calculateMinWidth(3, @extraStackLayoutSpacing);
+        }
+
+        &.fxs-bladesize-medium {
+            .calculateMinWidth(6, @extraStackLayoutSpacing);
+        }
+
+        &.fxs-bladesize-large {
+            .calculateMinWidth(9, @extraStackLayoutSpacing);
+        }
+
+        &.fxs-bladesize-xlarge {
+            .calculateMinWidth(12, @extraStackLayoutSpacing);
+        }
+    }
+}
+
+.fxs-blade {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    transition: width .1s ease-out, opacity .2s ease;
+    .display-flex();
+    .flex-direction(column);
+
+    .fxs-blade-header,
+    .fxs-blade-actionBar {
+        .flex(0, 0, auto);
+    }
+
+    .fxs-blade-content {
+        .flex(1, 1, auto);
+    }
+
+    &.fxs-blade-initializing {
+        transition: none !important;
+    }
+
+    .fxs-blade-maximized-content {
+        display: none;
+    }
+
+    .fxs-blade-header {
+        min-height: @fxsBladeHeaderHeightWithCommandBarLabels;
+
+        &.fxs-blade-header-hideCommandBarLabels {
+            min-height: @fxsBladeHeaderHeightWithoutCommandBarLabels;
+        }
+
+        .fxs-blade-title-text-container {
+            height: 44px;
+        }
+
+        > img {
+            background-color: transparent;
+            margin-top: @fxsImageTopMargin;
+        }
+
+        .fxs-blade-icon {
+            display: none;
+        }
+
+        .fxs-blade-title {
+            margin: 0 @fxsBladeHorizontalPadding;
+
+            .fxs-blade-title-image {
+                display: none;
+            }
+
+            h2,
+            h3 {
+                margin: 0;
+                padding-left: 0;
+                .ellipsis();
+            }
+
+            h2 {
+                .fx-text-internal(semilight, 18px, normal);
+            }
+
+            h3 {
+                .fx-text-subheader();
+                line-height: normal;
+                padding-bottom: 6px;
+            }
+
+            &.fxs-blade-header-icon {
+
+                h2,
+                h3 {
+                    padding-left: @fxsBladeHeaderIconSpacing;
+                }
+
+                .fxs-blade-header-icon-holder {
+                    position: absolute;
+                    height: @fxsBladeHeaderIconHolderHeight;
+                }
+
+                .fxs-blade-header-icon-holder svg {
+                    height: @fxsBladeHeaderIconSideLength;
+                    width: @fxsBladeHeaderIconSideLength;
+                    margin-top: @fxsBladeHeaderIconTopMargin;
+                }
+            }
+
+            .fxs-blade-title-description {
+                margin: 7px 0 0;
+                .fx-text-internal(regular, 11px, 14px);
+                height: 44px;
+                overflow: hidden;
+
+                .fxs-blade-title-help-link {
+                    white-space: nowrap;
+
+                    .fxs-blade-title-help-icon > svg {
+                        width: @fxsBladeTitleHelpIconSideLength;
+                        height: @fxsBladeTitleHelpIconSideLength;
+                        margin-left: 2px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            h2::after,
+            h3::after {
+                content: '\0000a0'; // Add a nobreak space so it always renders its height
+            }
+        }
+
+        &.fxs-blade-disabled {
+            .fxs-blade-commandBarContainer {
+                display: none;
+            }
+        }
+
+        .fxs-blade-commandBarContainer {
+            margin: 0 (@fxsBladeHorizontalPadding - 5px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    .fxs-blade-dialoghost {
+        display: block;
+        position: absolute;
+        z-index: @fxZIndexPopUp;
+        width: 100%;
+        left: 0;
+    }
+
+    .fxs-blade-content {
+        position: relative;
+        padding: @fxsBladeHorizontalPadding;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+
+        // Hide scrollbars unless the user is hovering (hide part)
+        &::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+    }
+
+    .fxs-blade-stacklayout {
+        position: absolute;
+        top: 10px;
+        bottom: @fxsBladeHorizontalPadding;
+    }
+
+    .fxs-blade-disabled-message {
+        > div {
+            float: left;
+        }
+
+        svg {
+            width: 200px;
+            height: 200px;
+        }
+
+        h2 {
+            .fx-text-header-large();
+            text-transform: uppercase;
+            margin: 0 0 3px;
+            padding-top: 23px;
+        }
+
+        h3 {
+            .fx-text-header();
+            margin: 0;
+        }
+    }
+}
+
+// Blade status bar with actions
+.fxs-blade-statusbar-wrapper {
+    height: @fxsBladeStatusBarHeight;
+}
+
+.fxs-blade .fxs-blade-loading-status {
+    background-image: data-uri("../../../Content/Images/MsPortalImpl/Blade_loadingProgress.gif");
+    background-repeat: repeat-x;
+}
+
+.fxs-blade .fxs-blade-statusbar,
+.fxs-blade .fxs-blade-loading-status {
+    padding: @fxsBladeStatusBarPaddingTop @fxsBladeStatusBarPaddingRight @fxsBladeStatusBarPaddingBottom @fxsBladeHorizontalPadding;
+    .fx-text-internal(semibold, 10px, @fxsBladeStatusBarHeight - @fxsBladeStatusBarPaddingTop - @fxsBladeStatusBarPaddingBottom);
+    text-transform: uppercase;
+    .ellipsis();
+    opacity: .7;
+
+    &::after {
+        content: '\0000a0'; // Add a nobreak space so it always renders it's height
+    }
+}
+
+.fxs-blade .fxs-blade-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: @fxsBladeStatusBarHeight;
+
+    button {
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+        margin: 0;
+        padding: 5px 7px 9px;
+        opacity: .5;
+        transition: opacity .2s ease-out;
+
+        img,
+        svg {
+            display: block;
+            .size(@fxImageSizeExtraSmall);
+        }
+    }
+}
+
+.fxs-blade .fxs-blade-statusbar {
+    transition: opacity .2s, background-color .2s;
+
+    &.fxs-blade-contentstate-success,
+    &.fxs-blade-contentstate-warning,
+    &.fxs-blade-contentstate-error,
+    &.fxs-blade-contentstate-dirty,
+    &.fxs-blade-contentstate-info {
+
+        &.fxs-blade-statusbar-fadeout {
+             background-color: transparent;
+        }
+    }
+}
+
+.fxs-blade .fxs-blade-loading-status:hover,
+.fxs-blade .fxs-blade-statusbar:hover,
+.fxs-blade .fxs-blade-statusbar:hover + .fxs-blade-actions > button,
+.fxs-blade .fxs-blade-actions > button:hover {
+    opacity: 1;
+}
+
+// Blade sizing
+.fxs-blade {
+    .fxsBladeSizing();
+}
+
+// Maximized blade
+.fxs-blade.fxs-blade-maximized {
+    &.fxs-blade-maximized-reflow {
+        .fxs-blade-maximized-content {
+            display: block;
+            height: auto;
+        }
+
+        .fxs-blade-stacklayout {
+            display: none;
+        }
+    }
+}
+
+// Minimized blade
+.fxs-blade.fxs-blade-minimized {
+    // !important because when minimized, blade must be sized no matter how other rules would prefer sizing to apply.
+    width: @fxsBladeMinimizedWidth !important;
+    min-width: @fxsBladeMinimizedWidth !important;
+    .unselectable();
+
+    .fxs-blade-statusbar-wrapper,
+    .fxs-blade-content,
+    .fxs-blade-actions,
+    .fxs-blade-actionBar,
+    .fxs-blade-title-description,
+    .fxs-blade-commandBarContainer {
+        display: none;
+    }
+
+    &.fxs-bladestyle-info {
+        .fxs-blade-header {
+            .fxs-blade-title {
+                .fxs-blade-title-image {
+                    display: none;
+                }
+
+                &.fxs-blade-title-image-visible {
+                    .fxs-blade-title-text-container {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .fxs-blade-header {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .fxs-blade-title {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            .fxs-blade-header-icon-holder {
+                display: none;
+            }
+
+            h2 {
+                .transform(rotate(90deg) translateX(50%) translateX(25px));
+                .fx-text-subheader();
+                overflow: visible;
+            }
+
+            h3 {
+                display: none;
+            }
+        }
+    }
+}
+
+// Blade loading animation
+.fxs-blade .fxs-blade-progress {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: @fxsBladeStatusBarHeight;
+    background-color: @Color_SlateTints_G12;
+    z-index: @fxZIndexBladeLoadingShield;
+
+    .fxs-blade-progress-dots {
+        position: absolute;
+        top: calc(~"50% - @{progressBoxSize}/2");
+        width: 100%;
+        line-height: 0;
+        text-align: center;
+
+        span {
+            display: inline-block;
+            height: @progressBoxSize;
+            width: @progressBoxSize;
+            .animation(fxs-blade-progress-animatedEllipses 1.5s infinite);
+            background: @Color_SlateTints_G13;
+            margin: 0 2.5px;
+        }
+
+        .fxs-blade-progress-dots-one {
+            .animation-delay(0s);
+        }
+
+        .fxs-blade-progress-dots-two {
+            .animation-delay(.2s);
+        }
+
+        .fxs-blade-progress-dots-three {
+            .animation-delay(.4s);
+        }
+    }
+}
+
+// Blade styles
+.fxs-blade {
+
+    .fxs-blade-content {
+        padding-top: 10px;
+    }
+
+    .fxs-blade-stacklayout {
+        top: 10px;
+    }
+
+    .fxs-blade-content,
+    .fxs-blade-header,
+    .fxs-blade-progress,
+    .fxs-blade-actionBar,
+    .fxs-blade-summary-container {
+        border-left-style: solid;
+        border-left-width: @fxsBladeBorderLeft;
+        border-color: inherit;
+    }
+
+    &.fxs-bladestyle-default {
+        .fxs-blade-content {
+            padding-top: 10px;
+        }
+
+        .fxs-blade-stacklayout {
+            top: 10px;
+        }
+    }
+
+    &.fxs-bladestyle-info,
+    &.fxs-bladestyle-create,
+    &.fxs-bladestyle-context {
+        .fxs-blade-commandBarContainer {
+            display: none;
+        }
+    }
+
+    &.fxs-bladestyle-info {
+        .fxs-blade-header {
+            .fxs-blade-title {
+                .fxs-blade-title-image {
+                    position: absolute;
+                    margin-top: 5px;
+                    width: @fxsBladeTitleImageWidth;
+                    height: @fxsBladeTitleImageHeight;
+                    display: block;
+                }
+
+                &.fxs-blade-title-image-visible {
+                    padding-bottom: 0;
+
+                    h2,
+                    h3,
+                    .fxs-blade-title-description {
+                        padding-left: 95px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.fxs-bladestyle-basic,
+    &.fxs-bladestyle-basicwithcommands,
+    &.fxs-bladestyle-context,
+    &.fxs-bladestyle-create {
+        .fxs-blade-content {
+            padding: 0;
+        }
+
+        .fxs-blade-stacklayout {
+            top: 0;
+            bottom: 0;
+        }
+
+        .fxs-lens .fxs-lens-drag-handle {
+            display: none;
+        }
+
+        // Compensate sizing with removed padding
+        .fxsBladeSizing(2 * @fxsBladeHorizontalPadding);
+    }
+
+    &.fxs-bladestyle-context {
+
+        .fxs-blade-content {
+            .fxs-tile {
+                background: none;
+            }
+
+            .fxs-part-content {
+                h1 {
+                    .fx-font-light();
+                    font-size: 28px;
+                    margin: 0 0 25px 0;
+                }
+
+                .fxcontrol-hotspot {
+                    padding: 5px 10px;
+                }
+
+                button.fxcontrol-hotspot {
+                    padding: 3px 10px 5px 10px;
+                }
+
+                .msportalfx-partdivider::after {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &.fxs-bladestyle-help,
+    &.fxs-bladestyle-help.fxs-blade-locked {
+
+        .fxs-blade-content {
+            .fxs-tile {
+                background: none;
+            }
+
+            .fxs-part-content {
+                // Set all monochromatic icons to white in help blades (they have blue backgrounds).
+                .msportalfx-svg-placeholder * {
+                    fill: @Color_Palette_C01;
+                }
+
+                h1,
+                h2 {
+                    .fx-font-light();
+                }
+
+                h1 {
+                    font-size: 34px;
+                    margin: 14px 0 33px;
+                }
+
+                h2 {
+                    font-size: 22px;
+                    margin: 0 0 17px;
+                }
+
+                h3 {
+                    font-size: 16px;
+                    margin: 10px 0 8px;
+                    line-height: 20px;
+                    font-weight: normal;
+                }
+
+                h4 {
+                    text-transform: uppercase;
+                    .fx-font-bold();
+                    margin: 0;
+                }
+
+                div,
+                span {
+                    line-height: 16px;
+                    font-size: 12px;
+                }
+
+                button.fxcontrol-hotspot {
+                    padding: 3px 10px 5px;
+                }
+            }
+        }
+    }
+}
+
+// Blade pairs
+.fxs-blade.fxs-blade-paired {
+    &.fxs-blade-pairmaster,
+    &.fxs-blade-pairmaster.fxs-blade-paired-smallmaster {
+        .calculateWidth(3);
+
+        + .fxs-blade-pairdetails {
+            .bladeWidth(3);
+            width: calc(~"100vw - @{fxsNavBarWidth} - @{bladeWidth}");
+
+            .fxs-blade-stacklayout {
+                .bladeContentWidth(3);
+                width: calc(~"100vw - @{fxsNavBarWidth} - @{bladeWidth} - 2 * @{fxsBladeHorizontalPadding}");
+            }
+        }
+    }
+
+    &.fxs-blade-pairmaster.fxs-blade-paired-mediummaster {
+        .calculateWidth(6);
+
+        + .fxs-blade-pairdetails {
+            .bladeWidth(6);
+            width: calc(~"100vw - @{fxsNavBarWidth} - @{bladeWidth}");
+
+            .fxs-blade-stacklayout {
+                .bladeContentWidth(6);
+                width: calc(~"100vw - @{fxsNavBarWidth} - @{bladeWidth} - 2 * @{fxsBladeHorizontalPadding}");
+            }
+        }
+    }
+
+    &.fxs-blade-pairmaster.fxs-blade-paired-collapsed {
+        width: 0 !important;
+
+        + .fxs-blade-pairdetails {
+            width: calc(~"100vw - @{fxsNavBarWidth}");
+
+            .fxs-blade-stacklayout {
+                width: calc(~"100vw - @{fxsNavBarWidth} - 2 * @{fxsBladeHorizontalPadding}");
+            }
+        }
+    }
+}
+
+// Blade with columns
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0;
+
+    .fxs-blade-stacklayout {
+        top: 0;
+        bottom: 0;
+        .flex-flow(row, nowrap);
+        // !important because the orientation of the stack changed, so full width should be used.
+        width: 100% !important;
+
+        .fxs-stacklayout-child {
+
+            &:first-child {
+                .flex(1, 1, auto);
+                .bladeWidth(3);
+                min-width: @bladeWidth;
+            }
+
+            &:not(:first-child) {
+                &.fxs-lens {
+                    .bladeWidth(3);
+                    width: @bladeWidth;
+
+                    .fxs-lens-layout {
+                        border-left-width: 1px;
+                        border-left-style: solid;
+                        border-left-color: inherit;
+                    }
+
+                    &.fxs-lens-collapsed {
+                        width: 30px;
+
+                        .fxs-lens-title-container {
+                            .flex-direction(column-reverse);
+                            .justify-content(flex-end);
+                        }
+                    }
+                }
+
+                .fxs-lens-title-container {
+                    background-color: @Color_SlateTints_G06;
+                    color: @Color_Palette_C01;
+                }
+            }
+        }
+    }
+}
+
+.fxs-blade.fxs-blade-withcolumns .fxs-blade-content .fxs-lens {
+    padding-bottom: 0;
+
+    .fxs-lens-title {
+        padding: 0 10px
+    }
+
+    .fxs-lens-layout {
+        padding: 0 25px;
+        overflow-y: auto;
+    }
+
+    .fxs-part {
+        padding-bottom: 0;
+    }
+
+    .fxs-tilesize-fittocontainer .fxs-part {
+        overflow: visible;
+    }
+}
+
+// First child of a journey should have no left border
+.fxs-journey-layout .fxs-stacklayout-child:first-child .fxs-blade-content,
+.fxs-journey-layout .fxs-stacklayout-child:first-child .fxs-blade-header,
+.fxs-journey-layout .fxs-stacklayout-child:first-child .fxs-blade-actionBar,
+.fxs-journey-layout .fxs-stacklayout-child:first-child .fxs-blade-progress,
+.fxs-journey-layout .fxs-stacklayout-child:first-child .fxs-blade-summary-container {
+    border-left-width: 0;
+}
+
+// context pane
+.fxs-contextpane .fxs-blade {
+    position: fixed;
+    // !important is to ensure that the background color of the blade is the same as the one of the context pane.
+    background-color: inherit !important;
+
+    .fxs-blade-actions .fxs-blade-button-bladeactions,
+    .fxs-blade-actions .fxs-blade-maximizeOrRestore {
+        display: none;
+    }
+
+    .fxs-blade-content,
+    .fxs-blade-header,
+    .fxs-blade-progress,
+    .fxs-blade-actionBar,
+    .fxs-blade-commandBarContainer {
+        border: none;
+    }
+
+    .fxs-blade-header,
+    .fxs-blade-statusbar-wrapper  {
+        background-color: inherit;
+    }
+
+    .fxs-blade-stacklayout {
+        // !important is to ensure that the stacklayout naturally fits in the context blade and will not across the boundry.
+        width: inherit !important;
+    }
+}

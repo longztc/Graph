@@ -1,0 +1,381 @@
+﻿@import "Themes.Control.Mixins.less";
+
+.controlClass(
+    @controlBackground,
+    @controlBorder,
+    @controlText,
+    @priorityPrimary,
+    @stateDirty,
+    @stateError,
+    @stateInfo,
+    @stateInvalid,
+    @stateSuccess,
+    @stateWarning) {
+
+    @priorityPrimaryHover: spin(darken(@priorityPrimary, 20%), 10%);
+    @controlColorWhite: tint(@controlBackground, 100%);
+    @controlColorBlack: shade(@controlBackground, 100%);
+
+    // Graph control is the only control so far that has a notion of explicit item (node) that has color of a background that is different from the color of the control's own background.
+    // That reasons the need in having classes for item (node) that would use different colors than @controlBackground
+    @controlItemBackgroundLight: lighten(@priorityPrimary, 45);
+    @controlItemBackgroundDark: @controlBorder;
+
+    // Defaults
+    .azc-control {
+        border-color: @controlBorder;
+
+        optgroup, option {
+            background-color: @controlBackground;
+            border-color: @controlBorder;
+            color: @controlText;
+        }
+
+        .placeholderMuted(@controlText, 50);
+
+        a {
+            color: @controlText;
+        }
+    }
+
+    .azc-node-fill {
+        .fillSplit(@controlBackground, @controlItemBackgroundLight, @controlItemBackgroundDark);
+    }
+
+    .azc-node-fill-hovered {
+        .fillSplit(@controlBackground, lighten(@priorityPrimary, 30), tint(@controlItemBackgroundDark, 17));
+    }
+
+    .azc-node-bg {
+        .backgroundSplitByDiscriminator(@controlBackground, @controlItemBackgroundLight, @controlItemBackgroundDark);
+    }
+
+    .azc-node-bg-hovered {
+        .backgroundSplitByDiscriminator(@controlBackground, lighten(@priorityPrimary, 30), tint(@controlItemBackgroundDark, 17));
+    }
+
+    .azc-chart {
+        fill: @controlBackground;
+        .strokeMuted(@controlBackground, 20%);
+
+        text {
+            .fillMuted(@controlText, 50%);
+
+            &.azc-chart-axis-slider-text {
+                fill: @controlText;
+            }
+        }
+
+        .azc-chart-axis-slider-text-rect {
+            fill: @controlBackground;
+            stroke: @controlBackground;
+        }
+    }
+
+    .azc-stroke-default {
+        stroke: @controlText;
+    }
+
+    .azc-has-hover:hover, .azc-external-hovered {
+        &:not(.azc-bg-invalid):not(.azc-bg-edited):not(.azc-disabled):not(.azc-row-disabled):not(.azc-bg-selected):not(.azc-list-selected) {
+            .hoverableColors(@controlBackground, @priorityPrimary);
+        }
+    }
+
+    .azc-header {
+        background-color: @controlBorder;
+        color: contrast(@controlBorder, @controlBackground, @controlText);
+    }
+
+    .azc-input,
+    .azc-textarea {
+        color: @controlText;
+        border-color: @controlBorder;
+        background-color: @controlBackground;
+    }
+
+    .azc-list-focused {
+        .listFocused(@controlBackground, @priorityPrimary);
+    }
+
+    .azc-list-selected {
+        .selectableColors(@controlBackground, @priorityPrimary);
+    }
+    // Background
+    .azc-bg-default {
+        background-color: @controlBackground;
+    }
+
+    .azc-bg-light {
+        .backgroundMuted(@controlBackground, 10);
+    }
+
+    .azc-bg-muted {
+        .backgroundMuted(@controlBackground, 30);
+    }
+
+    .azc-bg-muted-selected {
+        .backgroundMuted(@controlBackground, 50);
+    }
+    // Mutes light background by 80 and dark background by 10
+    .azc-bg-muted-80-10 {
+        .backgroundSplit(@controlBackground, 80, 10);
+    }
+
+    .azc-bg-console {
+        background-color: tint(@controlColorBlack, 10);
+    }
+
+    .azc-bg-selected {
+        background-color: @priorityPrimary;
+    }
+
+    .azc-bg-hover {
+        .backgroundMuted(@priorityPrimary, 60);
+    }
+
+    .azc-bg-edited {
+        background-color: @stateDirty;
+    }
+
+    .azc-bg-edited-before::before {
+        background-color: @stateDirty;
+    }
+
+    .azc-bg-success {
+        background-color: @stateSuccess;
+    }
+
+    .azc-bg-error {
+        background-color: @stateError;
+    }
+
+    .azc-bg-invalid {
+        background-color: @stateInvalid;
+    }
+
+    .azc-bg-invalid-before::before {
+        background-color: @stateInvalid;
+    }
+
+    .azc-bg-disabled {
+        .backgroundMuted(@controlBackground, 10);
+    }
+
+    .azc-bg-white {
+        background-color: @controlColorWhite;
+    }
+
+    .azc-bg-overlay-dark {
+        background: rgba(red(@controlColorBlack), green(@controlColorBlack), blue(@controlColorBlack), .7);
+    }
+    // Background Hover
+    .azc-bg-hover-muted:hover {
+        .backgroundMuted(@controlBackground, 50);
+    }
+    // Border
+    .azc-br-default {
+        border-color: @controlBorder;
+    }
+
+    .azc-br-muted {
+        .borderMuted(@controlBackground, 20);
+    }
+
+    .azc-br-muted-80-10 {
+        .borderSplit(@controlBackground, 80, 10);
+    }
+
+   .azc-br-active {
+        border-color: @controlText;
+    }
+
+    .azc-br-strong {
+        .borderMuted(@controlBackground, 50);
+    }
+
+    .azc-br-focused {
+        border-color: @priorityPrimary;
+    }
+
+    .azc-br-edited {
+        border-color: @stateDirty;
+    }
+
+    .azc-br-selected {
+        border-color: @priorityPrimary;
+    }
+
+    .azc-br-invalid {
+        border-color: @stateInvalid;
+    }
+    // Button
+    .azc-button {
+        background-color: transparent;
+        border-color: @controlText;
+        color: @controlText;
+        fill: @controlText;
+    }
+
+    .azc-btn-primary {
+        background-color: @priorityPrimary;
+        border-color: @priorityPrimary;
+        color: @controlColorWhite;
+        fill: @controlColorWhite;
+
+        &:hover {
+            background-color: @priorityPrimaryHover;
+            border-color: @priorityPrimaryHover;
+            outline-color: @priorityPrimaryHover;
+        }
+    }
+
+    .azc-btn-secondary {
+        .backgroundMuted(@controlBackground, 30);
+        .fillMuted(@controlText, 20);
+
+        &:hover {
+            .backgroundMuted(@controlBackground, 40);
+            .fillMuted(@controlText, 30);
+        }
+    }
+    // Stroke
+    .azc-stroke-muted {
+        .strokeMuted(@controlBackground, 50);
+    }
+
+    .azc-stroke-heavy {
+        .strokeMuted(@controlBackground, 60);
+    }
+
+    .azc-stroke-default {
+        stroke: @controlBackground;
+    }
+
+    .azc-stroke-selected {
+        stroke: @priorityPrimary;
+    }
+    // Fill
+    .azc-fill-default {
+        fill: @controlBackground;
+    }
+
+    .azc-fill-muted {
+        .fillMuted(@controlBackground, 20);
+    }
+
+    .azc-fill-heavy {
+        .fillMuted(@controlBackground, 60);
+    }
+
+    .azc-fill-muted-30 {
+        .fillMuted(@controlBackground, 30);
+    }
+
+    .azc-fill-hover-muted-30:hover {
+        .fillMuted(@controlBackground, 30);
+    }
+
+    .azc-fill-hovered-heavy:hover {
+        .fillMuted(@controlBackground, 60);
+    }
+
+    .azc-fill-text {
+        fill: @controlText;
+    }
+
+    .azc-fill-hover {
+        .fillHover(@controlBackground, @priorityPrimary);
+    }
+
+    .azc-fill-selected {
+        .fillSelect(@controlBackground, @priorityPrimary);
+    }
+
+    .azc-fill-white {
+        fill: @controlColorWhite;
+    }
+
+    .azc-fill-primary {
+        fill: @priorityPrimary;
+    }
+
+    .azc-fill-primary-tinted-60 {
+        fill: tint(@priorityPrimary, 60);
+    }
+
+    // Outline
+    .azc-outline-primary {
+        outline-color: @priorityPrimary;
+    }
+    // Link
+    a.azc-link-primary {
+        color: @priorityPrimary;
+    }
+    // Scrollbar
+    .azc-scrollbar-default,
+    .azc-scrollbar-default:hover {
+        -ms-overflow-style: scrollbar;
+        .scrollbarMuted(@controlBackground, 30);
+    }
+    // Text
+    .azc-text-muted {
+        .textSplit(@controlText, 35, 50);
+    }
+
+    .azc-text-console {
+        color: shade(@controlColorWhite, 10);
+    }
+
+    a.azc-text-primary,
+    .azc-text-primary {
+        color: @priorityPrimary;
+    }
+
+    .azc-text-success {
+        color: @stateSuccess;
+    }
+
+    .azc-text-warning {
+        color: @stateWarning;
+    }
+
+    a.azc-text-white,
+    .azc-text-white {
+        color: @controlColorWhite;
+    }
+
+    a.azc-text-disabled,
+    .azc-text-disabled {
+        .textMuted(@controlText, 50);
+    }
+
+    input.azc-disabled,
+    .azc-disabled,
+    .azc-disabled:hover,
+    .azc-disabled:focus {
+        .textMuted(@controlText, 50);
+        .backgroundMuted(@controlBackground, 10);
+        .borderMuted(@controlBorder, 20);
+        .fillMuted(@controlText, 50);
+        cursor: default;
+        outline: none;
+    }
+
+    .azc-fill-disabled {
+        .fillMuted(@controlText, 50);
+        cursor: default;
+    }
+    // Gradients
+    .azc-gradient-default {
+        background: linear-gradient(to bottom, 
+        rgba(red(@controlBackground), green(@controlBackground), blue(@controlBackground), 0.01) 0%, 
+        rgba(red(@controlBackground), green(@controlBackground), blue(@controlBackground), 1.00) 50%, 
+        rgba(red(@controlBackground), green(@controlBackground), blue(@controlBackground), 0.01) 100%);
+    }
+
+    .azc-highlight {
+        color: @controlColorBlack;
+        background-color: #fff100;
+    }
+}

@@ -1,0 +1,187 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-donut {
+    .azc-singleSetting.azc-usageGauge-centerSetting {
+        .azc-font-bold();
+        line-height: 1;
+    }
+
+    &.azc-gauge-center-small {
+        &.azc-donut-gauge-has-selected {
+            .azc-singleSetting.azc-usageGauge-centerSetting {
+                .azc-singleSetting-caption {
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        width: 3px;
+                        height: 10px;
+                        margin-right: 1px;
+                        margin-bottom: -1px;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    &.azc-gauge-center-large, &.azc-gauge-center-medium {
+        &.azc-donut-gauge-has-selected {
+            .azc-singleSetting.azc-usageGauge-centerSetting {
+                .azc-singleSetting-caption {
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        width: 4px;
+                        height: 10px;
+                        margin-right: 1px;
+                        margin-bottom: -1px;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    .azc-gauge {
+        .azc-gauge-currentbar-g {
+            path {
+                opacity: 1;
+            }
+        }
+
+        svg {
+            .azc-gauge-currentbar-g {
+                path {
+
+                    &[data-hovered='true'] {
+                        opacity: .75;
+                    }
+
+                    &[aria-selected='true'] {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &.azc-donut-gauge-hovered {
+        .azc-gauge {
+            svg {
+                g.azc-gauge-thresholdsbar-g {
+                    path {
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .azc-gauge-currentbar-g {
+                path {
+                    &:not([data-hovered='true']):not([aria-selected='true']):not([data-hovering-out='true']) {
+                        opacity: 0;
+                    }
+
+                    &[aria-selected='true']:not([data-hovered='true']) {
+                        opacity: .88;
+                    }
+                }
+            }
+        }
+
+        &:not([data-gauge-hovering='true']) {
+            &:not(.azc-donut-gauge-has-selected) {
+                .azc-gauge {
+                    .azc-gauge-currentbar-g {
+                        path {
+                            &:not([data-hovered='true']):not([aria-selected='true']) {
+                                transition: opacity .3s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:not(.azc-donut-gauge-hovered):not(.azc-donut-gauge-has-selected) {
+        .azc-gauge {
+            .azc-gauge-currentbar-g {
+                path {
+                    &:not([data-hovered='true']):not([aria-selected='true']) {
+                        transition: opacity .3s;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &.azc-donut-gauge-has-selected {
+        .azc-gauge {
+            svg {
+                g.azc-gauge-thresholdsbar-g {
+                    path {
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .azc-gauge-currentbar-g {
+                path {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &.azc-theme-tropical {
+        .azc-gauge {
+            .azc-gauge-currentbar-g {
+                path {
+                    opacity: 0;
+
+
+                    &[data-hovered='true'] {
+                        opacity: .75;
+                    }
+
+                    &[aria-selected='true'] {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &.azc-donut-gauge-hovered {
+            .azc-gauge {
+                svg {
+                    g.azc-gauge-thresholdsbar-g {
+                        path {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+
+                .azc-gauge-currentbar-g {
+                    path {
+                        &[aria-selected='true']:not([data-hovered='true']) {
+                            opacity: .88;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.azc-donut-gauge-has-selected {
+            .azc-gauge {
+                svg {
+                    g.azc-gauge-thresholdsbar-g {
+                        path {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

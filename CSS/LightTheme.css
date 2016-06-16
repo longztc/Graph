@@ -1,0 +1,304 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-light-theme {
+  background-color: #ffffff;
+  color: #252525;
+}
+.azc-light-theme .azc-control {
+  border-color: #bababa;
+}
+.azc-light-theme .azc-control optgroup,
+.azc-light-theme .azc-control option {
+  background-color: #ffffff;
+  border-color: #bababa;
+  color: #252525;
+}
+.azc-light-theme .azc-control ::-webkit-input-placeholder {
+  color: #929292;
+}
+.azc-light-theme .azc-control ::-moz-placeholder {
+  color: #929292;
+}
+.azc-light-theme .azc-control :-ms-input-placeholder {
+  color: #929292;
+}
+.azc-light-theme .azc-control a {
+  color: #252525;
+}
+.azc-light-theme .azc-node-fill {
+  fill: #d9f6ff;
+}
+.azc-light-theme .azc-node-fill-hovered {
+  fill: #8ce5ff;
+}
+.azc-light-theme .azc-node-bg {
+  background-color: #d9f6ff;
+}
+.azc-light-theme .azc-node-bg-hovered {
+  background-color: #8ce5ff;
+}
+.azc-light-theme .azc-chart {
+  fill: #ffffff;
+  stroke: #cccccc;
+}
+.azc-light-theme .azc-chart text {
+  fill: #929292;
+}
+.azc-light-theme .azc-chart text.azc-chart-axis-slider-text {
+  fill: #252525;
+}
+.azc-light-theme .azc-chart .azc-chart-axis-slider-text-rect {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+.azc-light-theme .azc-stroke-default {
+  stroke: #252525;
+}
+.azc-light-theme .azc-has-hover:hover:not(.azc-bg-invalid):not(.azc-bg-edited):not(.azc-disabled):not(.azc-row-disabled):not(.azc-bg-selected):not(.azc-list-selected),
+.azc-light-theme .azc-external-hovered:not(.azc-bg-invalid):not(.azc-bg-edited):not(.azc-disabled):not(.azc-row-disabled):not(.azc-bg-selected):not(.azc-list-selected) {
+  background-color: #d9f5fd;
+}
+.azc-light-theme .azc-header {
+  background-color: #bababa;
+  color: #252525;
+}
+.azc-light-theme .azc-input,
+.azc-light-theme .azc-textarea {
+  color: #252525;
+  border-color: #bababa;
+  background-color: #ffffff;
+}
+.azc-light-theme .azc-list-focused {
+  background-color: #d9f5fd;
+}
+.azc-light-theme .azc-list-selected {
+  background-color: #b3ebfb;
+}
+.azc-light-theme .azc-bg-default {
+  background-color: #ffffff;
+}
+.azc-light-theme .azc-bg-light {
+  background-color: #e6e6e6;
+}
+.azc-light-theme .azc-bg-muted {
+  background-color: #b3b3b3;
+}
+.azc-light-theme .azc-bg-muted-selected {
+  background-color: #808080;
+}
+.azc-light-theme .azc-bg-muted-80-10 {
+  background-color: #333333;
+}
+.azc-light-theme .azc-bg-console {
+  background-color: #191919;
+}
+.azc-light-theme .azc-bg-selected {
+  background-color: #00bcf2;
+}
+.azc-light-theme .azc-bg-hover {
+  background-color: #99e4fa;
+}
+.azc-light-theme .azc-bg-edited {
+  background-color: #9b4f96;
+}
+.azc-light-theme .azc-bg-edited-before::before {
+  background-color: #9b4f96;
+}
+.azc-light-theme .azc-bg-success {
+  background-color: #bad80a;
+}
+.azc-light-theme .azc-bg-error {
+  background-color: #fcd6f1;
+}
+.azc-light-theme .azc-bg-invalid {
+  background-color: #ec008c;
+}
+.azc-light-theme .azc-bg-invalid-before::before {
+  background-color: #ec008c;
+}
+.azc-light-theme .azc-bg-disabled {
+  background-color: #e6e6e6;
+}
+.azc-light-theme .azc-bg-white {
+  background-color: #ffffff;
+}
+.azc-light-theme .azc-bg-overlay-dark {
+  background: rgba(0, 0, 0, 0.7);
+}
+.azc-light-theme .azc-bg-hover-muted:hover {
+  background-color: #808080;
+}
+.azc-light-theme .azc-br-default {
+  border-color: #bababa;
+}
+.azc-light-theme .azc-br-muted {
+  border-color: #cccccc;
+}
+.azc-light-theme .azc-br-muted-80-10 {
+  border-color: #333333;
+}
+.azc-light-theme .azc-br-active {
+  border-color: #252525;
+}
+.azc-light-theme .azc-br-strong {
+  border-color: #808080;
+}
+.azc-light-theme .azc-br-focused {
+  border-color: #00bcf2;
+}
+.azc-light-theme .azc-br-edited {
+  border-color: #9b4f96;
+}
+.azc-light-theme .azc-br-selected {
+  border-color: #00bcf2;
+}
+.azc-light-theme .azc-br-invalid {
+  border-color: #ec008c;
+}
+.azc-light-theme .azc-button {
+  background-color: transparent;
+  border-color: #252525;
+  color: #252525;
+  fill: #252525;
+}
+.azc-light-theme .azc-btn-primary {
+  background-color: #00bcf2;
+  border-color: #00bcf2;
+  color: #ffffff;
+  fill: #ffffff;
+}
+.azc-light-theme .azc-btn-primary:hover {
+  background-color: #00558c;
+  border-color: #00558c;
+  outline-color: #00558c;
+}
+.azc-light-theme .azc-btn-secondary {
+  background-color: #b3b3b3;
+  fill: #515151;
+}
+.azc-light-theme .azc-btn-secondary:hover {
+  background-color: #999999;
+  fill: #666666;
+}
+.azc-light-theme .azc-stroke-muted {
+  stroke: #808080;
+}
+.azc-light-theme .azc-stroke-heavy {
+  stroke: #666666;
+}
+.azc-light-theme .azc-stroke-default {
+  stroke: #ffffff;
+}
+.azc-light-theme .azc-stroke-selected {
+  stroke: #00bcf2;
+}
+.azc-light-theme .azc-fill-default {
+  fill: #ffffff;
+}
+.azc-light-theme .azc-fill-muted {
+  fill: #cccccc;
+}
+.azc-light-theme .azc-fill-heavy {
+  fill: #666666;
+}
+.azc-light-theme .azc-fill-muted-30 {
+  fill: #b3b3b3;
+}
+.azc-light-theme .azc-fill-hover-muted-30:hover {
+  fill: #b3b3b3;
+}
+.azc-light-theme .azc-fill-hovered-heavy:hover {
+  fill: #666666;
+}
+.azc-light-theme .azc-fill-text {
+  fill: #252525;
+}
+.azc-light-theme .azc-fill-hover {
+  fill: #d9f5fd;
+}
+.azc-light-theme .azc-fill-selected {
+  fill: #b3ebfb;
+}
+.azc-light-theme .azc-fill-white {
+  fill: #ffffff;
+}
+.azc-light-theme .azc-fill-primary {
+  fill: #00bcf2;
+}
+.azc-light-theme .azc-fill-primary-tinted-60 {
+  fill: #99e4fa;
+}
+.azc-light-theme .azc-outline-primary {
+  outline-color: #00bcf2;
+}
+.azc-light-theme a.azc-link-primary {
+  color: #00bcf2;
+}
+.azc-light-theme .azc-scrollbar-default,
+.azc-light-theme .azc-scrollbar-default:hover {
+  -ms-overflow-style: scrollbar;
+  -ms-scrollbar-track-color: #e6e6e6;
+  -ms-scrollbar-face-color: #b3b3b3;
+}
+.azc-light-theme .azc-scrollbar-default::-webkit-scrollbar,
+.azc-light-theme .azc-scrollbar-default:hover::-webkit-scrollbar {
+  background: transparent;
+}
+.azc-light-theme .azc-scrollbar-default::-webkit-scrollbar-track-piece,
+.azc-light-theme .azc-scrollbar-default:hover::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+.azc-light-theme .azc-scrollbar-default::-webkit-scrollbar-thumb,
+.azc-light-theme .azc-scrollbar-default:hover::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+}
+.azc-light-theme .azc-text-muted {
+  color: #929292;
+}
+.azc-light-theme .azc-text-console {
+  color: #e6e6e6;
+}
+.azc-light-theme a.azc-text-primary,
+.azc-light-theme .azc-text-primary {
+  color: #00bcf2;
+}
+.azc-light-theme .azc-text-success {
+  color: #bad80a;
+}
+.azc-light-theme .azc-text-warning {
+  color: #ffb900;
+}
+.azc-light-theme a.azc-text-white,
+.azc-light-theme .azc-text-white {
+  color: #ffffff;
+}
+.azc-light-theme a.azc-text-disabled,
+.azc-light-theme .azc-text-disabled {
+  color: #929292;
+}
+.azc-light-theme input.azc-disabled,
+.azc-light-theme .azc-disabled,
+.azc-light-theme .azc-disabled:hover,
+.azc-light-theme .azc-disabled:focus {
+  color: #929292;
+  background-color: #e6e6e6;
+  border-color: #959595;
+  fill: #929292;
+  cursor: default;
+  outline: none;
+}
+.azc-light-theme .azc-fill-disabled {
+  fill: #929292;
+  cursor: default;
+}
+.azc-light-theme .azc-gradient-default {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 0%, #ffffff 50%, rgba(255, 255, 255, 0.01) 100%);
+}
+.azc-light-theme .azc-highlight {
+  color: #000000;
+  background-color: #fff100;
+}

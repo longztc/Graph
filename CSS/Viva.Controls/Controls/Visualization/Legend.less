@@ -1,0 +1,62 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-legend {
+    width: 100%;
+
+    .azc-legend-color {
+        min-height: 1em;
+        width: 4px;
+
+        svg {
+            height: 14px;
+        }
+    }
+
+    .azc-grid-full {
+        table-layout: fixed;
+    }
+
+    table {
+        padding: 1px;
+        tbody {
+            tr {
+                td {
+                    font-size: 10px;
+                    text-transform: uppercase;
+                    padding-left: 5px;
+                    border: 0;
+                    height: 14px;
+                    padding-bottom: 4px;
+                    padding-top: 3px;
+                    border-bottom: 5px;
+
+                    &:first-child {
+                        padding-left: 2px;
+                    }
+                }
+            }
+        }
+
+            tbody:last-child {
+                tr:last-child {
+                    td {
+                        border-bottom: 5px;
+                    }
+                }
+            }
+    }
+
+    svg {
+        display: block;
+
+        .azc-hatchingPatternStyle {
+            stroke-width: 0;
+            
+            path {
+                fill: none;
+                stroke-width: 1;
+                stroke: #ffffff;
+            }
+        }
+    }
+}

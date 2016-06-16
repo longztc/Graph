@@ -1,0 +1,70 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@maxStringWidth: 120px;
+@horizontalStringMargin: 6px;
+@padding: 0 10px 0 10px;
+@closeIconWidth: 10px;
+@closeIconHeight: 10px;
+@closeIconMargin: 5px 4px 0 0;
+
+.azc-stringList {
+
+    .azc-stringList-item {
+        // styles for the block
+        display: inline-block;
+        margin-right: @horizontalStringMargin;
+        cursor: pointer;
+        background-color: #63717f;
+        color: white;
+
+        .azc-stringList-itemText {
+            line-height: @formElementHeight;
+            padding: @padding;
+            max-width: @maxStringWidth;
+            .ellipsis;
+        }
+
+        .azc-stringList-itemRemove {
+            float: right;
+            margin: @closeIconMargin;
+            width: @closeIconWidth;
+            height: @closeIconHeight;
+            cursor: pointer;
+
+            svg {
+                opacity: 0.7;
+            }
+
+            svg polygon {
+                fill: white;
+            }
+        }
+
+        &:hover {
+            background-color: #464f59;
+
+            svg {
+                opacity: 1.0;
+            }
+        }
+    }
+
+    .azc-stringList-add {
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .azc-stringList-addIcon {
+        font-size: large;
+        width: @formElementHeight;
+        height: @formElementHeight;
+        text-align: center;
+        cursor: pointer;
+        line-height: 22px;
+
+        svg {
+            width: @formElementHeight;
+            height: @formElementHeight;
+        }
+    }
+}

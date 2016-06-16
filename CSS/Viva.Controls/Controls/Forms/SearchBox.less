@@ -1,0 +1,71 @@
+﻿@import "../../Definitions/Common.d.less";
+@import "TextInput.less";
+
+@borderOffset: 4px;
+
+.azc-searchBox {
+    position: relative;
+    display: inline-block;
+    font-size: @fontSize;
+    padding-right: 30px;
+    height: @formElementHeight;
+    .azc-font();
+
+    ::-ms-clear {
+        display: none;
+    }
+
+    &.azc-searchBox-state-hidden {
+        display: none;
+    }
+
+    &.azc-searchBox-button-state-hidden {
+        padding-right: 0;
+
+        .azc-button {
+            display: none;
+        }
+    }
+
+    .azc-searchBox-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        float: left;
+        padding: 0;
+
+        .azc-searchBox-input {
+            .unselectable();
+            width: 100%;
+
+            .azc-textBox-wrapper {
+                padding-right: 0;
+                width: 100%;
+
+                input {
+                    display: inline-block;
+                    padding-right: 0;
+                }
+            } 
+        }
+    }
+
+    .azc-button {
+        height: @formElementHeight;
+        width: @formElementHeight;
+        min-width: @formElementHeight;
+        font-size: 16px;
+        line-height: normal;
+        vertical-align: top;
+        margin-left: 0;
+        border: none;
+        top: 0;
+        position: absolute;
+
+        .azc-searchBox-button-icon {
+            position: absolute;
+            top: -1px;
+            left: 6px;
+        }
+    }
+}

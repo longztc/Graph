@@ -1,0 +1,62 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-scrollbar {
+  overflow: hidden;
+  position: relative;
+}
+.azc-scrollbar .azc-scrollbar-scrollable {
+  position: relative;
+}
+.azc-scrollbar .azc-scrollbar-content {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.azc-scrollbar.azc-scrollbar-scrolling-vertical .azc-scrollbar-content {
+  padding-right: 8px;
+}
+.azc-scrollbar.azc-scrollbar-scrolling-horizontal .azc-scrollbar-content {
+  padding-bottom: 8px;
+}
+.azc-scrollbar .azc-scrollbar-track {
+  position: absolute;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+}
+.azc-scrollbar .azc-scrollbar-track.azc-scrollbar-track-vertical {
+  width: 8px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+}
+.azc-scrollbar .azc-scrollbar-track.azc-scrollbar-track-vertical .azc-scrollbar-handle {
+  width: 8px;
+  right: 0;
+}
+.azc-scrollbar .azc-scrollbar-track.azc-scrollbar-track-vertical.azc-scrollbar-track-disabled .azc-scrollbar-handle {
+  display: none;
+}
+.azc-scrollbar .azc-scrollbar-track.azc-scrollbar-track-horizontal {
+  height: 8px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+}
+.azc-scrollbar .azc-scrollbar-track.azc-scrollbar-track-horizontal .azc-scrollbar-handle {
+  height: 8px;
+  bottom: 0;
+}
+.azc-scrollbar .azc-scrollbar-track.azc-scrollbar-track-horizontal.azc-scrollbar-track-disabled .azc-scrollbar-handle {
+  display: none;
+}
+.azc-scrollbar .azc-scrollbar-track .azc-scrollbar-handle {
+  position: absolute;
+  background-color: #666666;
+}

@@ -1,0 +1,87 @@
+@import "../Definitions/Common.d.less";
+
+.azc-pager {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+
+        li {
+            float: left;
+            text-align: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                display: block;
+                padding: 0 12px;
+                font-size: 11px;
+                line-height: 23px;
+                color: inherit;
+                text-decoration: none;
+            }
+
+            &.azc-pager-arrow,
+            &.azc-pager-page {
+                .unselectable();
+            }
+
+            &.azc-pager-arrow {
+                margin-left: 5px;
+                width: 30px;
+                opacity: .5;
+
+                &:hover {
+                    opacity: .75;
+                }
+
+                a {
+                    background-color: #ccc;
+
+                    &[href]:hover {
+                        background-color: #f5f5f5;
+                    }
+
+                    img {
+                        border: 0;
+                    }
+                }
+
+                &.azc-pager-arrow-previous {
+                    a span:before {
+                        content: data-uri("image/svg+xml;base64", "../../../Content/Images/Viva.Controls/azc.pager.chevron-previous.svg");
+                    }
+                }
+
+                &.azc-pager-arrow-next {
+                    a span:before {
+                        content: data-uri("image/svg+xml;base64", "../../../Content/Images/Viva.Controls/azc.pager.chevron-next.svg");
+                    }
+                }
+            }
+
+            &.azc-pager-page[aria-selected=true] a {
+                background-color: #e5e5e5;
+            }
+
+            &.azc-pager-input {
+                width: 50px;
+
+                .azc-pager-input-textBox {
+                    height: 23px;
+                }
+
+                input {
+                    text-align: center;
+                }
+            }
+
+            &[aria-disabled=true] {
+                opacity: 0.1 !important;
+            }
+        }
+    }
+}

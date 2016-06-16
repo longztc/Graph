@@ -1,0 +1,6 @@
+.azc-grid-editableRow .azc-grid-editableRow-edited td:first-child {
+  box-shadow: inset 3px 0 0 0 #c84fd7;
+}
+.azc-grid-editableRow .azc-grid-editableRow-deleted {
+  display: none;
+}

@@ -1,0 +1,304 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-chartBase .azc-chart-axis {
+  pointer-events: none;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-x text,
+.azc-chartBase .azc-chart-axis .azc-chart-axis-y text,
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-x text,
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-y text {
+  font-size: 10px;
+  text-transform: uppercase;
+  stroke-width: 0px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-x .azc-chart-axis-caption {
+  text-anchor: middle;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-y .azc-chart-axis-caption {
+  text-anchor: end;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-x path,
+.azc-chartBase .azc-chart-axis .azc-chart-axis-x line {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke-width: 1px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-y path,
+.azc-chartBase .azc-chart-axis .azc-chart-axis-y line {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke-width: 1px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-x path,
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-x line {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke-width: 1px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-y path,
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-y line {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke-width: 1px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-area-border-line {
+  stroke-width: 1px;
+  stroke: #dcdfe2;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-hidden-line path {
+  stroke-width: 0px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-hidden-ticks .azc-chart-axis-tick-line {
+  stroke-width: 0px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-ticks .azc-chart-axis-tick-line {
+  stroke-width: 1px;
+}
+.azc-chartBase .azc-chart-background {
+  stroke-width: 0px;
+  fill-opacity: 0;
+}
+.azc-chartBase .azc-chart-axis-gridline {
+  stroke-width: 1px;
+  pointer-events: none;
+}
+.azc-chartBase .azc-chart-data:not(.azc-chart-noninteractive),
+.azc-chartBase .azc-chart-background:not(.azc-chart-noninteractive) {
+  pointer-events: all;
+}
+.azc-chart {
+  text-rendering: optimizeLegibility;
+  /* Stacked area chart */
+  /*
+     * Selection and Hover Styles
+     *
+     * azc-chart-hovered            Added chart root when hovering over something in the chart.
+     * azc-chart-selected           Added to chart root when there is a selection within the chart.
+     * azc-chart-series-hovered     Added to the series when hovering over it.
+     * azc-chart-series-selected    Added to the series when it is selected.
+     * azc-chart-item-hovered       (NYI) Added to the item when hovering over it.
+     * azc-chart-item-selected      (NYI) Added to the item when it is selected.
+     */
+}
+.azc-chart path {
+  stroke-width: 2;
+}
+.azc-chart svg g.azc-lineChart-series path {
+  fill: none !important;
+}
+.azc-chart .azc-chart-noDataMessage {
+  text-anchor: middle;
+}
+.azc-chart .azc-chart-view-line .azc-chart-lineStyleSolid {
+  fill: none;
+  stroke-dasharray: none;
+  transition: opacity 0.2s ease-in-out;
+}
+.azc-chart .azc-chart-view-line .azc-chart-lineStyleDotted {
+  stroke-dasharray: 3, 3;
+}
+.azc-chart .azc-chart-view-line .azc-chart-lineStyleDashed {
+  stroke-dasharray: 10, 5;
+}
+.azc-chart .azc-chart-view-line .azc-chart-lineStyleWarningThreshold {
+  stroke-width: 1px;
+  stroke-dasharray: 3, 3;
+}
+.azc-chart .azc-chart-view-line .azc-chart-lineStyleUsageThreshold {
+  stroke-width: 1px;
+}
+.azc-chart .azc-chart-view-line .azc-chart-lineStyleTrendline {
+  stroke-width: 2px;
+  opacity: 0.7;
+  stroke-dasharray: 4, 4;
+}
+.azc-chart .azc-chart-view-line .azc-chart-callout {
+  text-anchor: middle;
+}
+.azc-chart .azc-chart-view-line .azc-chart-tooltip-circle {
+  fill: none;
+  stroke: none;
+}
+.azc-chart .azc-chart-view-area {
+  fill-opacity: 0.6;
+}
+.azc-chart .azc-chart-view-area path {
+  stroke-width: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.azc-chart .azc-chart-view-area pattern.azc-hatchingPatternStyle {
+  fill: none;
+  stroke: #f4f5f6 !important;
+}
+.azc-chart .azc-chart-view-area pattern.azc-hatchingPatternStyle rect {
+  stroke-width: 0;
+}
+.azc-chart .azc-chart-view-area pattern.azc-hatchingPatternStyle path {
+  stroke-width: 1;
+}
+.azc-chart .azc-chart-view-area .azc-chart-callout {
+  text-anchor: middle;
+}
+.azc-chart .azc-chart-view-area .azc-chart-tooltip-circle {
+  fill: none;
+  stroke: none;
+}
+.azc-chart .azc-chart-view-scatter .azc-chart-tooltip-circle {
+  fill: none;
+  stroke: none;
+}
+.azc-chart .azc-chart-view-scatter .azc-chart-callout {
+  text-anchor: middle;
+}
+.azc-chart .azc-chart-view-scatter .azc-chart-hovered-circle {
+  opacity: 0.4;
+}
+.azc-chart .azc-chart-view-scatter .azc-chart-selected-circle {
+  opacity: 0.2;
+}
+.azc-chart .azc-chart-view-bar {
+  /* TODO guruk: implement the split bar chart using thresholds. This was you can get rid of those positive and negative constants. */
+}
+.azc-chart .azc-chart-view-bar .azc-barChart-series .azc-barChart-bar-positive {
+  fill: #4682b4 !important;
+  stroke: #4682b4 !important;
+}
+.azc-chart .azc-chart-view-bar .azc-barChart-series .azc-barChart-bar-negative {
+  fill: #ff0000 !important;
+  stroke: #ff0000 !important;
+}
+.azc-chart .azc-chart-view-bar .azc-barChart-series rect {
+  transition: opacity 0.2s ease-in-out;
+}
+.azc-chart .azc-chart-view-stackedArea pattern.azc-hatchingPatternStyle {
+  fill: none;
+  stroke: #f4f5f6 !important;
+}
+.azc-chart .azc-chart-view-stackedArea pattern.azc-hatchingPatternStyle rect {
+  stroke-width: 0;
+}
+.azc-chart .azc-chart-view-stackedArea pattern.azc-hatchingPatternStyle path {
+  stroke-width: 1;
+}
+.azc-chart .azc-chart-view-stackedArea .azc-stackedAreaChart-series .azc-svg-style-fill {
+  opacity: 1;
+}
+.azc-chart .azc-chart-view-stackedArea .azc-stackedAreaChart-series path {
+  stroke-width: 0;
+}
+.azc-chart .azc-chart-view-stackedArea .azc-stackedAreaChart-series.azc-stackedAreaChart-not-selected .azc-svg-style-fill {
+  opacity: 0.15;
+  transition: opacity 0.2s ease-in-out;
+}
+.azc-chart .azc-chart-view-stackedArea .azc-stackedAreaChart-series.azc-stackedAreaChart-not-selected.azc-chart-series-selected .azc-svg-style-fill,
+.azc-chart .azc-chart-view-stackedArea .azc-stackedAreaChart-series.azc-stackedAreaChart-not-selected.azc-chart-series-hovered .azc-svg-style-fill {
+  opacity: .8;
+}
+.azc-chart .azc-chart-view-stackedArea .azc-stackedLineChart-series path.azc-svg-style-fill {
+  stroke-width: 2px;
+  fill: none;
+  opacity: 1;
+}
+.azc-chart .azc-chart-view-stackedArea .azc-stackedLineChart-series.azc-chart-series-hovered .azc-svg-style-fill,
+.azc-chart .azc-chart-view-stackedArea .azc-stackedLineChart-series.azc-chart-series-selected .azc-svg-style-fill {
+  stroke-width: 3px;
+}
+.azc-chart .azc-chart-view-stackedArea .azc-stackedLineChart-series.azc-stackedAreaChart-not-selected path.azc-svg-style-fill,
+.azc-chart .azc-chart-view-stackedArea .azc-stackedLineChart-series.azc-stackedAreaChart-not-selected circle,
+.azc-chart .azc-chart-view-stackedArea .azc-stackedLineChart-series.azc-stackedAreaChart-not-selected circle.azc-chart-hovered-circle {
+  opacity: .3;
+  transition: opacity 0.2s ease-in-out;
+}
+.azc-chart .azc-chart-view-stackedArea .azc-stackedLineChart-series.azc-stackedAreaChart-not-selected.azc-chart-series-selected .azc-svg-style-fill,
+.azc-chart .azc-chart-view-stackedArea .azc-stackedLineChart-series.azc-stackedAreaChart-not-selected.azc-chart-series-hovered .azc-svg-style-fill {
+  opacity: .8;
+}
+.azc-chart .azc-chart-view-stackedArea .azc-chart-series-selected .azc-svg-style-fill {
+  opacity: 1;
+}
+.azc-chart .azc-chart-view-stackedArea .azc-chart-series-hovered .azc-svg-style-fill {
+  opacity: .8;
+}
+.azc-chart.azc-chart-hovered .azc-chart-view-bar .azc-barChart-series:not(.azc-chart-series-selected):not(.azc-chart-series-hovered) rect,
+.azc-chart.azc-chart-selected .azc-chart-view-bar .azc-barChart-series:not(.azc-chart-series-selected):not(.azc-chart-series-hovered) rect {
+  opacity: 0.3;
+}
+.azc-chart.azc-chart-hovered .azc-chart-view-bar .azc-barChart-series:not(.azc-chart-series-selected):not(.azc-chart-series-hovered) rect.azc-chart-item-hovered,
+.azc-chart.azc-chart-selected .azc-chart-view-bar .azc-barChart-series:not(.azc-chart-series-selected):not(.azc-chart-series-hovered) rect.azc-chart-item-hovered,
+.azc-chart.azc-chart-hovered .azc-chart-view-bar .azc-barChart-series:not(.azc-chart-series-selected):not(.azc-chart-series-hovered) rect.azc-chart-item-selected,
+.azc-chart.azc-chart-selected .azc-chart-view-bar .azc-barChart-series:not(.azc-chart-series-selected):not(.azc-chart-series-hovered) rect.azc-chart-item-selected {
+  opacity: 1;
+}
+.azc-chart.azc-chart-hovered .azc-chart-view-area .azc-areaChart-series:not(.azc-chart-series-selected):not(.azc-chart-series-hovered) .azc-svg-style-fill,
+.azc-chart.azc-chart-selected .azc-chart-view-area .azc-areaChart-series:not(.azc-chart-series-selected):not(.azc-chart-series-hovered) .azc-svg-style-fill {
+  fill-opacity: 0.3;
+}
+.azc-chart.azc-chart-hovered .azc-chart-view-area .azc-areaChart-series.azc-chart-series-selected .azc-svg-style-fill,
+.azc-chart.azc-chart-selected .azc-chart-view-area .azc-areaChart-series.azc-chart-series-selected .azc-svg-style-fill,
+.azc-chart.azc-chart-hovered .azc-chart-view-area .azc-areaChart-series.azc-chart-series-hovered .azc-svg-style-fill,
+.azc-chart.azc-chart-selected .azc-chart-view-area .azc-areaChart-series.azc-chart-series-hovered .azc-svg-style-fill {
+  fill-opacity: 1;
+}
+.azc-chart.azc-chart-hovered .azc-chart-view-line {
+  transition: opacity 0.3s;
+}
+.azc-chart.azc-chart-hovered .azc-chart-view-line .azc-lineChart-series.azc-chart-series-hovered path {
+  stroke-width: 3px;
+}
+.azc-chart.azc-chart-hovered .azc-chart-view-line .azc-lineChart-series.azc-chart-series-hovered .azc-chart-series-hovered-projection {
+  pointer-events: none;
+  stroke-width: 2px;
+  opacity: 0.4;
+}
+.azc-chart.azc-chart-hovered .azc-chart-view-line .azc-lineChart-series.azc-chart-series-hovered .azc-svg-style-stroke {
+  opacity: 1;
+}
+.azc-chart.azc-chart-selected .azc-chart-view-line {
+  transition: opacity 0.3s;
+}
+.azc-chart.azc-chart-selected .azc-chart-view-line .azc-lineChart-series:not(.azc-chart-series-selected):not(.azc-chart-series-hovered) circle,
+.azc-chart.azc-chart-selected .azc-chart-view-line .azc-lineChart-series:not(.azc-chart-series-selected):not(.azc-chart-series-hovered) .azc-svg-style-stroke {
+  opacity: 0.3;
+}
+.azc-chart .azc-chart-y-axis-slice {
+  stroke-width: 2px;
+  pointer-events: none;
+  opacity: 0.2;
+}
+.azc-chart.azc-chart-noninteractive,
+.azc-chart .azc-chart-noninteractive {
+  pointer-events: none !important;
+}
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) {
+  /* Stacked area chart */
+}
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) .azc-chart-view-line path {
+  pointer-events: stroke;
+}
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) .azc-chart-view-line .azc-chart-selected-circle,
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) .azc-chart-view-line .azc-chart-hovered-circle {
+  pointer-events: all;
+}
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) .azc-chart-view-area path {
+  pointer-events: fill;
+}
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) .azc-chart-view-scatter .azc-chart-hovered-circle {
+  pointer-events: all;
+}
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) .azc-chart-view-scatter .azc-chart-selected-circle {
+  pointer-events: all;
+}
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) .azc-chart-view-stackedArea .azc-stackedAreaChart-series path {
+  pointer-events: fill;
+}
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) .azc-chart-view-stackedArea .azc-stackedLineChart-series path.azc-svg-style-fill {
+  pointer-events: stroke;
+}
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) .azc-chart-view-stackedArea .azc-stackedLineChart-series .azc-chart-selected-circle,
+.azc-chart .azc-chart-data:not(.azc-chart-noninteractive) .azc-chart-view-stackedArea .azc-stackedLineChart-series .azc-chart-hovered-circle {
+  pointer-events: all;
+}

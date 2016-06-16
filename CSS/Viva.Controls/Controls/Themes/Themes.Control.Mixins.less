@@ -1,0 +1,189 @@
+﻿.backgroundMuted(@controlBackground, @amount) when (lightness(@controlBackground) >= 50%) {
+    background-color: shade(@controlBackground, @amount);
+}
+
+.backgroundMuted(@controlBackground, @amount) when (lightness(@controlBackground) < 50%) {
+    background-color: tint(@controlBackground, @amount);
+}
+
+.backgroundSplit(@controlBackground, @amountLight, @amountDark) when (lightness(@controlBackground) >= 50%) {
+    background-color: shade(@controlBackground, @amountLight);
+}
+
+.backgroundSplit(@controlBackground, @amountLight, @amountDark) when (lightness(@controlBackground) < 50%) {
+    background-color: tint(@controlBackground, @amountDark);
+}
+
+.backgroundSplitByDiscriminator(@discriminatorColor, @lightColor, @darkColor) when (lightness(@discriminatorColor) >= 50%) {
+    background-color: @lightColor;
+}
+
+.backgroundSplitByDiscriminator(@discriminatorColor, @lightColor, @darkColor) when (lightness(@discriminatorColor) < 50%) {
+    background-color: @darkColor;
+}
+
+.borderMuted(@controlBackground, @amount) when (lightness(@controlBackground) >= 50%) {
+    border-color: shade(@controlBackground, @amount);
+}
+
+.borderMuted(@controlBackground, @amount) when (lightness(@controlBackground) < 50%) {
+    border-color: tint(@controlBackground, @amount);
+}
+
+.borderSplit(@color, @amountLight, @amountDark) when (lightness(@color) >= 50%) {
+    border-color: shade(@color, @amountLight);
+}
+
+.borderSplit(@color, @amountLight, @amountDark) when (lightness(@color) < 50%) {
+    border-color: tint(@color, @amountDark);
+}
+
+.borderStrong(@controlBackground, @amount) when (lightness(@controlBackground) >= 50%) {
+    border-color: tint(@controlBackground, @amount);
+}
+
+.borderStrong(@controlBackground, @amount) when (lightness(@controlBackground) < 50%) {
+    border-color: shade(@controlBackground, @amount);
+}
+
+.strokeMuted(@controlBackground, @amount) when (lightness(@controlBackground) >= 50%) {
+    stroke: shade(@controlBackground, @amount);
+}
+
+.strokeMuted(@controlBackground, @amount) when (lightness(@controlBackground) < 50%) {
+    stroke: tint(@controlBackground, @amount);
+}
+
+.fillSplit(@discriminatorColor, @lightColor, @darkColor) when (lightness(@discriminatorColor) >= 50%) {
+    fill: @lightColor;
+}
+
+.fillSplit(@discriminatorColor, @lightColor, @darkColor) when (lightness(@discriminatorColor) < 50%) {
+    fill: @darkColor;
+}
+
+.fillMuted(@color, @amount) when (lightness(@color) >= 50%) {
+    fill: shade(@color, @amount);
+}
+
+.fillMuted(@color, @amount) when (lightness(@color) < 50%) {
+    fill: tint(@color, @amount);
+}
+
+.fillHover(@controlBackground, @priorityPrimary) when (lightness(@controlBackground) >= 50%) {
+    fill: tint(@priorityPrimary, 85%);
+}
+
+.fillHover(@controlBackground, @priorityPrimary) when (lightness(@controlBackground) < 50%) {
+    fill: shade(@controlBackground, 30%);
+}
+
+.fillSelect(@controlBackground, @priorityPrimary) when (lightness(@controlBackground) >= 50%) {
+    fill: tint(@priorityPrimary, 70%);
+}
+
+.fillSelect(@controlBackground, @priorityPrimary) when (lightness(@controlBackground) < 50%) {
+    fill: shade(@controlBackground, 50%);
+}
+
+.hoverableColors(@controlBackground, @priorityPrimary) when (lightness(@controlBackground) >= 50%) {
+    background-color: tint(@priorityPrimary, 85%);
+}
+
+.hoverableColors(@controlBackground, @priorityPrimary) when (lightness(@controlBackground) < 50%) {
+    background-color: shade(@controlBackground, 30%);
+}
+
+.placeholderMuted(@controlText, @amount) when (lightness(@controlText) >= 50%) {
+    ::-webkit-input-placeholder {
+        color: shade(@controlText, @amount);
+    }
+
+    ::-moz-placeholder {
+        color: shade(@controlText, @amount);
+    }
+
+    :-ms-input-placeholder {
+        color: shade(@controlText, @amount); 
+    }
+}
+
+.placeholderMuted(@controlText, @amount) when (lightness(@controlText) < 50%) {
+    ::-webkit-input-placeholder {
+        color: tint(@controlText, @amount);
+    }
+
+    ::-moz-placeholder {
+        color: tint(@controlText, @amount);
+    }
+
+    :-ms-input-placeholder {
+        color: tint(@controlText, @amount); 
+    }
+}
+
+.listFocused(@controlBackground, @priorityPrimary) when (lightness(@controlBackground) >= 50%) {
+    background-color: tint(@priorityPrimary, 85%);
+}
+
+.listFocused(@controlBackground, @priorityPrimary) when (lightness(@controlBackground) < 50%) {
+    background-color: shade(@controlBackground, 20%);
+}
+
+.textMuted(@controlText, @amount) when (lightness(@controlText) >= 50%) {
+    color: shade(@controlText, @amount);
+}
+
+.textMuted(@controlText, @amount) when (lightness(@controlText) < 50%) {
+    color: tint(@controlText, @amount);
+}
+
+.textSplit(@controlText, @amountLight, @amountDark) when (lightness(@controlText) >= 50%) {
+    color: shade(@controlText, @amountLight);
+}
+
+.textSplit(@controlText, @amountLight, @amountDark) when (lightness(@controlText) < 50%) {
+    color: tint(@controlText, @amountDark);
+}
+
+.selectableColors(@controlBackground, @priorityPrimary) when (lightness(@controlBackground) >= 50%) {
+    background-color: tint(@priorityPrimary, 70%);
+}
+
+.selectableColors(@controlBackground, @priorityPrimary) when (lightness(@controlBackground) < 50%) {
+    background-color: shade(@controlBackground, 50%);
+}
+
+.scrollbarMuted(@color, @amount) when (lightness(@color) >= 50%) {
+    &::-webkit-scrollbar {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: shade(@color, @amount);
+    }
+
+    -ms-scrollbar-track-color: shade(@color, @amount - 20);
+    -ms-scrollbar-face-color: shade(@color, @amount);
+}
+
+.scrollbarMuted(@color, @amount) when (lightness(@color) < 50%) {
+    &::-webkit-scrollbar {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: tint(@color, @amount);
+    }
+
+    -ms-scrollbar-track-color: tint(@color, @amount - 20);
+    -ms-scrollbar-face-color: tint(@color, @amount);
+}

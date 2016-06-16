@@ -1,0 +1,1414 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+/* MIXINS */
+/* MultiLIneTextBox */
+/* Password */
+/* NumericTextBox */
+/* EditableCombo */
+.azc-editableCombo.azc-validatableControl-invalid {
+  padding-right: 14px;
+}
+.azc-editableCombo.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  padding-bottom: 3px;
+}
+.azc-editableCombo .azc-dockedballoon.azc-dockedballoon-validation {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: none;
+  padding: 0;
+  margin: 0;
+  float: left;
+  height: 100%;
+}
+.azc-editableCombo .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor {
+  padding-top: 1px;
+}
+/* DropDown */
+.azc-dropdown .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+}
+/* .azc-editableControl and .azc-validatableControl are here to ensure the selector wins */
+.azc-editableControl.azc-validatableControl.azc-validatableControl-valid-validated.azc-textBox-hasfocus .azc-dockedballoon-validation,
+.azc-editableControl.azc-validatableControl.azc-validatableControl-valid-validated.azc-multiLineTextBox-hasfocus .azc-dockedballoon-validation,
+.azc-editableControl.azc-validatableControl.azc-validatableControl-valid-validated.azc-password-hasfocus .azc-dockedballoon-validation,
+.azc-editableControl.azc-validatableControl.azc-validatableControl-valid-validated.azc-numericTextBox-hasfocus .azc-dockedballoon-validation {
+  border-color: #00bcf2;
+}
+.azc-editableControl.azc-validatableControl.azc-editableControl-edited.azc-validatableControl-pending .azc-dockedballoon-validation,
+.azc-editableControl.azc-validatableControl.azc-editableControl-edited.azc-validatableControl-valid-validated .azc-dockedballoon-validation {
+  border-color: #9b4f96;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor {
+  padding-left: 4px;
+  /* Offset due to different anchor image sizes */
+  padding-top: 3px;
+  line-height: inherit;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-invalid {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-invalid .azc-textBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-invalid .azc-textBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-invalid .azc-textBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-editableControl-edited.azc-validatableControl-invalid {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-textBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-textBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-textBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-pending {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-pending .azc-textBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-pending .azc-textBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-pending .azc-textBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated .azc-textBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-color: transparent;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated .azc-textBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated .azc-textBox-wrapper textarea {
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor svg {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated.azc-textBox-hasfocus .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated.azc-textBox-hasfocus input,
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-validatableControl-valid-validated.azc-textBox-hasfocus textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-editableControl-edited.azc-validatableControl-valid-validated.azc-textBox-hasfocus .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-editableControl-edited.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-control-disabled.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation,
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-control-disabled.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation,
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-control-disabled.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-control-disabled.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor,
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-control-disabled.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor,
+.azc-editableControl.azc-validatableControl.azc-textBox.azc-control-disabled.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor {
+  padding-left: 4px;
+  /* Offset due to different anchor image sizes */
+  padding-top: 3px;
+  line-height: inherit;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper {
+  width: 100%;
+  line-height: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper input {
+  height: 23px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper textarea {
+  height: 100%;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper textarea {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3px 8px 4px;
+  outline: none;
+  font-size: 12px;
+  border-width: 1px;
+  border-style: solid;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper textarea::-webkit-input-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper textarea:-ms-input-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-multiLineTextBox-wrapper textarea::-moz-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited .azc-multiLineTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor {
+  padding-left: 4px;
+  /* Offset due to different anchor image sizes */
+  padding-top: 3px;
+  line-height: inherit;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid.azc-validatableControl-pending {
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-multiLineTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-multiLineTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending {
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-multiLineTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-multiLineTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-pending {
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-pending .azc-multiLineTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-pending .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-pending .azc-multiLineTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-valid-validated {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-color: transparent;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper textarea {
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor svg {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-validatableControl-valid-validated.azc-multiLineTextBox-hasfocus .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-editableControl-edited.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper {
+  width: 100%;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper input {
+  height: 23px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper textarea {
+  height: 100%;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper textarea {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3px 8px 4px;
+  outline: none;
+  font-size: 12px;
+  border-width: 1px;
+  border-style: solid;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper textarea::-webkit-input-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper textarea:-ms-input-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled .azc-multiLineTextBox-wrapper textarea::-moz-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending {
+  padding-right: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper {
+  width: 100%;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper input {
+  height: 23px;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper textarea {
+  height: 100%;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper textarea {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3px 8px 4px;
+  outline: none;
+  font-size: 12px;
+  border-width: 1px;
+  border-style: solid;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper textarea::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper textarea::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper textarea::-webkit-input-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper textarea:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper textarea:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper textarea:-ms-input-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-multiLineTextBox-wrapper textarea::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-multiLineTextBox-wrapper textarea::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-multiLineTextBox-wrapper textarea::-moz-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-disabled.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor {
+  padding-left: 4px;
+  /* Offset due to different anchor image sizes */
+  padding-top: 3px;
+  line-height: inherit;
+}
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-hasfocus input,
+.azc-editableControl.azc-validatableControl.azc-multiLineTextBox.azc-multiLineTextBox-hasfocus textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-password .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-password .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor {
+  padding-left: 4px;
+  /* Offset due to different anchor image sizes */
+  padding-top: 3px;
+  line-height: inherit;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid .azc-password-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid .azc-password-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid.azc-validatableControl-pending {
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid.azc-validatableControl-pending .azc-password-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid.azc-validatableControl-pending .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid.azc-validatableControl-pending .azc-password-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid .azc-password-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid .azc-password-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending {
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-password-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-password-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-pending {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-pending .azc-password-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-pending .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-pending .azc-password-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated .azc-password-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-color: transparent;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated .azc-password-wrapper textarea {
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor svg {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated.azc-password-hasfocus .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated.azc-password-hasfocus input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-validatableControl-valid-validated.azc-password-hasfocus textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-valid-validated.azc-password-hasfocus .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-valid-validated.azc-password-hasfocus input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-valid-validated.azc-password-hasfocus textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-editableControl-edited.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending {
+  padding-right: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper {
+  width: 100%;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper input {
+  height: 23px;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper textarea {
+  height: 100%;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper textarea {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3px 8px 4px;
+  outline: none;
+  font-size: 12px;
+  border-width: 1px;
+  border-style: solid;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper textarea::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper textarea::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper textarea::-webkit-input-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper textarea:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper textarea:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper textarea:-ms-input-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-invalid .azc-password-wrapper textarea::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-valid-validated .azc-password-wrapper textarea::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled.azc-validatableControl-pending .azc-password-wrapper textarea::-moz-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-password.azc-control-disabled .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor {
+  padding-left: 4px;
+  /* Offset due to different anchor image sizes */
+  padding-top: 3px;
+  line-height: inherit;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor {
+  padding-left: 4px;
+  /* Offset due to different anchor image sizes */
+  padding-top: 3px;
+  line-height: inherit;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid .azc-numericTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid .azc-numericTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid.azc-validatableControl-pending {
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-numericTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-numericTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-numericTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-numericTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending {
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-numericTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-numericTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-invalid.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-pending {
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-pending .azc-numericTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-pending .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-pending .azc-numericTextBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-valid-validated {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-color: transparent;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper textarea {
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor svg {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-validatableControl-valid-validated.azc-numericTextBox-hasfocus .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-valid-validated.azc-numericTextBox-hasfocus .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-editableControl-edited.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-left-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending {
+  padding-right: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper {
+  width: 100%;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper input {
+  height: 23px;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper textarea {
+  height: 100%;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper textarea,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper textarea {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3px 8px 4px;
+  outline: none;
+  font-size: 12px;
+  border-width: 1px;
+  border-style: solid;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper input::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper textarea::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper textarea::-webkit-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper textarea::-webkit-input-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper input:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper textarea:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper textarea:-ms-input-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper textarea:-ms-input-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper input::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-numericTextBox-wrapper textarea::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-numericTextBox-wrapper textarea::-moz-placeholder,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-numericTextBox-wrapper textarea::-moz-placeholder {
+  font-style: italic;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-valid-validated .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor,
+.azc-editableControl.azc-validatableControl.azc-numericTextBox.azc-numericTextBox-disabled.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor {
+  padding-left: 4px;
+  /* Offset due to different anchor image sizes */
+  padding-top: 3px;
+  line-height: inherit;
+}
+.azc-editableControl.azc-validatableControl.azc-dropdown.azc-validatableControl-invalid {
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-dropdown.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+}
+.azc-editableControl.azc-validatableControl.azc-checkBox.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+}
+.azc-editableControl.azc-validatableControl.azc-checkBox .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+  vertical-align: top;
+  padding: 0;
+  height: 17px;
+}
+.azc-editableControl.azc-validatableControl.azc-checkBox .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  padding: 0 2px 0 0;
+  font-size: 9pt;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox .azc-dockedballoon.azc-dockedballoon-validation {
+  display: none;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor {
+  padding-left: 4px;
+  /* Offset due to different anchor image sizes */
+  padding-top: 3px;
+  line-height: inherit;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-invalid {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-invalid .azc-textBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-invalid .azc-textBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-invalid .azc-textBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-invalid .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-pending {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 14px;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-pending .azc-textBox-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  text-decoration: none;
+  float: left;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-pending .azc-textBox-wrapper input,
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-pending .azc-textBox-wrapper textarea {
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  border-right-width: 0;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation {
+  display: inline-block;
+  width: 14px;
+  margin-right: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-left-width: 0;
+  padding: 0 2px 0 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  /* Need it higher than the input */
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation div.azc-dockedballoon-anchor {
+  cursor: default;
+  padding: 1px 1px 0 0;
+  text-align: right;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-validatableControl-pending .azc-dockedballoon.azc-dockedballoon-validation .azc-dockedballoon-anchor:before {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+}
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-control-disabled.azc-validatableControl-invalid,
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-control-disabled.azc-validatableControl-valid-validated,
+.azc-editableControl.azc-validatableControl.azc-fileUpload .azc-textBox.azc-control-disabled.azc-validatableControl-pending {
+  padding-right: 14px;
+}

@@ -1,0 +1,77 @@
+﻿@import "../../Definitions/Common.d.less";
+@import "TextInput.less";
+
+@editableComboDropWidth: 15px;
+@svgTopPadding: 3px;
+@jumpBarWidth: 90px;
+
+// TODO serkani, move this to common
+.azc-editableCombo-slimbox() {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    float: left;
+}
+
+.azc-editableCombo {
+    position: relative; // Necessary for positioning the children.
+    .box-sizing(border-box);
+    overflow: hidden;
+
+    .azc-editableCombo-wrapper {
+        .box-sizing(border-box);
+        .azc-editableCombo-slimbox();
+        overflow: hidden;
+        position: relative;
+        height: @formElementHeight;
+        width: 100%;
+        margin: 0;
+        border-width: @borderWidth;
+        border-style: solid;
+
+        input {
+            .box-sizing(border-box);
+            .azc-editableCombo-slimbox();
+            padding: 4px 4px 3px 8px;
+            width: 100%;
+            height: 100%;
+            outline: 0;
+            display: inline-block;
+            font-size: @inputFontSize;
+            background: transparent;
+        }
+
+        .azc-editableCombo-drop-image {
+            .azc-editableCombo-slimbox();
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+    }
+
+    // Combo has drop icon
+    &.azc-editableCombo-has-drop-image {
+        .azc-editableCombo-wrapper {
+            padding-right: 25px;
+
+            input {
+                padding-right: 0;
+            }
+
+            .azc-editableCombo-drop-image {
+                margin-right: -@editableComboDropWidth;
+                padding-top: @svgTopPadding;
+            }
+        }
+    }
+}
+
+.azc-editableCombo-drop-popup {
+    left: -10000px;
+    top: -10000px;
+    position: fixed;
+    z-index: 99;
+    overflow: hidden;
+    max-width: calc(~"100% - @{jumpBarWidth}")
+}

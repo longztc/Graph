@@ -1,0 +1,76 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-control-loading {
+    display: none !important;
+}
+
+.azc-control {
+    svg {
+        overflow: hidden;
+    }
+
+    ol, ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    a img {
+        border: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+body > div[data-popup='true'].azc-control {
+    .bodyPopupZindex();
+}
+
+.setDivBackgroundColor(@index, @color, @colorCode) {
+    @msportfxColorCodeName: ~".msportalfx-bgcolor-@{colorCode}";
+    @colorCodeName: ~".azc-color-@{colorCode}";
+    @className: ~".azc-color-@{color}";
+    // ToDo: lmchen REMOVE this after build. Temporary to allow not break the extension author.
+    @legacyChartClassName: ~".azc-chart-color-@{color}";
+    @classIndexName: ~".azc-color-index-@{index}";
+    @beforeColorCodeName: ~".azc-before-color-@{colorCode}";
+    @beforeClassName: ~".azc-before-color-@{color}";
+    @beforeClassIndexName: ~".azc-before-color-index-@{index}";
+    @afterColorCodeName: ~".azc-after-color-@{colorCode}";
+    @afterClassName: ~".azc-after-color-@{color}";
+    @afterClassIndexName: ~".azc-after-color-index-@{index}";
+    @colorString: "#@{color}";
+
+    div@{msportfxColorCodeName}, 
+    @{classIndexName}, 
+    div@{colorCodeName}, 
+    div@{className}, 
+    div@{legacyChartClassName}, 
+    @{beforeClassIndexName}::before,
+    div@{beforeClassName}::before, 
+    div@{beforeColorCodeName}::before {
+        background-color: color(@colorString) !important;
+    }
+}
+
+.divBackgroundColor(@index) {
+    @currentColor: "mscolor@{index}";
+    @currentColorCode: "mscolorcode@{index}";
+    .setDivBackgroundColor(@index, @@currentColor, @@currentColorCode);
+}
+
+.loopingDivBackgroundColor(@index) when (@index >= 0) {
+    .divBackgroundColor(@index);
+    .loopingDivBackgroundColor(@index - 1);
+}
+
+div {
+    .loopingDivBackgroundColor(@max-mscolor-index);
+}

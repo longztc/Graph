@@ -1,0 +1,39 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-grid-reorderRow.azc-grid table thead tr th:nth-child(2) > a {
+  padding-left: 0;
+}
+.azc-grid-reorderRow col.azc-grid-reorderRow-col {
+  width: 16px;
+}
+.azc-grid-reorderRow table tbody tr td.azc-grid-reorderRow-cell {
+  padding-left: 5px;
+  padding-right: 6px;
+}
+.azc-grid-reorderRow table tbody tr td:nth-child(2) {
+  padding: 0;
+}
+.azc-grid-reorderRow.azc-grid-reorderRow-enabled table tbody tr:not([aria-disabled="true"]):hover td.azc-grid-reorderRow-cell div {
+  margin-top: 4px;
+}
+.azc-grid-reorderRow.azc-grid-reorderRow-enabled table tbody tr:not([aria-disabled="true"]):hover td.azc-grid-reorderRow-cell div:before {
+  content: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI4cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDggMTYiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDggMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGNpcmNsZSBmaWxsPSIjYWFiM2JkIiBjeD0iMiIgY3k9IjIiIHI9IjEuOCIvPg0KPGNpcmNsZSBmaWxsPSIjYWFiM2JkIiBjeD0iMiIgY3k9IjgiIHI9IjEuOCIvPg0KPGNpcmNsZSBmaWxsPSIjYWFiM2JkIiBjeD0iMiIgY3k9IjE0IiByPSIxLjgiLz4NCjwvc3ZnPg0K");
+  width: 5px;
+  height: 17px;
+}
+.azc-grid-reorderRow.azc-grid-reorderRow-enabled table tbody tr:not([aria-disabled="true"])[aria-selected="true"]:hover td.azc-grid-reorderRow-cell div:before {
+  content: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI4cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDggMTYiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDggMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGNpcmNsZSBmaWxsPSIjOGY5Y2E4IiBjeD0iMiIgY3k9IjIiIHI9IjEuOCIvPg0KPGNpcmNsZSBmaWxsPSIjOGY5Y2E4IiBjeD0iMiIgY3k9IjgiIHI9IjEuOCIvPg0KPGNpcmNsZSBmaWxsPSIjOGY5Y2E4IiBjeD0iMiIgY3k9IjE0IiByPSIxLjgiLz4NCjwvc3ZnPg0K");
+}
+.azc-grid-reorderRow .azc-grid-reorderRow-line {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  display: none;
+}
+.azc-grid-reorderRow.azc-grid-reorderRow-active .azc-grid-reorderRow-line {
+  display: block;
+}

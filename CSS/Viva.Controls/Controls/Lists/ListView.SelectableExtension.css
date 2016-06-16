@@ -1,0 +1,10 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-listView-selectable .azc-listView-item[aria-selected=true] {
+  outline-width: 3px;
+  outline-style: solid;
+}

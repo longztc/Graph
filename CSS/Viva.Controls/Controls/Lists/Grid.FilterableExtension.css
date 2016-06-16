@@ -1,0 +1,24 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-grid-filterable.azc-grid {
+  /* Soft dependency until disabling reorder is inherently supported */
+  /* #1385694 */
+}
+.azc-grid-filterable.azc-grid.azc-grid-filterable-active .azc-grid-reorderRow-col,
+.azc-grid-filterable.azc-grid.azc-grid-filterable-active .azc-grid-reorderRow-header,
+.azc-grid-filterable.azc-grid.azc-grid-filterable-active .azc-grid-reorderRow-cell {
+  visibility: hidden;
+}
+.azc-grid-filterable.azc-grid .azc-grid-filterable-searchBox {
+  display: block;
+}
+.azc-grid-filterable.azc-grid .azc-grid-filterable-searchBox.azc-searchBox-state-hidden {
+  display: none;
+}
+.azc-grid-filterable.azc-grid .azc-grid-filterable-match {
+  font-style: normal;
+}

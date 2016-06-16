@@ -1,0 +1,49 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-legend {
+  width: 100%;
+}
+.azc-legend .azc-legend-color {
+  min-height: 1em;
+  width: 4px;
+}
+.azc-legend .azc-legend-color svg {
+  height: 14px;
+}
+.azc-legend .azc-grid-full {
+  table-layout: fixed;
+}
+.azc-legend table {
+  padding: 1px;
+}
+.azc-legend table tbody tr td {
+  font-size: 10px;
+  text-transform: uppercase;
+  padding-left: 5px;
+  border: 0;
+  height: 14px;
+  padding-bottom: 4px;
+  padding-top: 3px;
+  border-bottom: 5px;
+}
+.azc-legend table tbody tr td:first-child {
+  padding-left: 2px;
+}
+.azc-legend table tbody:last-child tr:last-child td {
+  border-bottom: 5px;
+}
+.azc-legend svg {
+  display: block;
+}
+.azc-legend svg .azc-hatchingPatternStyle {
+  stroke-width: 0;
+}
+.azc-legend svg .azc-hatchingPatternStyle path {
+  fill: none;
+  stroke-width: 1;
+  stroke: #ffffff;
+}

@@ -1,0 +1,29 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-splitter {
+    position: relative;
+
+    .azc-splitter-paneContainer {
+        overflow: auto;
+    }
+
+    .azc-splitter-resizeHandler {
+        position: relative;
+        width: 100%;
+        cursor: n-resize;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        z-index: 2;
+    }
+
+    .azc-splitter-shadow {
+        position: absolute;
+        height: 30px;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+body.azc-splitter-unselectable * {
+    .unselectable
+}

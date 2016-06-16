@@ -1,0 +1,72 @@
+﻿@import "../Definitions/Common.d.less";
+
+@azcScrollbarTrackColor: transparent;
+@azcScrollbarTrackHandleColor: #666;
+
+.azc-scrollbar {
+    overflow: hidden;
+    position: relative;
+
+    .azc-scrollbar-scrollable {
+        position: relative;
+    }
+
+    .azc-scrollbar-content {
+        .box-sizing(border-box);
+    }
+
+    &.azc-scrollbar-scrolling-vertical .azc-scrollbar-content {
+        padding-right: 8px;
+    }
+
+    &.azc-scrollbar-scrolling-horizontal .azc-scrollbar-content {
+        padding-bottom: 8px;
+    }
+
+    .azc-scrollbar-track {
+        position: absolute;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        cursor: default;
+
+        &.azc-scrollbar-track-vertical {
+            width: 8px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: @azcScrollbarTrackColor;
+
+            .azc-scrollbar-handle {
+                width: 8px;
+                right: 0;
+            }
+
+            &.azc-scrollbar-track-disabled .azc-scrollbar-handle {
+                display: none;
+            }
+        }
+
+        &.azc-scrollbar-track-horizontal {
+            height: 8px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: @azcScrollbarTrackColor;
+
+            .azc-scrollbar-handle {
+                height: 8px;
+                bottom: 0;
+            }
+
+            &.azc-scrollbar-track-disabled .azc-scrollbar-handle {
+                display: none;
+            }
+        }
+
+        .azc-scrollbar-handle {
+            position: absolute;
+            background-color: @azcScrollbarTrackHandleColor;
+        }
+    }
+}

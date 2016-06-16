@@ -1,0 +1,40 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-usageGauge {
+  position: relative;
+  text-decoration: none;
+  /* display:table (container) and display:table-cell (child) achieve the better vertical align across multi-line single setting control*/
+  display: table;
+}
+.azc-usageGauge .azc-usageGauge-centerSetting {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  /* display:table (container) and display:table-cell (child) achieve the better vertical align across multi-line single setting control*/
+  display: table-cell;
+  vertical-align: middle;
+}
+.azc-usageGauge .azc-usageGauge-footerSetting {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+.azc-usageGauge .azc-usageGauge-gauge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

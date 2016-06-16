@@ -1,0 +1,87 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@fontSize: 10px;
+
+.azc-chart-axis-common() {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke-width: 1px;
+}
+
+.azc-chartBase {
+    .azc-chart-axis {
+        pointer-events: none;
+
+        .azc-chart-axis-x, .azc-chart-axis-y, .azc-chart-secondary-axis-x, .azc-chart-secondary-axis-y {
+            text {
+                font-size: @fontSize;
+                text-transform: uppercase;
+                stroke-width: 0px;
+            }
+        }
+
+        .azc-chart-axis-x .azc-chart-axis-caption {
+            text-anchor: middle;
+        }
+
+        .azc-chart-axis-y .azc-chart-axis-caption {
+            text-anchor: end;
+        }
+
+        .azc-chart-axis-x path, .azc-chart-axis-x line {
+            .azc-chart-axis-common();
+        }
+
+        .azc-chart-axis-y path, .azc-chart-axis-y line {
+            .azc-chart-axis-common();
+        }
+
+        .azc-chart-secondary-axis-x path, .azc-chart-secondary-axis-x line {
+            .azc-chart-axis-common();
+        }
+
+        .azc-chart-secondary-axis-y path, .azc-chart-secondary-axis-y line {
+            .azc-chart-axis-common();
+        }
+
+        .azc-chart-area-border-line {
+            stroke-width: 1px;
+            stroke: #dcdfe2;
+        }
+
+        .azc-chart-axis-hidden-line {
+            path {
+                stroke-width: 0px;
+            }
+        }
+
+        .azc-chart-axis-hidden-ticks {
+            .azc-chart-axis-tick-line {
+                stroke-width: 0px;
+            }
+        }
+
+        .azc-chart-axis-ticks {
+            .azc-chart-axis-tick-line {
+                stroke-width: 1px;
+            }
+        }
+    }
+
+    .azc-chart-background {
+        stroke-width: 0px;
+        fill-opacity: 0;
+    }
+
+    .azc-chart-axis-gridline {
+        stroke-width: 1px;
+        
+        pointer-events: none;
+    }
+
+    .azc-chart-data, .azc-chart-background {
+        &:not(.azc-chart-noninteractive) {
+            pointer-events: all;
+        }
+    }
+}

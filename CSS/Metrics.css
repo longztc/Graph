@@ -1,0 +1,282 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-metrics svg {
+  display: block;
+}
+.azc-metrics svg .azc-hatchingPatternStyle {
+  stroke-width: 0;
+  fill: none;
+}
+.azc-metrics svg .azc-hatchingPatternStyle path {
+  stroke-width: 1;
+  stroke: #ffffff !important;
+}
+.azc-metrics .azc-metrics-singleSetting {
+  display: inline-block;
+  text-align: left;
+}
+.azc-metrics .azc-metrics-singleSetting .azc-singleSetting-data {
+  text-align: left;
+}
+.azc-metrics .azc-metrics-singleSetting .azc-singleSetting-data .azc-singleSetting-value {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 30px;
+  letter-spacing: -0.025em;
+}
+.azc-metrics .azc-metrics-singleSetting .azc-singleSetting-data .azc-singleSetting-unit {
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.02em;
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+}
+.azc-metrics .azc-metrics-singleSetting .azc-singleSetting-caption {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: -0.05em;
+  text-align: left;
+  text-transform: uppercase;
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+  display: inline-block;
+  max-width: 115px;
+  vertical-align: top;
+}
+.azc-metrics .azc-metrics-singleSetting .azc-singleSetting-captionWrapper {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.azc-metrics .azc-metrics-singleSetting .azc-singleSetting-captionWrapper .azc-singleSetting-caption {
+  display: inline-block;
+  max-width: 102px;
+  height: inherit;
+}
+.azc-metrics .azc-metrics-singleSetting .azc-singleSetting-captionWrapper .azc-dockedballoon {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1px;
+  width: inherit;
+  height: inherit;
+  vertical-align: top;
+}
+.azc-metrics .azc-metrics-bar-rectangle {
+  fill: none;
+}
+.azc-metrics.azc-metrics-sizeSmall ul.azc-metrics-horizontal {
+  height: 32px;
+  overflow: hidden;
+}
+.azc-metrics.azc-metrics-sizeSmall ul.azc-metrics-horizontal li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-bottom: 15px;
+  height: 32px;
+  margin-right: 0;
+}
+.azc-metrics.azc-metrics-sizeSmall ul.azc-metrics-horizontal li:first-child {
+  margin-left: 0;
+}
+.azc-metrics.azc-metrics-sizeSmall ul.azc-metrics-vertical {
+  overflow: hidden;
+}
+.azc-metrics.azc-metrics-sizeSmall ul.azc-metrics-vertical li {
+  margin-top: 14px;
+  height: 32px;
+  margin-right: 0;
+}
+.azc-metrics.azc-metrics-sizeSmall ul.azc-metrics-vertical li:first-child {
+  margin-top: 0;
+}
+.azc-metrics.azc-metrics-sizeSmall ul.azc-metrics-vertical li:last-child {
+  margin-bottom: 0;
+}
+.azc-metrics.azc-metrics-sizeSmall ul li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.azc-metrics.azc-metrics-sizeSmall ul li .azc-metrics-barColor {
+  display: inline-block;
+  width: 5px;
+  float: left;
+  height: 32px;
+  margin-right: 5px;
+}
+.azc-metrics.azc-metrics-sizeSmall .azc-singleSetting-data {
+  height: 15px;
+}
+.azc-metrics.azc-metrics-sizeSmall .azc-singleSetting-data div:first-child {
+  padding-right: 3px;
+}
+.azc-metrics.azc-metrics-sizeSmall .azc-singleSetting-data .azc-singleSetting-value {
+  font-size: 20px;
+  line-height: 15px;
+}
+.azc-metrics.azc-metrics-sizeSmall .azc-singleSetting-data .azc-singleSetting-unit {
+  font-size: 10px;
+}
+.azc-metrics.azc-metrics-sizeMedium ul.azc-metrics-horizontal {
+  height: 35px;
+  overflow: hidden;
+}
+.azc-metrics.azc-metrics-sizeMedium ul.azc-metrics-horizontal li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-bottom: 15px;
+  height: 35px;
+  margin-right: 0;
+}
+.azc-metrics.azc-metrics-sizeMedium ul.azc-metrics-horizontal li:first-child {
+  margin-left: 0;
+}
+.azc-metrics.azc-metrics-sizeMedium ul.azc-metrics-vertical {
+  overflow: hidden;
+}
+.azc-metrics.azc-metrics-sizeMedium ul.azc-metrics-vertical li {
+  margin-top: 30px;
+  height: 35px;
+  margin-right: 0;
+}
+.azc-metrics.azc-metrics-sizeMedium ul.azc-metrics-vertical li:first-child {
+  margin-top: 0;
+}
+.azc-metrics.azc-metrics-sizeMedium ul.azc-metrics-vertical li:last-child {
+  margin-bottom: 0;
+}
+.azc-metrics.azc-metrics-sizeMedium ul li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.azc-metrics.azc-metrics-sizeMedium ul li .azc-metrics-barColor {
+  display: inline-block;
+  width: 5px;
+  float: left;
+  height: 35px;
+  margin-right: 5px;
+}
+.azc-metrics.azc-metrics-sizeMedium .azc-singleSetting-data {
+  height: 20px;
+}
+.azc-metrics.azc-metrics-sizeMedium .azc-singleSetting-data div:first-child {
+  padding-right: 4px;
+}
+.azc-metrics.azc-metrics-sizeMedium .azc-singleSetting-data .azc-singleSetting-value {
+  font-size: 27px;
+  line-height: 14px;
+}
+.azc-metrics.azc-metrics-sizeMedium .azc-singleSetting-data .azc-singleSetting-unit {
+  font-size: 13px;
+}
+.azc-metrics.azc-metrics-sizeLarge ul.azc-metrics-horizontal {
+  height: 45px;
+  overflow: hidden;
+}
+.azc-metrics.azc-metrics-sizeLarge ul.azc-metrics-horizontal li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-bottom: 15px;
+  height: 45px;
+  margin-right: 0;
+}
+.azc-metrics.azc-metrics-sizeLarge ul.azc-metrics-horizontal li:first-child {
+  margin-left: 0;
+}
+.azc-metrics.azc-metrics-sizeLarge ul.azc-metrics-vertical {
+  overflow: hidden;
+}
+.azc-metrics.azc-metrics-sizeLarge ul.azc-metrics-vertical li {
+  margin-top: 22px;
+  height: 45px;
+  margin-right: 0;
+}
+.azc-metrics.azc-metrics-sizeLarge ul.azc-metrics-vertical li:first-child {
+  margin-top: 0;
+}
+.azc-metrics.azc-metrics-sizeLarge ul.azc-metrics-vertical li:last-child {
+  margin-bottom: 0;
+}
+.azc-metrics.azc-metrics-sizeLarge ul li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.azc-metrics.azc-metrics-sizeLarge ul li .azc-metrics-barColor {
+  display: inline-block;
+  width: 5px;
+  float: left;
+  height: 45px;
+  margin-right: 5px;
+}
+.azc-metrics.azc-metrics-sizeLarge .azc-singleSetting-data {
+  height: 30px;
+}
+.azc-metrics.azc-metrics-sizeLarge .azc-singleSetting-data div:first-child {
+  padding-right: 5px;
+}
+.azc-metrics.azc-metrics-sizeLarge .azc-singleSetting-data .azc-singleSetting-value {
+  font-size: 40px;
+  line-height: 24px;
+}
+.azc-metrics.azc-metrics-sizeXLarge ul.azc-metrics-horizontal {
+  height: 45px;
+  overflow: hidden;
+}
+.azc-metrics.azc-metrics-sizeXLarge ul.azc-metrics-horizontal li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-bottom: 15px;
+  height: 45px;
+  margin-right: 0;
+}
+.azc-metrics.azc-metrics-sizeXLarge ul.azc-metrics-horizontal li:first-child {
+  margin-left: 0;
+}
+.azc-metrics.azc-metrics-sizeXLarge ul.azc-metrics-vertical {
+  overflow: hidden;
+}
+.azc-metrics.azc-metrics-sizeXLarge ul.azc-metrics-vertical li {
+  margin-top: 23px;
+  height: 45px;
+  margin-right: 0;
+}
+.azc-metrics.azc-metrics-sizeXLarge ul.azc-metrics-vertical li:first-child {
+  margin-top: 0;
+}
+.azc-metrics.azc-metrics-sizeXLarge ul.azc-metrics-vertical li:last-child {
+  margin-bottom: 0;
+}
+.azc-metrics.azc-metrics-sizeXLarge ul li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.azc-metrics.azc-metrics-sizeXLarge ul li .azc-metrics-barColor {
+  display: inline-block;
+  width: 5px;
+  float: left;
+  height: 45px;
+  margin-right: 5px;
+}
+.azc-metrics.azc-metrics-sizeXLarge .azc-singleSetting-data {
+  height: 30px;
+}
+.azc-metrics.azc-metrics-sizeXLarge .azc-singleSetting-data div:first-child {
+  padding-right: 5px;
+}
+.azc-metrics.azc-metrics-sizeXLarge .azc-singleSetting-data .azc-singleSetting-value {
+  font-size: 40px;
+  line-height: 24px;
+}
+.azc-metrics .azc-metrics-nonvisible {
+  display: none !important;
+}

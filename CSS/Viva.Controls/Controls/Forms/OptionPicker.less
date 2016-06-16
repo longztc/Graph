@@ -1,0 +1,37 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-optionPicker {
+    display: inline-block;
+    height: @formElementHeight;
+
+    li {
+        min-width: 46px;
+        line-height: 13px;
+        font-size: @inputFontSize;
+        padding: 4px;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: default;
+        float: left;
+        border: @borderWidth solid;
+        margin-right: -@borderWidth;
+        outline: none;
+
+        input {
+            display: none;
+        }
+    }
+
+    li[aria-checked="true"] {
+        position: relative;
+    }
+
+    /* Clearfix */
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}

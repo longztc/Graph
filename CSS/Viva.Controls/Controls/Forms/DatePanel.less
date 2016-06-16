@@ -1,0 +1,110 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@cellAlign: center;
+
+.azc-datePanel {
+    border-width: @borderWidth;
+    border-style: solid;
+    .azc-font();
+
+    a {
+        text-decoration: none;
+        outline: none;
+        border: 1px solid transparent;
+        display: block;
+    }
+
+    .azc-datePanel-quick-navigation {
+        text-align: center;
+        padding: 6px 0 7px 0;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 100%;
+
+        .azc-datePanel-prev-month,
+        .azc-datePanel-next-month {
+            height: 15px;
+            width: 15px;
+            margin-top: -1px;
+        }
+
+        .azc-datePanel-prev-month {
+            float: left;
+            margin-left: 7px;
+        }
+
+            .azc-datePanel-prev-month:before {
+                content: data-uri("../../../../Content/Images/Viva.Controls/azc.datepanel.previous.png");
+            }
+
+        .azc-datePanel-next-month {
+            float: right;
+            margin-right: 7px;
+        }
+
+            .azc-datePanel-next-month:before {
+                content: data-uri("../../../../Content/Images/Viva.Controls/azc.datepanel.next.png");
+            }
+
+    }
+
+    .azc-datePanel-days {
+        border-spacing: 0;
+        border-collapse: collapse;
+        table-layout: auto;
+        margin: 5px auto;
+        border-color: inherit;
+
+        th {
+            text-align: @cellAlign;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        }
+
+        td {
+            text-align: @cellAlign;
+
+            a {
+                padding: 4px 6px 5px 7px;
+                font-size: 13px;
+                .azc-font-bold();
+            }
+
+            &.azc-datePanel-today {
+                padding: 4px 0;
+            }
+
+            &.azc-datePanel-other-month {
+                a {
+                    .azc-font();
+                }
+            }
+        }
+
+        .azc-datePanel-day-names {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-color: inherit;
+
+            th {
+                padding: 5px 0 7px 0;
+                text-transform: uppercase;
+                font-size: 11px;
+                .azc-font-bold();
+            }
+        }
+    }
+
+    .azc-datePanel-legend {
+        span {
+            &.azc-datePanel-legend-today {
+                width: 14px;
+                height: 14px;
+                float: left;
+                margin: 3px;
+                border-width: 1px;
+                border-style: solid;
+            }
+        }
+    }
+}

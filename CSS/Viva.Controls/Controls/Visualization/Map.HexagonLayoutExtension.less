@@ -1,0 +1,54 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-map {
+    .azc-svg-map-overlay {
+        .azc-hexagon-link-polyline {
+            fill: none;
+            stroke: steelblue;
+            stroke-width: 2;
+        }
+
+        .azc-hexagon-link-polyline-animated-dashed {
+            fill: none;
+            stroke: steelblue;
+            stroke-width: 2;
+            stroke-dasharray: 5;
+            stroke-dashoffset: 100;
+        }
+
+        .azc-hexagon-border-only {
+            fill: transparent;
+            stroke: blue;
+            stroke-width: 1;
+            pointer-events: fill;
+        }
+
+        .azc-hexagon-primary {
+            fill: blue;
+            stroke: blue;
+            stroke-width: 1;
+            pointer-events: fill;
+        }
+
+        .azc-hexagon-secondary {
+            fill: green;
+            stroke: green;
+            stroke-width: 1;
+            pointer-events: fill;
+        }
+
+        .azc-hexagon-icon-only {
+            fill: transparent;
+            stroke: transparent;
+            stroke-width: 0;
+            pointer-events: fill;
+        }
+
+        .azc-hexagon-text {
+            fill: red;
+            font-family: Verdana;
+            font-size: 6px;
+            text-anchor:middle;
+        }
+    }
+}

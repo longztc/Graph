@@ -1,0 +1,42 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-log-stream {
+  background-color: #000000;
+  color: #c0c0c0;
+}
+.azc-log-stream span.azc-log-stream-error,
+.azc-log-stream em.azc-log-stream-error,
+.azc-log-stream strong.azc-log-stream-error {
+  color: #ff0000;
+}
+.azc-log-stream span.azc-log-stream-success,
+.azc-log-stream em.azc-log-stream-success,
+.azc-log-stream strong.azc-log-stream-success {
+  color: #00ff00;
+}
+.azc-log-stream span.azc-log-stream-warning,
+.azc-log-stream em.azc-log-stream-warning,
+.azc-log-stream strong.azc-log-stream-warning {
+  color: #ffff00;
+}
+.azc-log-stream span.azc-log-stream-information,
+.azc-log-stream em.azc-log-stream-information,
+.azc-log-stream strong.azc-log-stream-information {
+  color: #00ffff;
+}
+.azc-log-stream span.azc-log-stream-text,
+.azc-log-stream em.azc-log-stream-text,
+.azc-log-stream strong.azc-log-stream-text {
+  color: #c0c0c0;
+}
+.azc-log-stream.azc-log-stream-error-hide .azc-log-stream-error,
+.azc-log-stream.azc-log-stream-success-hide .azc-log-stream-success,
+.azc-log-stream.azc-log-stream-warning-hide .azc-log-stream-warning,
+.azc-log-stream.azc-log-stream-information-hide .azc-log-stream-information,
+.azc-log-stream.azc-log-stream-text-hide .azc-log-stream-text {
+  display: none;
+}

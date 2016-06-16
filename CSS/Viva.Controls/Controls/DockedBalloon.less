@@ -1,0 +1,140 @@
+@import "../Definitions/Common.d.less";
+
+@textColor: @Color_Palette_C01;
+@pointerSize: 20px;
+
+/* HELP/INFO ANCHORS */
+.azc-dockedballoon.azc-dockedballoon-info,
+.azc-dockedballoon.azc-dockedballoon-help {
+    display: inline-block;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+
+    .azc-dockedballoon-anchor {
+        width: 100%;
+        height: 100%;
+
+        img {
+            display: inline-block;
+            margin-top: 5px;
+        }
+    }
+}
+
+.azc-dockedballoon-anchor-target {
+    height: 9px;
+    width: 9px;
+    margin-left: 3px;
+}
+
+/* VALIDATION ANCHOR */
+.azc-dockedballoon.azc-dockedballoon-validation {
+    display: inline-block;
+    vertical-align: top;
+
+    div.azc-dockedballoon-anchor {
+        // We support a click, but we do not allow the font.
+        // Since the balloon will start showing when the focus is in the textbox.
+        cursor: pointer;
+        font-weight: bold;
+        color: @textColor;
+        padding: 0 5px;
+        font-size: 12px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+
+        svg {
+            display: none;
+        }
+
+        &:before {
+            content: "!";
+        }
+    }
+}
+
+/* VALIDATION BALLOON OVERRIDES */
+div.azc-dockedballoon-validation {
+    &.azc-balloon {
+        width: auto;
+        height: auto;
+
+        &.azc-balloon-box-bottom {
+            .azc-balloon-pointer {
+                top: 0;
+                .bottomLeft-triangle(@pointerSize);
+            }
+
+            .azc-balloon-content {
+                margin-top: 4px;
+            }
+
+            &.azc-balloon-box-position-preferred,
+            &.azc-balloon-position-preferred {
+                left: 0;
+                vertical-align: baseline;
+
+                .azc-balloon-pointer {
+                    left: 0;
+                    top: -5px;
+                    .bottomLeft-triangle(@pointerSize);
+                }
+            }
+
+            &.azc-balloon-box-position-alternate,
+            &.azc-balloon-position-alternate {
+                left: 0;
+                vertical-align: bottom;
+
+                .azc-balloon-pointer {
+                    right: 0;
+                    top: -5px;
+                    .bottomRight-triangle(@pointerSize);
+                }
+            }
+        }
+
+        &.azc-balloon-box-top {
+            .azc-balloon-pointer {
+                bottom: 0;
+                .topLeft-triangle(@pointerSize);
+            }
+
+            .azc-balloon-content {
+                margin-bottom: 0px;
+            }
+
+            &.azc-balloon-box-position-preferred,
+            &.azc-balloon-position-preferred {
+                left: 0;
+                vertical-align: baseline;
+
+                .azc-balloon-pointer {
+                    left: 0;
+                    bottom: -9px;
+                    .topLeft-triangle(@pointerSize);
+                }
+            }
+
+            &.azc-balloon-box-position-alternate,
+            &.azc-balloon-position-alternate {
+                left: 0;
+                vertical-align: bottom;
+
+                .azc-balloon-pointer {
+                    right: 0;
+                    bottom: -5px;
+                    .topRight-triangle(@pointerSize);
+                }
+            }
+        }
+
+        .azc-balloon-content {
+            padding: 15px;
+        }
+    }
+}

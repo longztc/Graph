@@ -1,0 +1,69 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-editableCombo {
+  position: relative;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.azc-editableCombo .azc-editableCombo-wrapper {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0;
+  border-width: 0;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  height: 23px;
+  width: 100%;
+  margin: 0;
+  border-width: 1px;
+  border-style: solid;
+}
+.azc-editableCombo .azc-editableCombo-wrapper input {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  float: left;
+  padding: 4px 4px 3px 8px;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  display: inline-block;
+  font-size: 12px;
+  background: transparent;
+}
+.azc-editableCombo .azc-editableCombo-wrapper .azc-editableCombo-drop-image {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.azc-editableCombo.azc-editableCombo-has-drop-image .azc-editableCombo-wrapper {
+  padding-right: 25px;
+}
+.azc-editableCombo.azc-editableCombo-has-drop-image .azc-editableCombo-wrapper input {
+  padding-right: 0;
+}
+.azc-editableCombo.azc-editableCombo-has-drop-image .azc-editableCombo-wrapper .azc-editableCombo-drop-image {
+  margin-right: -15px;
+  padding-top: 3px;
+}
+.azc-editableCombo-drop-popup {
+  left: -10000px;
+  top: -10000px;
+  position: fixed;
+  z-index: 99;
+  overflow: hidden;
+  max-width: calc(100% - 90px);
+}

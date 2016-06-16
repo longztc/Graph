@@ -1,0 +1,48 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-sliderControl {
+  position: relative;
+  padding: 7px;
+  /* Make sure we don't get out of our controller */
+  height: 23px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.azc-sliderControl .azc-slider-slider {
+  position: relative;
+  height: 9px;
+  border-color: inherit;
+}
+.azc-sliderControl .azc-slider-slider .azc-slider-range {
+  position: absolute;
+}
+.azc-sliderControl .azc-slider-slider .azc-slider-selection {
+  top: 0;
+  height: 100%;
+}
+.azc-sliderControl .azc-slider-slider .azc-slider-handle {
+  top: 0;
+  position: absolute;
+  cursor: default;
+  margin-left: -7px;
+  margin-top: -7px;
+  height: 21px;
+  width: 9px;
+  border-width: 1px;
+  border-style: solid;
+}
+.azc-sliderControl .azc-slider-slider .azc-slider-markers .azc-slider-marker {
+  top: 7px;
+  position: absolute;
+  cursor: default;
+  margin-left: -7px;
+  margin-top: -7px;
+  height: 9px;
+  width: 2px;
+  outline: none;
+  border: none;
+}

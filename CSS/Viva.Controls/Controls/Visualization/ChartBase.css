@@ -1,0 +1,72 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-chartBase .azc-chart-axis {
+  pointer-events: none;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-x text,
+.azc-chartBase .azc-chart-axis .azc-chart-axis-y text,
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-x text,
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-y text {
+  font-size: 10px;
+  text-transform: uppercase;
+  stroke-width: 0px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-x .azc-chart-axis-caption {
+  text-anchor: middle;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-y .azc-chart-axis-caption {
+  text-anchor: end;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-x path,
+.azc-chartBase .azc-chart-axis .azc-chart-axis-x line {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke-width: 1px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-y path,
+.azc-chartBase .azc-chart-axis .azc-chart-axis-y line {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke-width: 1px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-x path,
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-x line {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke-width: 1px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-y path,
+.azc-chartBase .azc-chart-axis .azc-chart-secondary-axis-y line {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke-width: 1px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-area-border-line {
+  stroke-width: 1px;
+  stroke: #dcdfe2;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-hidden-line path {
+  stroke-width: 0px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-hidden-ticks .azc-chart-axis-tick-line {
+  stroke-width: 0px;
+}
+.azc-chartBase .azc-chart-axis .azc-chart-axis-ticks .azc-chart-axis-tick-line {
+  stroke-width: 1px;
+}
+.azc-chartBase .azc-chart-background {
+  stroke-width: 0px;
+  fill-opacity: 0;
+}
+.azc-chartBase .azc-chart-axis-gridline {
+  stroke-width: 1px;
+  pointer-events: none;
+}
+.azc-chartBase .azc-chart-data:not(.azc-chart-noninteractive),
+.azc-chartBase .azc-chart-background:not(.azc-chart-noninteractive) {
+  pointer-events: all;
+}

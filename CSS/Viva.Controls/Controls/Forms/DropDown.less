@@ -1,0 +1,78 @@
+﻿@import "../../Definitions/Common.d.less";
+@paddingLeftInputOffset: 2px;
+@chromeMarginOffset: 2px;
+
+.azc-dropdown {
+    .unselectable();
+    .box-sizing(border-box);
+    position: relative;
+    /*Font should be specified here to allow inline style to override.*/
+    font-size: @inputFontSize;
+    height: @formElementHeight;
+    line-height: @formElementHeight - (@borderWidth * 2);
+
+    .azc-dropdown-wrapper {
+        .azc-dropdown-slimbox();
+        .box-sizing(border-box);
+        position: relative;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        min-height: @azcDropdownMinHeight;
+        padding-right: @azcDropdownArrowWidth;
+        border-width: @borderWidth;
+        border-style: solid;
+
+        .azc-dropdown-current {
+            .azc-dropdown-slimbox();
+            .box-sizing(border-box);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+            padding-left: 8px;
+            height: 100%;
+            .calc(top, ~"50% - @{halfArrowWidth}");
+        }
+
+        .azc-dropdown-arrow {
+            .azc-dropdown-slimbox();
+            .box-sizing(border-box);
+            width: @azcDropdownArrowWidth;
+            height: 100%;
+            margin-right: -@azcDropdownArrowWidth;
+            min-height: @azcDropdownMinHeight;
+            min-width: @azcDropdownArrowWidth;
+            background-color: transparent;
+            vertical-align: middle;
+        }
+
+        .azc-dropdown-arrow-normal:before {
+            /*css before require content*/
+            content: '';
+            .downArrow(@quarterArrowWidth, @quarterArrowWidthAfterRotate);
+        }
+
+        .azc-dropdown-arrow-hover:before {
+            /*css before require content*/
+            content: '';
+            .downArrow(@quarterArrowWidth, @quarterArrowWidthAfterRotate );
+        }
+
+        .azc-dropdown-select {
+            .azc-font();
+            font-size: @inputFontSize;
+            .azc-dropdown-slimbox();
+            padding-left: 3px;
+            .box-sizing(border-box);
+            position: absolute;
+            top: 0;
+            left: 0;
+            // IE requires the following width and height
+            width: 100%;
+            height: 100%;
+            /*DO NOT REMOVE: workaround IE9 and IE10 layering incorrect.*/ 
+            opacity: 0;
+        }
+    }
+}

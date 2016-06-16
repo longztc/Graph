@@ -1,0 +1,27 @@
+﻿@import "../../Definitions/Common.d.less";
+
+
+.azc-button {
+    display: inline-block;
+    border-width: @borderWidth;
+    border-style: solid;
+    .box-sizing(border-box);
+    overflow: hidden;
+    min-width: 60px;
+    .azc-font-semibold();
+    font-size: @inputFontSize;
+    text-align: center;
+    padding: 1px 6px;
+    height: @buttonHeight;
+    .unselectable();
+    cursor: pointer; // button can be a div on which we will need a mouse pointer
+
+    &:focus {
+        outline-width: 1px;
+        outline-style: solid;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+}

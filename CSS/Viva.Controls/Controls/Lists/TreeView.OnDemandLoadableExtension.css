@@ -1,0 +1,42 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-treeView-onDemandLoadable .azc-treeView-icon-loading {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #758393;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: azc-treeView-loading 1s linear infinite;
+  animation: azc-treeView-loading 1s linear infinite;
+}
+.azc-treeView-onDemandLoadable .azc-treeView-icon-expanded {
+  -webkit-animation: none;
+  animation: none;
+}
+@keyframes azc-treeView-loading {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes azc-treeView-loading {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

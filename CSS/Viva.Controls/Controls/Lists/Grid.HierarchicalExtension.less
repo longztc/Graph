@@ -1,0 +1,45 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@expandIconSize: 16px;
+@iconSize: 16px;
+@arrowSize: 5px;
+@nodeMargin: 3px;
+@headerCellPaddingLeft: 10px;
+
+.azc-grid.azc-grid-hierarchical {
+    .azc-grid-hierarchical-cell-flexcontainer {
+        .display-flex();
+        .flex-align-items(center);
+
+        .azc-grid-hierarchical-icon,
+        .azc-grid-hierarchical-indent {
+            display: inline-block;
+            flex: 0 0 auto;
+            width: @expandIconSize;
+            height: @expandIconSize;
+            top: @nodeMargin;
+        }
+
+        .azc-grid-hierarchical-icon {
+            .azc-grid-hierarchical-icon-collapsed {
+                margin-top: (@expandIconSize - @arrowSize * 2) / 2;
+                margin-left: (@expandIconSize - @arrowSize) / 2;
+                .left-triangle(@arrowSize, @arrowSize);
+            }
+
+            .azc-grid-hierarchical-icon-expanded {
+                margin-top: (@expandIconSize - @arrowSize) / 2;
+                margin-left: (@expandIconSize - @arrowSize * 2) / 2;
+                .top-triangle(@arrowSize, @arrowSize);
+            }
+        }
+
+        .azc-grid-cellContent {
+            flex: 1 1 auto;
+        }
+
+        thead tr th.azc-grid-hierarchical-header > a {
+            padding-left: @headerCellPaddingLeft + @expandIconSize;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-list-focusable .azc-list-item:not([aria-disabled="true"]):not([aria-selected="true"]):focus {
+  outline-width: 1px;
+  outline-style: solid;
+}
+.azc-list-focusable .azc-list-item:not([aria-disabled="true"]):not([aria-selected="true"]):not(:focus):hover {
+  outline-width: 1px;
+  outline-style: solid;
+}

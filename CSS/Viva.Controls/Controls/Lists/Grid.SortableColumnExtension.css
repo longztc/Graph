@@ -1,0 +1,36 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-grid-sortableColumn table thead tr th[aria-sort] a .azc-grid-headerlabel {
+  margin-right: 22px;
+  /* Room for the arrow image */
+}
+.azc-grid-sortableColumn table thead tr th a[href]:hover .azc-grid-sortableColumn-sortImage:before {
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAQAAAB0Z3/WAAAAbUlEQVR4Xk3IoQ3CYABGwU9V1FTBNAh2QDAACRMQBAsUFoEFCOYUCRbBBgg2wDVpfpKmIb3nXspQYulrkdG4zX0Ub7PJ1njpHHSemnGrPfRWibXeXZ1E5abYZGCruKriotjlz15xjtaxZMpJ+wOu9T8/J3S7PgAAAABJRU5ErkJggg==");
+  position: absolute;
+  line-height: 0;
+}
+.azc-grid-sortableColumn table thead tr th a[href]:hover .azc-grid-headerlabel {
+  margin-right: 22px;
+  /* Room for the arrow image */
+}
+.azc-grid-sortableColumn table thead tr th a span.azc-grid-sortableColumn-sortImage {
+  position: absolute;
+  top: 17px;
+  right: 9px;
+  width: 11px;
+  height: 7px;
+}
+.azc-grid-sortableColumn table thead tr th a span.azc-grid-sortableColumn-sortImage.azc-grid-sortableColumn-sortImage-ascending:before {
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAQAAAB0Z3/WAAAAVklEQVR4Xk3JQQ2AMBSD4UqYlCn4bcwOEhDAYZImAQk7ceEwGtIE3kvT5KvW+xKNm6ZcmMrFcmo4OI2HM6lhCqdhk9jdg2I2DmPXe/QMH/4HF33pf1geqs0u7bC4nkcAAAAASUVORK5CYII=") !important;
+  position: absolute;
+  line-height: 0;
+}
+.azc-grid-sortableColumn table thead tr th a span.azc-grid-sortableColumn-sortImage.azc-grid-sortableColumn-sortImage-descending:before {
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAQAAAB0Z3/WAAAAUUlEQVR4Xk3KMQHAIAADwUhACgreBnYqoQI6IAkJlcDE0iEdwkDG+4hO1zFHGPgMdMwQJeFEirQDt8SFeSnOh8rEPJhJtcIJC7OC4YTGR5PCP9NhLu2CSHIrAAAAAElFTkSuQmCC") !important;
+  position: absolute;
+  line-height: 0;
+}

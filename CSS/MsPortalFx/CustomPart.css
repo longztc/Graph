@@ -1,0 +1,586 @@
+.msportalfx-layoutChildren-horizontal-inlineblock {
+  white-space: nowrap;
+  line-height: 0;
+  font-size: 0;
+}
+.msportalfx-layoutChildren-horizontal-inlineblock > .msportalfx-layoutChildren-child {
+  display: inline-block;
+  box-sizing: border-box;
+  white-space: normal;
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  line-height: normal;
+}
+.msportalfx-layoutChildren-horizontal-float > .msportalfx-layoutChildren-child {
+  float: left;
+  box-sizing: border-box;
+}
+.msportalfx-layoutChildren-horizontal-float::after {
+  content: "\0000a0";
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+.msportalfx-bgcolor-themeMain {
+  background-color: #00bcf2;
+}
+.msportalfx-bgcolor-themeWarning {
+  background-color: #ff8c00;
+}
+.msportalfx-bgcolor-themeError {
+  background-color: #ec008c;
+}
+.msportalfx-bgcolor-themeSuccess {
+  background-color: #7fba00;
+}
+.msportalfx-bgcolor-paletteDiffAdd {
+  background-color: #c7f1c7;
+}
+.msportalfx-bgcolor-paletteDiffDel {
+  background-color: #fcd6f1;
+}
+.msportalfx-bgcolor-white {
+  background-color: #fff;
+}
+.msportalfx-removeTableBorders {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.msportalfx-boxsizing-borderbox {
+  box-sizing: border-box;
+}
+.msportalfx-removeDefaultListStyle {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.msportalfx-removeDefaultListStyle > li {
+  margin: 0;
+  padding: 0;
+}
+.msportalfx-fill {
+  height: 100%;
+  width: 100%;
+}
+.msportalfx-clearfix::after {
+  content: "\0000a0";
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+.msportalfx-overflowY.azc-grid {
+  overflow-y: auto;
+}
+.msportalfx-removepartpadding {
+  height: calc(100% + 15px + 15px);
+  width: calc(100% + 15px + 15px);
+  margin: -15px -15px -15px -15px;
+}
+.fxs-blade-locked .msportalfx-removepartpaddingside {
+  width: calc(100% + 15px + 15px);
+  margin: 0 -15px 0 -15px;
+}
+.msportalfx-removepartpaddingside {
+  width: calc(100% + 14px + 15px);
+  margin: 0 -15px 0 -14px;
+}
+.msportalfx-partdivider:after {
+  content: "";
+  display: block;
+  width: calc(100% + 15px + 15px);
+  margin: 0 -15px 0 -15px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.msportalfx-form-section-label-donotuse {
+  height: 22px;
+  font-size: 12px;
+  line-height: 12px;
+}
+.msportalfx-form-section-button-donotuse {
+  margin-bottom: 20px;
+}
+.msportalfx-text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.msportalfx-font-monospace {
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 400;
+  font-size: 12px;
+}
+.msportalfx-text-header {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+.msportalfx-text-header-small,
+.msportalfx-text-label {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+.msportalfx-text-small {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+}
+.msportalfx-text-subheader {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  text-transform: uppercase;
+}
+.msportalfx-text-header-regular {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+.msportalfx-text-regular {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+.msportalfx-text-createsectionheader {
+  font-family: wf_segoe-ui_light, "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: normal;
+}
+.msportalfx-number-jumbo {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: -0.02em;
+}
+.msportalfx-number-large {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 43px;
+  line-height: 43px;
+  letter-spacing: -0.02em;
+}
+.msportalfx-number-medium {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 30px;
+  letter-spacing: -0.025em;
+}
+.msportalfx-number-small {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+}
+.msportalfx-number-jumbo-adorn {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+.msportalfx-number-large-adorn {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.02em;
+}
+.msportalfx-number-medium-adorn {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.02em;
+}
+.msportalfx-number-small-adorn {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: -0.05em;
+}
+.msportalfx-code {
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 400;
+  font-size: 12px;
+  background-color: #f1f1f8;
+  color: #32383f;
+  border: 1px solid #dcdfe2;
+  border-left: 5px solid #dcdfe2;
+  padding: 10px 10px 10px 15px;
+  margin: 5px 0;
+  overflow-x: auto;
+}
+.msportalfx-lineheight-reset {
+  line-height: normal;
+}
+.msportalfx-gettingstarted-part {
+  color: #fff;
+}
+.msportalfx-gridcolumn-asseticon img,
+.msportalfx-gridcolumn-asseticon svg {
+  margin-top: 4px;
+  height: 21px;
+  width: 21px;
+}
+.msportalfx-gridcolumn-statusicon {
+  text-align: center;
+}
+.msportalfx-gridcolumn-statusicon img,
+.msportalfx-gridcolumn-statusicon svg {
+  text-align: center;
+  height: 15px;
+  width: 15px;
+}
+.msportalfx-gridcolumn-statusicon svg {
+  margin-top: 4px;
+}
+.msportalfx-customtopo-text-name-donotuse {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: normal;
+}
+.msportalfx-customtopo-text-description-donotuse {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: normal;
+  color: #8f9ca8;
+}
+.msportalfx-statuspart {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.msportalfx-statuspart > * {
+  box-sizing: border-box;
+}
+.msportalfx-statuspart .msportalfx-statuspart-statussection {
+  height: calc(100% - 55px);
+  padding-top: 10px;
+}
+.msportalfx-statuspart .msportalfx-statuspart-statussection > * {
+  vertical-align: middle;
+}
+.msportalfx-statuspart .msportalfx-statuspart-statussection > img {
+  height: 30px;
+  width: 30px;
+}
+.msportalfx-statuspart .msportalfx-statuspart-statussection > span {
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.msportalfx-statuspart .msportalfx-statuspart-messagesection {
+  position: absolute;
+  bottom: 55px;
+  margin-bottom: 25px;
+  height: 40px;
+  line-height: 0;
+  white-space: normal;
+}
+.msportalfx-statuspart .msportalfx-statuspart-messagesection > span {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+.msportalfx-statuspart .msportalfx-statuspart-propertysection,
+.msportalfx-statuspart .msportalfx-statuspart-metricsection {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 55px;
+}
+.msportalfx-statuspart .msportalfx-statuspart-propertysection {
+  padding-top: 5px;
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+.msportalfx-statuspart .msportalfx-statuspart-propertysection > span,
+.msportalfx-statuspart .msportalfx-statuspart-propertysection > div {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.msportalfx-statuspart .msportalfx-statuspart-metricsection > div {
+  float: left;
+  width: calc(100% / 3 - 3px);
+  box-sizing: border-box;
+  border-right: 1px solid #8f9ca8;
+  padding-left: 7px;
+}
+.msportalfx-statuspart .msportalfx-statuspart-metricsection > div:first-child {
+  padding-left: 0;
+}
+.msportalfx-statuspart .msportalfx-statuspart-metricsection > div:last-child {
+  border-right: none;
+}
+.msportalfx-statuspart .msportalfx-statuspart-metricsection .msportalfx-statuspart-metrictitle {
+  white-space: normal;
+  height: 30px;
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+.msportalfx-bgcolor-a1 {
+  background-color: #fcd116;
+}
+.msportalfx-bgcolor-b1 {
+  background-color: #eb3c00;
+}
+.msportalfx-bgcolor-c1 {
+  background-color: #ba141a;
+}
+.msportalfx-bgcolor-d1 {
+  background-color: #b4009e;
+}
+.msportalfx-bgcolor-e1 {
+  background-color: #442359;
+}
+.msportalfx-bgcolor-f1 {
+  background-color: #002050;
+}
+.msportalfx-bgcolor-g1 {
+  background-color: #0072c6;
+}
+.msportalfx-bgcolor-h1 {
+  background-color: #008272;
+}
+.msportalfx-bgcolor-i1 {
+  background-color: #007233;
+}
+.msportalfx-bgcolor-j1 {
+  background-color: #7fba00;
+}
+.msportalfx-bgcolor-k1 {
+  background-color: #a0a5a8;
+}
+.msportalfx-bgcolor-a0 {
+  background-color: #fff100;
+}
+.msportalfx-bgcolor-b0 {
+  background-color: #ff8c00;
+}
+.msportalfx-bgcolor-c0 {
+  background-color: #e81123;
+}
+.msportalfx-bgcolor-d0 {
+  background-color: #ec008c;
+}
+.msportalfx-bgcolor-e0 {
+  background-color: #68217a;
+}
+.msportalfx-bgcolor-f0 {
+  background-color: #00188f;
+}
+.msportalfx-bgcolor-g0 {
+  background-color: #00bcf2;
+}
+.msportalfx-bgcolor-h0 {
+  background-color: #00b294;
+}
+.msportalfx-bgcolor-i0 {
+  background-color: #009e49;
+}
+.msportalfx-bgcolor-j0 {
+  background-color: #bad80a;
+}
+.msportalfx-bgcolor-k0 {
+  background-color: #bbc2ca;
+}
+.msportalfx-bgcolor-a2 {
+  background-color: #fffc9e;
+}
+.msportalfx-bgcolor-b2 {
+  background-color: #ffb900;
+}
+.msportalfx-bgcolor-c2 {
+  background-color: #dd5900;
+}
+.msportalfx-bgcolor-d2 {
+  background-color: #f472d0;
+}
+.msportalfx-bgcolor-e2 {
+  background-color: #9b4f96;
+}
+.msportalfx-bgcolor-f2 {
+  background-color: #4668c5;
+}
+.msportalfx-bgcolor-g2 {
+  background-color: #6dc2e9;
+}
+.msportalfx-bgcolor-h2 {
+  background-color: #00d8cc;
+}
+.msportalfx-bgcolor-i2 {
+  background-color: #55d455;
+}
+.msportalfx-bgcolor-j2 {
+  background-color: #e2e584;
+}
+.msportalfx-bgcolor-k2 {
+  background-color: #d6d7d8;
+}
+.msportalfx-bgcolor-a0s2 {
+  background-color: #807900;
+}
+.msportalfx-bgcolor-b0s2 {
+  background-color: #804600;
+}
+.msportalfx-bgcolor-c0s2 {
+  background-color: #740912;
+}
+.msportalfx-bgcolor-d0s2 {
+  background-color: #760046;
+}
+.msportalfx-bgcolor-e0s2 {
+  background-color: #34113d;
+}
+.msportalfx-bgcolor-f0s2 {
+  background-color: #000c48;
+}
+.msportalfx-bgcolor-g0s2 {
+  background-color: #005e79;
+}
+.msportalfx-bgcolor-h0s2 {
+  background-color: #084c41;
+}
+.msportalfx-bgcolor-i0s2 {
+  background-color: #063d20;
+}
+.msportalfx-bgcolor-j0s2 {
+  background-color: #3d460a;
+}
+.msportalfx-bgcolor-k0s2 {
+  background-color: #32383f;
+}
+.msportalfx-bgcolor-a0s1 {
+  background-color: #bfb500;
+}
+.msportalfx-bgcolor-b0s1 {
+  background-color: #bf6900;
+}
+.msportalfx-bgcolor-c0s1 {
+  background-color: #ae0d1a;
+}
+.msportalfx-bgcolor-d0s1 {
+  background-color: #b10069;
+}
+.msportalfx-bgcolor-e0s1 {
+  background-color: #4e195c;
+}
+.msportalfx-bgcolor-f0s1 {
+  background-color: #00126b;
+}
+.msportalfx-bgcolor-g0s1 {
+  background-color: #008db5;
+}
+.msportalfx-bgcolor-h0s1 {
+  background-color: #00856f;
+}
+.msportalfx-bgcolor-i0s1 {
+  background-color: #0f5b2f;
+}
+.msportalfx-bgcolor-j0s1 {
+  background-color: #8ba208;
+}
+.msportalfx-bgcolor-k0s1 {
+  background-color: #464f59;
+}
+.msportalfx-bgcolor-a0t1 {
+  background-color: #fcf37e;
+}
+.msportalfx-bgcolor-b0t1 {
+  background-color: #ffba66;
+}
+.msportalfx-bgcolor-c0t1 {
+  background-color: #f1707b;
+}
+.msportalfx-bgcolor-d0t1 {
+  background-color: #f466ba;
+}
+.msportalfx-bgcolor-e0t1 {
+  background-color: #a47aaf;
+}
+.msportalfx-bgcolor-f0t1 {
+  background-color: #6674bc;
+}
+.msportalfx-bgcolor-g0t1 {
+  background-color: #66d7f7;
+}
+.msportalfx-bgcolor-h0t1 {
+  background-color: #66d1bf;
+}
+.msportalfx-bgcolor-i0t1 {
+  background-color: #66c592;
+}
+.msportalfx-bgcolor-j0t1 {
+  background-color: #d6e86c;
+}
+.msportalfx-bgcolor-k0t1 {
+  background-color: #8f9ca8;
+}
+.msportalfx-bgcolor-a0t2 {
+  background-color: #fffccc;
+}
+.msportalfx-bgcolor-b0t2 {
+  background-color: #ffe8cc;
+}
+.msportalfx-bgcolor-c0t2 {
+  background-color: #facfd3;
+}
+.msportalfx-bgcolor-d0t2 {
+  background-color: #fbcce8;
+}
+.msportalfx-bgcolor-e0t2 {
+  background-color: #e1d3e4;
+}
+.msportalfx-bgcolor-f0t2 {
+  background-color: #ccd1e9;
+}
+.msportalfx-bgcolor-g0t2 {
+  background-color: #ccf2fc;
+}
+.msportalfx-bgcolor-h0t2 {
+  background-color: #ccf0ea;
+}
+.msportalfx-bgcolor-i0t2 {
+  background-color: #ccecdb;
+}
+.msportalfx-bgcolor-j0t2 {
+  background-color: #f0f7b2;
+}
+.msportalfx-bgcolor-k0t2 {
+  background-color: #63707e;
+}

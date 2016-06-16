@@ -1,0 +1,90 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@fontSize: @inputFontSize;
+
+.placeholderStyle() {
+    font-style: italic;
+}
+
+.azc-input-slimbox() {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    text-decoration: none;
+}
+
+.azc-border-wrapper(@width) {
+    border-width: @width;
+    border-style: solid;
+    outline: none;
+}
+
+.azc-border-noLeftWidth-wrapper(@width) {
+    .azc-border-wrapper(@width);
+    border-left-width: 0;
+}
+
+.azc-border-noRightWidth-wrapper(@width) {
+    .azc-border-wrapper(@width);
+    border-right-width: 0;
+}
+
+.azc-input-border-wrapper(@width) {
+    input, textarea {
+        .azc-border-wrapper(@width);
+    }
+}
+
+.azc-input-focus-border-wrapper(@width) {
+    input, textarea {
+        .azc-border-wrapper(@width);
+    }
+}
+
+.azc-input-border-noRightWidth-wrapper(@width) {
+    input, textarea {
+        .azc-border-noRightWidth-wrapper(@width);
+    }
+}
+
+.azc-input-focus-border-noRightWidth-wrapper(@width) {
+    input, textarea {
+        .azc-border-noRightWidth-wrapper(@width);
+    }
+}
+
+.azc-textInput-default-wrapper() {
+    width: 100%;
+
+    input {
+        height: @formElementHeight;
+    }
+
+    textarea {
+        height: 100%;
+    }
+
+    input, textarea {
+        .azc-font();
+        .box-sizing(border-box);
+        width: 100%;
+        padding: @commonTextBoxPadding;
+        outline: none;
+        font-size: @fontSize;
+        border-width: @borderWidth;
+        border-style: solid;
+
+        &::-webkit-input-placeholder {
+            .placeholderStyle();
+        }
+
+        &:-ms-input-placeholder {
+            .placeholderStyle();
+        }
+
+        &::-moz-placeholder {
+            .placeholderStyle();
+        }
+    }
+}

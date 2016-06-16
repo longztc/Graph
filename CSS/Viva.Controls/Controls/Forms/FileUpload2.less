@@ -1,0 +1,146 @@
+﻿@import "../../Definitions/Common.d.less";
+@import "TextInput.less";
+
+@borderOffset: 4px;
+@uploadButtonOffset: 30px;
+@progressBarHeight: 32px;
+@progressBarMarginTop: 10px;
+@progressBarStatusHeight: 3px;
+@progressBarProgressHeight: 14px;
+@progressBarDetailsHeight: 18px;
+@progressBarCancelIconWidth: 12px;
+@progressBarCancelIconPaddingLeft: 4px;
+@progressBarCancelIconPaddingRight: 4px;
+@progressBarInfoBalloonIconPaddingLeft: 4px;
+@progressBarInfoBalloonIconPaddingRight: 8px;
+@progressBarProgressCancelAndBalloonWidth: @progressBarCancelIconWidth * 2 + @progressBarCancelIconPaddingLeft + @progressBarCancelIconPaddingRight + @progressBarInfoBalloonIconPaddingLeft + @progressBarInfoBalloonIconPaddingRight;
+
+.azc-fileUpload2 {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 200px;
+    font-size: @fontSize;
+    .azc-font();
+
+    .azc-fileUpload-wrapper {
+        width: 100%;
+        height: @formElementHeight;
+
+        .azc-fileUpload-selectedFile {
+            width: calc(~"100%" - @uploadButtonOffset);
+ 
+            .unselectable();
+            .selection-bg-transparent();
+
+            .azc-textBox input {
+                padding-left: 5px;
+                -webkit-touch-callout: none;
+                .unselectable();
+            }    
+        }
+            
+        .azc-button {
+            height: @formElementHeight;
+            width: @formElementHeight;
+            min-width: @formElementHeight;
+            padding: 0;
+            position: relative;
+            vertical-align: top;
+            margin-left: 5px;
+            border: none;
+
+            .azc-fileUpload-iconTab {
+                position: absolute;
+                top: 9px;
+                left: 8px;
+                height: 4px;
+                width: 6px;
+            }
+
+            .azc-fileUpload-iconFolder {
+                position: absolute;
+                top: 10px;
+                left: 8px;
+                height: 10px;
+                width: 13px;
+                border-left: 1px solid;
+                border-top: 1px solid;
+            }
+        }
+
+        .azc-fileUpload-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: @formElementHeight;
+            opacity: 0;
+            display: block;
+        }
+    }
+
+    .azc-fileUpload-progressBar, .azc-fileUpload-progressBarGroup {
+        height: @progressBarHeight;
+        margin-top: 7px;
+        margin-bottom: 3px;
+
+        .azc-fileUpload-progressBarAndCancel-container {
+            height: @progressBarProgressHeight;
+
+            .azc-fileUpload-progressBar-container {
+                overflow: hidden;
+                width: calc(~"100%" - @progressBarProgressCancelAndBalloonWidth);
+                height: @progressBarStatusHeight;
+                display: inline-block;
+                position: relative;
+                padding-bottom: 8px;
+                     
+                .azc-fileUpload-progress-background {
+                    background-color: #d1d1d1;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .azc-fileUpload-progress-value {
+                    position: absolute;
+                    height: @progressBarStatusHeight;
+                }
+            }
+
+            .azc-fileUpload-progressBar-cancelUpload {
+                height: 100%;
+                width: @progressBarCancelIconWidth;
+                display: inline-block;
+                padding: 0 @progressBarCancelIconPaddingRight 0 @progressBarCancelIconPaddingLeft;
+            }
+
+            .azc-fileUpload-progresBar-infoBalloon {
+                height: 100%;
+                width: @progressBarCancelIconWidth;
+                display: inline-block;
+                padding: 0 @progressBarInfoBalloonIconPaddingRight 0 @progressBarInfoBalloonIconPaddingLeft;
+            }
+        }
+
+        .azc-fileUpload-progressDetails {
+            height: @progressBarDetailsHeight;
+            overflow: hidden;
+            .ellipsis();
+        }
+
+        .azc-fileUpload-progressBarGroup-cancelUpload {
+            height: 100%;
+            width: @progressBarCancelIconWidth;
+            display: inline-block;
+            padding: 0 @progressBarCancelIconPaddingRight 0 @progressBarCancelIconPaddingLeft;
+        }
+
+        .azc-fileUpload-progresBarGroup-collapseAll {
+            height: 100%;
+            width: @progressBarCancelIconWidth;
+            padding: 0 @progressBarCancelIconPaddingRight 0 @progressBarCancelIconPaddingLeft;
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@arrowImageWidth: 11px;
+
+.marginRightSpace() {
+    .azc-grid-headerlabel {
+        margin-right: (@arrowImageWidth * 2); /* Room for the arrow image */
+    }
+}
+
+.azc-grid-sortableColumn {
+    table thead tr th {
+        &[aria-sort] {
+            a {
+                .marginRightSpace();
+            }
+        }
+
+        a {
+            &[href]:hover {
+                .azc-grid-sortableColumn-sortImage:before {
+                    content: data-uri("../../../../Content/Images/Viva.Controls/azc.grid.sortablecolumnextension.icon-sort-up.hover.png");
+                    position: absolute;
+                    line-height: 0;
+                }
+
+                .marginRightSpace();
+            }
+
+            span.azc-grid-sortableColumn-sortImage {
+                position: absolute;
+                top: 17px;
+                right: 9px;
+                width: 11px;
+                height: 7px;
+
+                &.azc-grid-sortableColumn-sortImage-ascending:before {
+                    content: data-uri("../../../../Content/Images/Viva.Controls/azc.grid.sortablecolumnextension.icon-sort-up.png") !important;
+                    position: absolute;
+                    line-height: 0;
+                }
+
+                &.azc-grid-sortableColumn-sortImage-descending:before {
+                    content: data-uri("../../../../Content/Images/Viva.Controls/azc.grid.sortablecolumnextension.icon-sort-down.png") !important;
+                    position: absolute;
+                    line-height: 0;
+                }
+            }
+        }
+    }
+}

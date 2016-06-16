@@ -1,0 +1,10 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-toggleCommandButton .azc-toggleCommandButton-checked {
+  border-width: 1px;
+  border-style: solid;
+}

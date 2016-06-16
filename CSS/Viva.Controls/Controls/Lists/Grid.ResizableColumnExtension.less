@@ -1,0 +1,56 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.azc-grid.azc-grid-resizableColumn {
+    .azc-grid-tableContainer {
+        position: relative;
+    }
+
+    .azc-grid-resizableColumn-handle {
+        position: absolute;
+        right: -5px;
+        top: 0;
+        height: 100%;
+        width: 10px;
+        cursor: ew-resize;
+        z-index: 1;
+        .display-flex();
+        .justify-content(center);
+
+        .azc-grid-resizableColumn-handle-line {
+            width: 1px;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+
+    .azc-grid-resizableColumn-ghostLine {
+        position: absolute;
+        width: 1px;
+        top: 0;
+        z-index: 1;
+    }
+
+    .azc-grid-show-handles {
+        .azc-grid-resizableColumn-handle {
+            .azc-grid-resizableColumn-handle-line {
+                opacity: 1;
+            }
+        }
+    }
+
+    thead:hover {
+        .azc-grid-resizableColumn-handle-line {
+            opacity: 1;
+        }
+    }
+
+    &.azc-grid-resizing {
+        .azc-grid-resizableColumn-handle-line {
+            opacity: 1;
+        }
+    }
+
+    &.azc-grid-resizing * {
+        .unselectable();
+    }
+}

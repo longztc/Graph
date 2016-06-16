@@ -1,0 +1,32 @@
+﻿@import "../../Definitions/Common.d.less";
+
+@groupHeaderPaddingSize: 15px;
+
+.azc-grid-groupable {
+    &.azc-grid {
+        table {
+            tbody {
+                &.azc-grid-groupdata {
+                    tr.azc-grid-groupheader {
+                        td {
+                            padding-top: @groupHeaderPaddingSize;
+                            font-size: @gridHeaderFontSize;
+                            .azc-font-semibold();
+                            text-transform: uppercase;
+                        }
+
+                        &:hover {
+                            background-color: inherit;
+                        }
+                    }
+
+                    tr:not(.azc-grid-groupheader) {
+                        td:first-of-type {
+                            padding-left: @groupHeaderPaddingSize * 2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

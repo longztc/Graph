@@ -1,0 +1,44 @@
+/*Between @fxZIndexPopUp (ContextMenu) & @fxZIndexSlideOut (Slideout) */
+/*Match the @formElementHeight with border into consideration. */
+/* !importants ensure that we override theming */
+/**
+ * Numbers and adornment text formatting
+ */
+.azc-textBox {
+  display: inline-block;
+  height: 23px;
+}
+.azc-textBox .azc-textBox-wrapper {
+  width: 100%;
+}
+.azc-textBox .azc-textBox-wrapper input {
+  height: 23px;
+}
+.azc-textBox .azc-textBox-wrapper textarea {
+  height: 100%;
+}
+.azc-textBox .azc-textBox-wrapper input,
+.azc-textBox .azc-textBox-wrapper textarea {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3px 8px 4px;
+  outline: none;
+  font-size: 12px;
+  border-width: 1px;
+  border-style: solid;
+}
+.azc-textBox .azc-textBox-wrapper input::-webkit-input-placeholder,
+.azc-textBox .azc-textBox-wrapper textarea::-webkit-input-placeholder {
+  font-style: italic;
+}
+.azc-textBox .azc-textBox-wrapper input:-ms-input-placeholder,
+.azc-textBox .azc-textBox-wrapper textarea:-ms-input-placeholder {
+  font-style: italic;
+}
+.azc-textBox .azc-textBox-wrapper input::-moz-placeholder,
+.azc-textBox .azc-textBox-wrapper textarea::-moz-placeholder {
+  font-style: italic;
+}

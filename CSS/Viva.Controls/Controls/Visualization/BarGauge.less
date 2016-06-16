@@ -1,0 +1,70 @@
+﻿@import "../../Definitions/Common.d.less";
+
+.barGaugeColor(@themeClassName, @themeDirectionName, @gaugeClassName, @color) {
+    @className: ~"@{gaugeClassName}";
+    @themeClass: ~"@{themeClassName}";
+    @themeDirection: ~"@{themeDirectionName}";
+
+    @{className}{
+        background-color: @color;
+    }
+    
+    &@{themeClass} {
+        @{className} {
+             background: linear-gradient(-90deg, @color, fade(@color, 20%));
+        }
+        &@{themeDirection} {
+            @{className} {
+                background: linear-gradient(90deg, @color, fade(@color, 20%));
+            }
+        }
+    }
+}
+
+.azc-barGauge {
+    font-weight: lighter;
+    min-height: 30px;
+    position: relative;
+
+    .azc-barGauge-container, .azc-gauge-thresholdsbar-g, .azc-gauge-currentbar-g {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .azc-gauge-thresholdbar, .azc-gauge-currentbar {
+        line-height: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        float: left;
+    }
+
+    .azc-gauge-outofthreshold, .azc-gauge-currentbar {
+        /*background-color: #dcdfe2;*/
+        background-color: transparent;
+    }
+
+    .barGaugeColor(".azc-gauge-gradient", ".azc-theme-frost-right", ".azc-gauge-thresholdstyle-0", #add8e6);
+    
+    .barGaugeColor(".azc-gauge-gradient", ".azc-theme-frost-right", ".azc-gauge-thresholdstyle-1", #90ee90);
+    
+    .barGaugeColor(".azc-gauge-gradient", ".azc-theme-frost-right", ".azc-gauge-thresholdstyle-2", #ffff00);
+
+    .barGaugeColor(".azc-gauge-gradient", ".azc-theme-frost-right", ".azc-gauge-thresholdstyle-3", #ff0000);
+
+    
+    .azc-gauge-current.azc-gauge-currentline {
+        background-color: #00008b;
+        border-width: 0;
+    }
+
+    &.azc-theme-frost-right {
+        .azc-gauge-thresholdbar, .azc-gauge-currentbar {
+            float: right;
+        }
+    }
+}
